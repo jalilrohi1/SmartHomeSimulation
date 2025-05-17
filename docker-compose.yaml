@@ -1,0 +1,17 @@
+version: '3'
+services:
+  node-red:
+    image: nodered/node-red
+    environment:
+      - NODE_RED_ENABLE_PROJECTS=true
+    ports:
+      - "1880:1880"
+    volumes:
+      - node_red_data:/data
+    command: >
+      bash -c "
+        npm install --unsafe-perm node-red-dashboard bufferutil utf-8-validate &&
+        ./node_modules/node-red/red.js -v
+      "
+volumes:
+  node_red_data:
