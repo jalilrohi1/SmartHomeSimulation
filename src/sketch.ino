@@ -4,265 +4,220 @@
 #include <LiquidCrystal_I2C.h>
 #include <WiFi.h>
 #include <WebServer.h>
-
 #include <PubSubClient.h>
 
 WebServer server(8185);
 
-
-
-
 // WiFi & MQTT Credentials
-//const char* ssid = "Galaxy A51 6C73";
-const char* ssid = "Wokwi-GUEST"; // Your WiFi SSID
+const char* ssid = "Wokwi-GUEST";
 const char* password = "";
-const char* mqttServer = "broker.hivemq.com"; // Public MQTT broker
-//const char* mqttServer = "192.168.167.23";
+const char* mqttServer = "broker.hivemq.com";
 const int mqttPort = 1883;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+// Constants and Thresholds
+#define GAS_THRESHOLD 500
+#define TEMP_THRESHOLD 25
+#define LDR_DARK 500
+#define LDR_BRIGHT 1000
+#define DOOR_OPEN_DISTANCE 50
+#define BLINDS_OPEN 0
+#define BLINDS_CLOSED 90
+#define DEBOUNCE_DELAY 200
+
 // MQTT Topics
 #define TEMP_TOPIC "smart_home/temperature"
-#define GAS_TOPIC "b/smart_home/esp32/gas "
-#define RELAY_TOPIC "c/smart_home/esp32/relay1 "
-// LCD2 (I2C)
-LiquidCrystal_I2C lcd2(0x27, 16, 2); // SDA=21, SCL=22
-// DHT22 Sensors
-#define DHT1_PIN 4
-#define DHT2_PIN 16
-DHT dht1(DHT1_PIN, DHT22);
-DHT dht2(DHT2_PIN, DHT22);
+#define HUMIDITY_TOPIC "smart_home/humidity"
+#define GAS_TOPIC "smart_home/gas"
+#define RELAY_TOPIC "smart_home/relay"
+#define MOTION_TOPIC "smart_home/motion"
+#define DOOR_TOPIC "smart_home/door"
 
-// PIR Motion Sensors
-#define PIR1_PIN 5     // Hall
-#define PIR2_PIN 17    // Room 2
-
-// Gas Sensor (MQ-2)
-#define GAS_PIN 36     // Analog VP pin
-
-// LDR (Light Sensor)
-#define LDR_PIN 35     // Analog VN pin
-
-// Ultrasonic Sensor (Door)
-#define TRIG_PIN 18
-#define ECHO_PIN 19
-
-// Actuators
-#define RELAY1_PIN 27  // Exhaust Fan (Kitchen)
-#define RELAY2_PIN 14  // AC (Room 1)
-#define SERVO_PIN 12   // Blinds
-#define BUZZER_PIN 23  // Buzzer
-
-// RGB LED
-#define RGB_R 13
-#define RGB_G 26
-#define RGB_B 32
-
-// Buttons
-#define BTN1_PIN 34    // Manual Override 1
-#define BTN2_PIN 33    // Manual Override 2
-
-
-// Servo
+// Hardware Configuration
+LiquidCrystal_I2C lcd2(0x27, 16, 2);
+DHT dht1(4, DHT22);
+DHT dht2(16, DHT22);
 Servo blindsServo;
 
-// Thresholds
-#define GAS_THRESHOLD 500   // Adjust based on simulation
-#define TEMP_THRESHOLD 25   // 25°C
+// Pin Definitions
+const int PIR1_PIN = 5;     // Hall
+const int PIR2_PIN = 17;    // Room 2
+const int GAS_PIN = 36;
+const int LDR_PIN = 35;
+const int TRIG_PIN = 18;
+const int ECHO_PIN = 19;
+const int RELAY1_PIN = 27;
+const int RELAY2_PIN = 14;
+const int SERVO_PIN = 12;
+const int BUZZER_PIN = 23;
+const int RGB_R = 13;
+const int RGB_G = 26;
+const int RGB_B = 32;
+const int BTN1_PIN = 34;
+const int BTN2_PIN = 33;
+const int POT_PIN = 39;
 
-////
-// MQTT Callback function
+// Variables
+unsigned long lastPublish = 0;
+bool manualMode = false;
+bool relay1State = false;
+bool relay2State = false;
+int currentGasThreshold = GAS_THRESHOLD;
+
+// PWM Channels
+const int PWM_RED = 0;
+const int PWM_GREEN = 1;
+const int PWM_BLUE = 2;
+
 void callback(char* topic, byte* payload, unsigned int length) {
-  String message;
-  for (int i = 0; i < length; i++) {
-    message += (char)payload[i];
+  char message[length + 1];
+  memcpy(message, payload, length);
+  message[length] = '\0';
+  
+  if (strcmp(topic, RELAY_TOPIC) == 0) {
+    if (strcmp(message, "ON") == 0) {
+      digitalWrite(RELAY1_PIN, HIGH);
+    } else if (strcmp(message, "OFF") == 0) {
+      digitalWrite(RELAY1_PIN, LOW);
+    }
   }
-  Serial.println("Message arrived [" + String(topic) + "]: " + message);
 }
 
-// MQTT connection function
 void reconnect() {
   while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
     String clientId = "ESP32Client-" + String(random(0xffff), HEX);
-    
     if (client.connect(clientId.c_str())) {
-      Serial.println("connected");
-      // Subscribe to topics
-      client.subscribe(TEMP_TOPIC);
-      
-      // Publish connection message
-      client.publish("esp32/status", "connected");
-    } else {
-      Serial.print("failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" retrying in 5 seconds");
-      delay(5000);
+      client.subscribe(RELAY_TOPIC);
+      client.publish("esp32/status", "Reconnected");
+    }
+    delay(5000);
+  }
+}
+
+void readPotentiometer() {
+  currentGasThreshold = map(analogRead(POT_PIN), 0, 4095, 300, 1000);
+}
+
+void controlBuzzer(bool state) {
+  digitalWrite(BUZZER_PIN, state);
+}
+
+void handleButtons() {
+  static unsigned long lastDebounce = 0;
+  if ((millis() - lastDebounce) > DEBOUNCE_DELAY) {
+    if (digitalRead(BTN1_PIN) == LOW) {
+      relay1State = !relay1State;
+      digitalWrite(RELAY1_PIN, relay1State);
+      lastDebounce = millis();
+    }
+    if (digitalRead(BTN2_PIN) == LOW) {
+      manualMode = !manualMode;
+      lcd2.clear();
+      lcd2.print(manualMode ? "Manual Mode" : "Auto Mode");
+      lastDebounce = millis();
     }
   }
 }
 
 void setup() {
   Serial.begin(115200);
-  delay(1000);
-
-  // Simple WiFi Connection for Wokwi
-  Serial.println("\nConnecting to Wokwi-GUEST");
-  WiFi.begin(ssid, password);
   
-  // Wait for connection
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  
-  Serial.println("\nWiFi connected!");
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-
-  // MQTT Setup
-  client.setServer(mqttServer, mqttPort);
-  client.setCallback(callback);
-
-  Serial.println("\nConnecting to WiFi");
-  int attempts = 0;
-  while (WiFi.status() != WL_CONNECTED && attempts < 30) {
-    delay(1000);
-    Serial.print(".");
-    attempts++;
-  }
-  
-  if (WiFi.status() == WL_CONNECTED) {
-    Serial.println("\nConnected to WiFi");
-    Serial.print("IP: ");
-    Serial.println(WiFi.localIP());
-  }
-  
-  // MQTT Setup
-  client.setServer(mqttServer, mqttPort);
-  client.setCallback(callback);
-
-  Serial.println("Hello, ESP32!");
- 
- 
-  // Initialize DHT sensors
+  // Initialize Hardware
   dht1.begin();
   dht2.begin();
-
-  // Initialize PIR sensors
+  blindsServo.attach(SERVO_PIN);
+  lcd2.init();
+  lcd2.backlight();
+  
   pinMode(PIR1_PIN, INPUT);
   pinMode(PIR2_PIN, INPUT);
-
-  // Initialize Actuators
   pinMode(RELAY1_PIN, OUTPUT);
   pinMode(RELAY2_PIN, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
-  blindsServo.attach(SERVO_PIN);
-
-  // RGB LED
-  // pinMode(RGB_R, OUTPUT);
-  // pinMode(RGB_G, OUTPUT);
-  // pinMode(RGB_B, OUTPUT);
-  ledcSetup(0, 5000, 8);  // Channel 0 for Red
-  ledcAttachPin(RGB_R, 0);
-  ledcSetup(1, 5000, 8);  // Channel 1 for Green
-  ledcAttachPin(RGB_G, 1);
-
-  // Buttons
   pinMode(BTN1_PIN, INPUT_PULLUP);
   pinMode(BTN2_PIN, INPUT_PULLUP);
+  
+  // RGB LED PWM Setup
+  ledcSetup(PWM_RED, 5000, 8);
+  ledcAttachPin(RGB_R, PWM_RED);
+  ledcSetup(PWM_GREEN, 5000, 8);
+  ledcAttachPin(RGB_G, PWM_GREEN);
+  ledcSetup(PWM_BLUE, 5000, 8);
+  ledcAttachPin(RGB_B, PWM_BLUE);
 
-  // Initialize LCD2
-  lcd2.init();
-  lcd2.backlight();
-  lcd2.print("Smart Home Ready");
-
-  // Ultrasonic Sensor
-  pinMode(TRIG_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
+  // WiFi Connection
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) delay(500);
+  
+  // MQTT Setup
+  client.setServer(mqttServer, mqttPort);
+  client.setCallback(callback);
 }
 
 void loop() {
-  // Check WiFi connection
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("WiFi connection lost!");
-    WiFi.reconnect();
-    delay(5000);
-    return;
-  }
-
-  // Check MQTT connection
-  if (!client.connected()) {
-    reconnect();
-  }
+  if (!client.connected()) reconnect();
   client.loop();
+  handleButtons();
+  readPotentiometer();
 
-  // Read Sensors
+  // Sensor Readings
   float temp1 = dht1.readTemperature();
   float temp2 = dht2.readTemperature();
+  float humidity1 = dht1.readHumidity();
+  float humidity2 = dht2.readHumidity();
   int gasValue = analogRead(GAS_PIN);
   int ldrValue = analogRead(LDR_PIN);
   bool motionHall = digitalRead(PIR1_PIN);
   bool motionRoom2 = digitalRead(PIR2_PIN);
 
-  // Ultrasonic Distance Measurement
-  long duration, distance;
+  // Ultrasonic Measurement
   digitalWrite(TRIG_PIN, LOW);
   delayMicroseconds(2);
   digitalWrite(TRIG_PIN, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
-  duration = pulseIn(ECHO_PIN, HIGH);
-  distance = duration * 0.034 / 2;
+  long distance = pulseIn(ECHO_PIN, HIGH) * 0.034 / 2;
 
   // Control Logic
-  // Gas Leak Detection
-  if (gasValue > GAS_THRESHOLD) {
-    lcd2.setCursor(0, 0);
-    lcd2.print("Gas Leak Detected!");
-  } else {
-    lcd2.setCursor(0, 0);
-    lcd2.print("No Gas Leakage");
+  if (!manualMode) {
+    // Gas System
+    if (gasValue > currentGasThreshold) {
+      lcd2.setCursor(0, 0);
+      lcd2.print("Gas Alert!     ");
+      controlBuzzer(true);
+    } else {
+      lcd2.setCursor(0, 0);
+      lcd2.print("Air Quality OK ");
+      controlBuzzer(false);
+    }
+
+    // Temperature Control
+    digitalWrite(RELAY2_PIN, (temp1 > TEMP_THRESHOLD) ? HIGH : LOW);
+
+    // Lighting Control
+    if (motionHall || ldrValue < LDR_DARK) {
+      ledcWrite(PWM_RED, 255);
+    } else {
+      ledcWrite(PWM_RED, 0);
+    }
+
+    // Blinds Control
+    blindsServo.write((ldrValue > LDR_BRIGHT) ? BLINDS_CLOSED : BLINDS_OPEN);
   }
 
-  // 2. Room Temperature Control
-  if (temp1 > TEMP_THRESHOLD) {
-    digitalWrite(RELAY2_PIN, HIGH); // Turn on AC
-  } else {
-    digitalWrite(RELAY2_PIN, LOW);
+  // Door Status
+  lcd2.setCursor(0, 1);
+  lcd2.print(distance > DOOR_OPEN_DISTANCE ? "Door Open!  " : "Door Closed  ");
+
+  // MQTT Publishing
+  if (millis() - lastPublish > 2000) {
+    client.publish(TEMP_TOPIC, String(temp1).c_str());
+    client.publish(HUMIDITY_TOPIC, String(humidity1).c_str());
+    client.publish(GAS_TOPIC, String(gasValue).c_str());
+    client.publish(MOTION_TOPIC, String(motionHall).c_str());
+    client.publish(DOOR_TOPIC, String(distance).c_str());
+    lastPublish = millis();
   }
-
-
-
-  // 3. Automated Lighting (Hall)
-  if (motionHall || ldrValue < 500) { // Motion OR low light
-    //analogWrite(RGB_R, 255);
-    ledcWrite(0, 255); // Red ON          // Turn on RGB LED (Red)
-  } else {
-    //analogWrite(RGB_R, 0);
-    ledcWrite(1, 0);   // Green OFF
-  }
-
-  // 4. Servo Blinds Control (Based on LDR)
-  if (ldrValue > 1000) {             // Bright light
-    blindsServo.write(90);           // Close blinds
-  } else {
-    blindsServo.write(0);            // Open blinds
-  }
-
-  // 5. Door Status (Ultrasonic)
-  if (distance > 50) {
-    lcd2.setCursor(0, 1);
-    lcd2.print("Door Open!, something went wrong");
-  } else {
-    lcd2.setCursor(0, 1);
-    lcd2.print("Door Close!, No Worries");
-  }
-
-    // Publish sensor data to MQTT
-  client.publish(TEMP_TOPIC, String(temp1).c_str());
-  client.publish(GAS_TOPIC, String(gasValue).c_str());
-  delay(1000); // Slow down the loop for stability
 }
