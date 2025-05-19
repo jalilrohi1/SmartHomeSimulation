@@ -1,10 +1,12 @@
 #include <DHT.h>
-#include <ESP32Servo.h> 
+#include <ESP32Servo.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <WiFi.h>
 #include <WebServer.h>
 #include <PubSubClient.h>
+#include <ArduinoJson.h>
+#include <esp_task_wdt.h>
 
 WebServer server(8185);
 
@@ -12,13 +14,15 @@ WebServer server(8185);
 const char* ssid = "Wokwi-GUEST";
 const char* password = "";
 const char* mqttServer = "broker.hivemq.com";
+//(current HiveMQ IP as of 2024)
+//const char* mqttServer = "3.121.166.18";
 const int mqttPort = 1883;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
 // Constants and Thresholds
-#define GAS_THRESHOLD 500
+#define GAS_THRESHOLD 0
 #define TEMP_THRESHOLD 25
 #define LDR_DARK 500
 #define LDR_BRIGHT 1000
@@ -26,6 +30,8 @@ PubSubClient client(espClient);
 #define BLINDS_OPEN 0
 #define BLINDS_CLOSED 90
 #define DEBOUNCE_DELAY 200
+#define TEMP_AVG_WINDOW 10
+
 
 // MQTT Topics
 #define TEMP_TOPIC "smart_home/temperature"
@@ -58,6 +64,11 @@ const int RGB_B = 32;
 const int BTN1_PIN = 34;
 const int BTN2_PIN = 33;
 const int POT_PIN = 39;
+
+// Global Variables
+float tempReadings[TEMP_AVG_WINDOW] = {0};
+int tempIndex = 0;
+
 
 // Variables
 unsigned long lastPublish = 0;
@@ -121,16 +132,70 @@ void handleButtons() {
   }
 }
 
+// Add to global variables section
+long distance = 0;
+bool motionHall = false;
+// JSON Payload Construction
+String createSensorPayload(
+      float temp1, float temp2, 
+      float humidity1, float humidity2,
+      int gasValue, int ldrValue,
+      bool motionHall, bool motionRoom2,
+      long distance) 
+  {
+  StaticJsonDocument<256> doc;
+  doc["temperature"]["room1"] = temp1;
+  doc["temperature"]["room2"] = temp2;
+  doc["humidity"]["room1"] = humidity1;
+  doc["humidity"]["room2"] = humidity2;
+  doc["gas"] = gasValue;
+  doc["light"] = ldrValue;
+  doc["motion"]["hall"] = motionHall;
+  doc["motion"]["room2"] = motionRoom2;
+  doc["door"] = distance;
+
+  String payload;
+  serializeJson(doc, payload);
+  return payload;
+}
+
+// Temperature Averaging
+float getAverageTemperature() {
+  tempReadings[tempIndex] = dht1.readTemperature();
+  tempIndex = (tempIndex + 1) % TEMP_AVG_WINDOW;
+  
+  float sum = 0;
+  for (int i = 0; i < TEMP_AVG_WINDOW; i++) {
+    sum += tempReadings[i];
+  }
+  return sum / TEMP_AVG_WINDOW;
+}
+
 void setup() {
   Serial.begin(115200);
-  
-  // Initialize Hardware
+    // Add DNS configuration FIRST
+  //WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE, IPAddress(8, 8, 8, 8));
+  WiFi.begin(ssid, password);
+  // Set defaults directly
+  manualMode = false;
+  relay1State = false;
+  relay2State = false;
+
+
+  lcd2.init();
+  lcd2.backlight();
+ 
+  // Initialize Hardware  
   dht1.begin();
   dht2.begin();
   blindsServo.attach(SERVO_PIN);
-  lcd2.init();
-  lcd2.backlight();
-  
+
+
+
+
+  digitalWrite(RELAY1_PIN, relay1State);
+  digitalWrite(RELAY2_PIN, relay2State);
+
   pinMode(PIR1_PIN, INPUT);
   pinMode(PIR2_PIN, INPUT);
   pinMode(RELAY1_PIN, OUTPUT);
@@ -157,6 +222,12 @@ void setup() {
 }
 
 void loop() {
+  static unsigned long stableCounter = 0; 
+  // Stability check
+  if(millis() > 10000 && stableCounter == 0) {
+    Serial.println("System stable for 10s");
+    stableCounter = millis();
+  }
   if (!client.connected()) reconnect();
   client.loop();
   handleButtons();
@@ -165,8 +236,16 @@ void loop() {
   // Sensor Readings
   float temp1 = dht1.readTemperature();
   float temp2 = dht2.readTemperature();
+  if (isnan(temp1)) {
+    Serial.println("Failed to read DHT1 temperature!");
+    temp1 = -999; // Special error value
+  }
   float humidity1 = dht1.readHumidity();
   float humidity2 = dht2.readHumidity();
+  if (isnan(humidity1)) {
+    Serial.println("Failed to read DHT1 humidity!");
+    humidity1 = -999;
+  }
   int gasValue = analogRead(GAS_PIN);
   int ldrValue = analogRead(LDR_PIN);
   bool motionHall = digitalRead(PIR1_PIN);
@@ -179,17 +258,23 @@ void loop() {
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
   long distance = pulseIn(ECHO_PIN, HIGH) * 0.034 / 2;
-
+  
+  // Use averaged temperature
+  float avgTemp = getAverageTemperature();
+  // Updated Control Logic
+  if (!manualMode) {
+    digitalWrite(RELAY2_PIN, (avgTemp > TEMP_THRESHOLD) ? HIGH : LOW);
+  }
   // Control Logic
   if (!manualMode) {
     // Gas System
     if (gasValue > currentGasThreshold) {
       lcd2.setCursor(0, 0);
-      lcd2.print("Gas Alert!     ");
+      lcd2.print("Gas Alert!  ");
       controlBuzzer(true);
     } else {
       lcd2.setCursor(0, 0);
-      lcd2.print("Air Quality OK ");
+      lcd2.print("Air Quality OK  ");
       controlBuzzer(false);
     }
 
@@ -207,17 +292,33 @@ void loop() {
     blindsServo.write((ldrValue > LDR_BRIGHT) ? BLINDS_CLOSED : BLINDS_OPEN);
   }
 
+
+  // Save state on mode change
+  static bool lastManualMode = manualMode;
+  if (manualMode != lastManualMode) {
+    lastManualMode = manualMode;
+  }
   // Door Status
   lcd2.setCursor(0, 1);
   lcd2.print(distance > DOOR_OPEN_DISTANCE ? "Door Open!  " : "Door Closed  ");
 
   // MQTT Publishing
   if (millis() - lastPublish > 2000) {
-    client.publish(TEMP_TOPIC, String(temp1).c_str());
-    client.publish(HUMIDITY_TOPIC, String(humidity1).c_str());
-    client.publish(GAS_TOPIC, String(gasValue).c_str());
-    client.publish(MOTION_TOPIC, String(motionHall).c_str());
-    client.publish(DOOR_TOPIC, String(distance).c_str());
+    // Publish JSON payload
+    client.publish("smart_home/sensors", createSensorPayload(
+      temp1, temp2, humidity1, humidity2, 
+      gasValue, ldrValue, motionHall, motionRoom2, distance
+    ).c_str());
     lastPublish = millis();
   }
+  // MQTT Publishing
+  // if (millis() - lastPublish > 2000) {
+  //   // Publish individual values (optional)
+  //   client.publish(TEMP_TOPIC, String(temp1).c_str());
+  //   client.publish(HUMIDITY_TOPIC, String(humidity1).c_str());
+  //   client.publish(GAS_TOPIC, String(gasValue).c_str());
+  //   client.publish(MOTION_TOPIC, String(motionHall).c_str());
+  //   client.publish(DOOR_TOPIC, String(distance).c_str());
+  //   lastPublish = millis();
+  // }
 }
