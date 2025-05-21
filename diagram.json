@@ -89,6 +89,7 @@
       "left": -80.8,
       "attrs": { "pins": "i2c" }
     }
+  
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
