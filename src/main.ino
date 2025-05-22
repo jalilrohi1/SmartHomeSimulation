@@ -47,9 +47,9 @@ void setup() {
 }
 
 void loop() {
-  if (WiFi.status() != WL_CONNECTED) {
-    network.connectWiFi(); // Reconnect WiFi if dropped
-  }
+  // if (WiFi.status() != WL_CONNECTED) {
+  //   network.connectWiFi(); // Reconnect WiFi if dropped
+  // }
   network.mqttLoop();
   SensorData data = sensors.readAll();
 

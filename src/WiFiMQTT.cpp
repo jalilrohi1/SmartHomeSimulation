@@ -19,9 +19,12 @@ void NetworkManager::mqttLoop() {
 
 void NetworkManager::reconnect() {
 
-  if (WiFi.status() != WL_CONNECTED) return; // Skip if WiFi is down
+  //if (WiFi.status() != WL_CONNECTED) return; // Skip if WiFi is down
+     
+  //Serial.println((clientId.c_str()));  
   while (!client.connected()) {
-    if (!client.connect("ESP32Client")) { // Simplified client ID
+    String clientId = "ESP32Client-" + String(random(0xffff), HEX);
+    if (client.connect(clientId.c_str())) { // Simplified client ID
       delay(5000); // Retry after 5 seconds
       continue;
     }
