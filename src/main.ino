@@ -73,6 +73,9 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   
+  // Print feature configuration
+  printFeatureStatus();
+  
   Serial.println("=================================");
   Serial.println("Smart Home Simulation v2.0");
   Serial.println("=================================");
@@ -97,11 +100,22 @@ void setup() {
   Serial.println();
   Serial.printf("WiFi Connected! IP: %s\n", WiFi.localIP().toString().c_str());
   
-  // Initialize web server
-  webServer.begin(&sensors, &actuators);
+  // Initialize web server (conditional)
+  #if ENABLE_WEB_SERVER
+    webServer.begin(&sensors, &actuators);
+  #else
+    Serial.println("✗ Web server disabled - using Node-RED for visualization");
+  #endif
   
-  // Initialize scheduler
-  scheduler.begin(&actuators);
+  // Initialize scheduler (conditional)
+  #if ENABLE_SCHEDULER
+    scheduler.begin(&actuators);
+  #else
+    Serial.println("✗ Automation scheduler disabled");
+  #endif
+  
+  // Set actuator reference for MQTT callbacks
+  network.setActuators(&actuators);
   
   // Connect to MQTT
   display.showStatus("Connecting MQTT", "Broker: " + String(MQTT_BROKER));
@@ -119,8 +133,10 @@ void setup() {
 void loop() {
   unsigned long currentTime = millis();
   
-  // Handle web server requests
-  webServer.handleClient();
+  // Handle web server requests (conditional)
+  #if ENABLE_WEB_SERVER
+    webServer.handleClient();
+  #endif
   
   // Check WiFi and MQTT connections
   if (WiFi.status() != WL_CONNECTED) {

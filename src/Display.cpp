@@ -25,6 +25,10 @@ void Display::showStatus(const char* line1, const char* line2) {
   lcd2.print(line2);
 }
 
+void Display::showStatus(String line1, String line2) {
+  showStatus(line1.c_str(), line2.c_str());
+}
+
 void Display::updateDoorStatus(bool isOpen) {
   lcd2.setCursor(0, 1);
   lcd2.print(isOpen ? "Door Open!  " : "Door Closed  ");

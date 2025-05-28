@@ -1,4 +1,7 @@
 #include "Scheduler.h"
+
+#if ENABLE_SCHEDULER
+
 #include <time.h>
 
 Scheduler::Scheduler() : taskCount(0), lastTimeCheck(0) {}
@@ -106,3 +109,5 @@ int Scheduler::getCurrentMinute() {
   // Simulate minutes based on millis()
   return (millis() / 60000) % 60;
 }
+
+#endif // ENABLE_SCHEDULER

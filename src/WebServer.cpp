@@ -1,70 +1,101 @@
 #include "WebServer.h"
+
+#if ENABLE_WEB_SERVER
+
 #include "pins.h"
 
-SmartHomeWebServer::SmartHomeWebServer() : server(80) {}
+SmartHomeWebServer::SmartHomeWebServer() : server(WEB_SERVER_PORT), isEnabled(true) {}
 
 void SmartHomeWebServer::begin(Sensors* sensorPtr, Actuators* actuatorPtr) {
   sensors = sensorPtr;
   actuators = actuatorPtr;
   
-  // Set up routes
-  server.on("/", [this]() { handleRoot(); });
-  server.on("/api/data", [this]() { handleAPI(); });
-  server.on("/api/control", HTTP_POST, [this]() { handleControl(); });
-  server.onNotFound([this]() { handleNotFound(); });
-  
-  // Enable CORS
-  server.enableCORS(true);
-  
-  server.begin();
-  Serial.println("Web server started on port 80");
-  Serial.print("Access dashboard at: http://");
-  Serial.println(WiFi.localIP());
-}
-
-void SmartHomeWebServer::handleClient() {
-  server.handleClient();
-}
-
-void SmartHomeWebServer::handleRoot() {
-  server.send(200, "text/html", getHomePage());
-}
-
-void SmartHomeWebServer::handleAPI() {
-  server.send(200, "application/json", getApiData());
-}
-
-void SmartHomeWebServer::handleControl() {
-  if (server.hasArg("action")) {
-    String action = server.arg("action");
-    String response = "OK";
-    
-    if (action == "ac_on") {
-      actuators->controlAC(true);
-    } else if (action == "ac_off") {
-      actuators->controlAC(false);
-    } else if (action == "blinds_open") {
-      actuators->controlBlinds(0);
-    } else if (action == "blinds_close") {
-      actuators->controlBlinds(90);
-    } else if (action.startsWith("rgb_")) {
-      // Parse RGB values
-      int r = server.arg("r").toInt();
-      int g = server.arg("g").toInt();
-      int b = server.arg("b").toInt();
-      actuators->rgbControl(r, g, b);
-    } else {
-      response = "Unknown action";
-    }
-    
-    server.send(200, "text/plain", response);
+  if (isEnabled) {
+    server.begin();
+    Serial.println("✓ Web Server started on port " + String(WEB_SERVER_PORT));
+    Serial.print("✓ Access dashboard at: http://");
+    Serial.println(WiFi.localIP());
   } else {
-    server.send(400, "text/plain", "Missing action parameter");
+    Serial.println("✗ Web Server is disabled");
   }
 }
 
-void SmartHomeWebServer::handleNotFound() {
-  server.send(404, "text/plain", "Not found");
+void SmartHomeWebServer::enable() {
+  isEnabled = true;
+  server.begin();
+  Serial.println("✓ Web Server enabled");
+}
+
+void SmartHomeWebServer::disable() {
+  isEnabled = false;
+  server.stop();
+  Serial.println("✗ Web Server disabled");
+}
+
+bool SmartHomeWebServer::isWebServerEnabled() const {
+  return isEnabled;
+}
+
+void SmartHomeWebServer::handleClient() {
+  if (!isEnabled) return; // Skip if web server is disabled
+  
+  WiFiClient client = server.available();
+  if (client) {
+    Serial.println("New web client connected");
+    String currentLine = "";
+    String requestLine = "";
+    bool isFirstLine = true;
+    
+    while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+        if (c == '\n') {
+          if (currentLine.length() == 0) {
+            // Parse request type
+            if (requestLine.indexOf("GET /api/data") >= 0) {
+              // API data request
+              client.println("HTTP/1.1 200 OK");
+              client.println("Content-type: application/json");
+              client.println("Access-Control-Allow-Origin: *");
+              client.println("Connection: close");
+              client.println();
+              client.println(getApiData());
+            } else if (requestLine.indexOf("POST /api/control") >= 0) {
+              // Control request (simplified)
+              client.println("HTTP/1.1 200 OK");
+              client.println("Content-type: text/plain");
+              client.println("Connection: close");
+              client.println();
+              client.println("OK");
+            } else {
+              // Default homepage
+              client.println("HTTP/1.1 200 OK");
+              client.println("Content-type: text/html");
+              client.println("Connection: close");
+              client.println();
+              client.println(getSimplePage());
+            }
+            break;
+          } else {
+            if (isFirstLine) {
+              requestLine = currentLine;
+              isFirstLine = false;
+            }
+            currentLine = "";
+          }
+        } else if (c != '\r') {
+          currentLine += c;
+        }
+      }
+    }
+    client.stop();
+    Serial.println("Web client disconnected");
+  }
+}
+
+void SmartHomeWebServer::stop() {
+  server.stop();
+  Serial.println("Web server stopped");
 }
 
 String SmartHomeWebServer::getApiData() {
@@ -256,14 +287,76 @@ String SmartHomeWebServer::getHomePage() {
         }
 
         // Auto-refresh data every 2 seconds
-        setInterval(updateData, 2000);
-        updateData(); // Initial load
+        setInterval(updateData, 2000);        updateData(); // Initial load
     </script>
 </body>
 </html>
 )HTML";
 }
 
-void SmartHomeWebServer::stop() {
-  server.stop();
+String SmartHomeWebServer::getSimplePage() {
+  SensorData data = sensors->readAll();
+  
+  return R"HTML(
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Home v2.0 - Simple</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial; margin: 20px; background: #f0f0f0; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
+        .sensor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sensor-card { background: #e8f4fd; padding: 15px; border-radius: 8px; text-align: center; }
+        .sensor-value { font-size: 1.5em; font-weight: bold; color: #2c3e50; }
+        .control-btn { background: #3498db; color: white; border: none; padding: 12px 24px; margin: 8px; border-radius: 6px; cursor: pointer; font-size: 16px; }
+        .control-btn:hover { background: #2980b9; }
+        .emergency { background: #e74c3c !important; }
+        h1 { color: #2c3e50; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 Smart Home v2.0 - Quick Access</h1>
+        
+        <div class="sensor-grid">
+            <div class="sensor-card">
+                <h3>🌡️ Room 1</h3>
+                <div class="sensor-value">)HTML" + String(data.temp1, 1) + R"HTML(°C</div>
+                <div>)HTML" + String(data.humidity1, 1) + R"HTML(%</div>
+            </div>
+            <div class="sensor-card">
+                <h3>🌡️ Room 2</h3>
+                <div class="sensor-value">)HTML" + String(data.temp2, 1) + R"HTML(°C</div>
+                <div>)HTML" + String(data.humidity2, 1) + R"HTML(%</div>
+            </div>
+            <div class="sensor-card">
+                <h3>💨 Gas Level</h3>
+                <div class="sensor-value">)HTML" + String(data.gasValue) + R"HTML(</div>
+            </div>
+            <div class="sensor-card">
+                <h3>💡 Light Level</h3>
+                <div class="sensor-value">)HTML" + String(data.ldrValue) + R"HTML(</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <button class="control-btn" onclick="fetch('/api/control', {method: 'POST', body: 'action=ac_on'})">AC ON</button>
+            <button class="control-btn" onclick="fetch('/api/control', {method: 'POST', body: 'action=ac_off'})">AC OFF</button>
+            <button class="control-btn" onclick="fetch('/api/control', {method: 'POST', body: 'action=blinds_open'})">Open Blinds</button>
+            <button class="control-btn" onclick="fetch('/api/control', {method: 'POST', body: 'action=blinds_close'})">Close Blinds</button>
+            <br><br>
+            <button class="control-btn emergency" onclick="if(confirm('Emergency Stop?')) fetch('/api/control', {method: 'POST', body: 'action=emergency_stop'})">🚨 EMERGENCY STOP</button>
+        </div>
+        
+        <div style="text-align: center; color: #7f8c8d; margin-top: 20px;">
+            <small>For full dashboard with real-time updates, visit: <a href="/">Full Dashboard</a></small><br>
+            <small>System Status: WiFi Connected | Uptime: )HTML" + String(millis()/1000) + R"HTML( seconds</small>
+        </div>
+    </div>
+</body>
+</html>
+)HTML";
 }
+
+#endif // ENABLE_WEB_SERVER

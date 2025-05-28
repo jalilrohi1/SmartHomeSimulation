@@ -1,4 +1,8 @@
 #pragma once
+#include "config.h"
+
+#if ENABLE_SCHEDULER
+
 #include <Arduino.h>
 #include "Actuators.h"
 
@@ -30,3 +34,22 @@ public:
   int getCurrentHour();
   int getCurrentMinute();
 };
+
+#else
+
+// Dummy class when scheduler is disabled
+class Scheduler {
+public:
+  Scheduler() {}
+  void begin(void* actuatorPtr) {}
+  void addTask(int hour, int minute, String action, String parameter = "") {}
+  void removeTask(int index) {}
+  void checkTasks() {}
+  void executeTask(const void* task) {}
+  String getTasksList() { return "[]"; }
+  void resetDailyTasks() {}
+  int getCurrentHour() { return 12; }
+  int getCurrentMinute() { return 0; }
+};
+
+#endif // ENABLE_SCHEDULER

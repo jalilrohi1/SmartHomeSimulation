@@ -1,9 +1,11 @@
 #include "WiFiMQTT.h"
 #include "config.h"
 #include "pins.h"
+#include "Actuators.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+Actuators* NetworkManager::actuatorsPtr = nullptr;
 
 void NetworkManager::connectMQTT() {
   client.setServer(MQTT_BROKER, 1883);
@@ -101,12 +103,11 @@ void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int lengt
       Serial.printf("RGB set to R:%d G:%d B:%d\n", r, g, b);
     }
   }
-  
-  // Handle blinds control
+    // Handle blinds control
   if (String(topic) == "smart_home/blinds") {
     int angle = message.toInt();
-    if (angle >= 0 && angle <= 180) {
-      // You'll need to access the servo somehow - we'll fix this
+    if (angle >= 0 && angle <= 180 && actuatorsPtr != nullptr) {
+      actuatorsPtr->controlBlinds(angle);
       Serial.printf("Blinds set to angle: %d\n", angle);
     }
   }
@@ -125,6 +126,10 @@ void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int lengt
       ESP.restart();
     }
   }
+}
+
+void NetworkManager::setActuators(Actuators* actuatorPtr) {
+  actuatorsPtr = actuatorPtr;
 }
 
 bool NetworkManager::isConnected() {
