@@ -15,7 +15,7 @@ const char* MQTT_BROKER = "test.mosquitto.org";  // More reliable for testing
 
 // Feature status logging
 void printFeatureStatus() {
-  Serial.println("\n=== Smart Home v2.0 Feature Configuration ===");
+  Serial.println("\n=== Smart Home v2.1 Feature Configuration ===");
   #if ENABLE_WEB_SERVER
     Serial.println("✓ Web Server: ENABLED (Port " + String(WEB_SERVER_PORT) + ")");
   #else

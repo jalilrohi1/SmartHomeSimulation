@@ -51,7 +51,7 @@ String createJSON(const SensorData& data) {
   doc["door"]["status"] = data.doorDistance > 50 ? "open" : "closed";
   
   // System information
-  doc["system"]["version"] = "2.0";
+  doc["system"]["version"] = "2.1";
   doc["system"]["uptime"] = millis() / 1000;
   doc["system"]["wifi_signal"] = WiFi.RSSI();
   doc["system"]["free_heap"] = ESP.getFreeHeap();
@@ -77,7 +77,7 @@ void setup() {
   printFeatureStatus();
   
   Serial.println("=================================");
-  Serial.println("Smart Home Simulation v2.0");
+  Serial.println("Smart Home Simulation v2.1");
   Serial.println("=================================");
   
   // Initialize components
@@ -86,7 +86,7 @@ void setup() {
   display.initialize();
   
   // Show startup message
-  display.showStatus("Smart Home v2.0", "Initializing...");
+  display.showStatus("Smart Home v2.1", "Initializing...");
   delay(2000);
   
   // Connect to WiFi
@@ -124,8 +124,8 @@ void setup() {
   // Subscribe to additional topics for v2
   // This will be handled in the reconnect function
   
-  display.showStatus("System Ready", "v2.0 Online");
-  Serial.println("Smart Home v2.0 - All systems ready!");
+  display.showStatus("System Ready", "v2.1 Online");
+  Serial.println("Smart Home v2.1 - All systems ready!");
   
   energyStartTime = millis();
 }
@@ -289,7 +289,7 @@ void updateDisplay(const SensorData& data) {
 
 String getSystemStatus() {
   StaticJsonDocument<256> doc;
-  doc["version"] = "2.0";
+  doc["version"] = "2.1";
   doc["system_enabled"] = systemEnabled;
   doc["auto_mode"] = autoMode;
   doc["uptime"] = millis() / 1000;

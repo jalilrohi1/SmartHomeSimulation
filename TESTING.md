@@ -1,4 +1,4 @@
-# Smart Home Simulation v2.0 - Testing Guide
+# Smart Home Simulation v2.1 - Testing Guide
 
 ## 🧪 Testing Checklist
 

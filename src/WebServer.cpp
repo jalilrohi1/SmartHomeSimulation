@@ -11,7 +11,7 @@ void SmartHomeWebServer::begin(Sensors* sensorPtr, Actuators* actuatorPtr) {
   actuators = actuatorPtr;
   
   if (isEnabled) {
-    server.begin();
+           <h1>🏠 Smart Home v2.1 - Quick Access</h1>server.begin();
     Serial.println("✓ Web Server started on port " + String(WEB_SERVER_PORT));
     Serial.print("✓ Access dashboard at: http://");
     Serial.println(WiFi.localIP());
@@ -148,7 +148,7 @@ String SmartHomeWebServer::getHomePage() {
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏠 Smart Home Dashboard v2.0</h1>
+            <h1>🏠 Smart Home Dashboard v2.1</h1>
             <p>Real-time monitoring and control system</p>
         </div>
 
@@ -301,7 +301,7 @@ String SmartHomeWebServer::getSimplePage() {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Smart Home v2.0 - Simple</title>
+    <title>Smart Home v2.1 - Simple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body { font-family: Arial; margin: 20px; background: #f0f0f0; }
@@ -317,7 +317,7 @@ String SmartHomeWebServer::getSimplePage() {
 </head>
 <body>
     <div class="container">
-        <h1>🏠 Smart Home v2.0 - Quick Access</h1>
+        <h1>🏠 Smart Home v2.1 - Quick Access</h1>
         
         <div class="sensor-grid">
             <div class="sensor-card">
