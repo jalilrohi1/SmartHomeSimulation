@@ -9,9 +9,8 @@ SmartHomeWebServer::SmartHomeWebServer() : server(WEB_SERVER_PORT), isEnabled(tr
 void SmartHomeWebServer::begin(Sensors* sensorPtr, Actuators* actuatorPtr) {
   sensors = sensorPtr;
   actuators = actuatorPtr;
-  
-  if (isEnabled) {
-           <h1>🏠 Smart Home v2.1 - Quick Access</h1>server.begin();
+    if (isEnabled) {
+    server.begin();
     Serial.println("✓ Web Server started on port " + String(WEB_SERVER_PORT));
     Serial.print("✓ Access dashboard at: http://");
     Serial.println(WiFi.localIP());
