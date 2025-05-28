@@ -10,6 +10,7 @@ public:
   void connectMQTT();
   void publishData(const char* topic, const String& payload);
   void mqttLoop();
+  bool isConnected(); // Add connection status check
 
 private:
   void reconnect(); // Add missing declaration

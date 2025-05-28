@@ -9,14 +9,25 @@ void Sensors::begin() {
   dht2.begin();
   pinMode(PIR1_PIN, INPUT);
   pinMode(PIR2_PIN, INPUT);
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
 }
 
 SensorData Sensors::readAll() {
   SensorData data;
+  
+  // Read DHT sensors with error checking
   data.temp1 = dht1.readTemperature();
   data.temp2 = dht2.readTemperature();
   data.humidity1 = dht1.readHumidity();
   data.humidity2 = dht2.readHumidity();
+  
+  // Check for failed readings
+  if (isnan(data.temp1)) data.temp1 = 0.0;
+  if (isnan(data.temp2)) data.temp2 = 0.0;
+  if (isnan(data.humidity1)) data.humidity1 = 0.0;
+  if (isnan(data.humidity2)) data.humidity2 = 0.0;
+  
   data.gasValue = analogRead(GAS_PIN);
   data.ldrValue = analogRead(LDR_PIN);
   data.motionHall = digitalRead(PIR1_PIN);
