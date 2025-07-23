@@ -37,6 +37,8 @@ public:
 
 #else
 
+#include <Arduino.h>  // Need this for String type in dummy class
+
 // Dummy class when scheduler is disabled
 class Scheduler {
 public:
@@ -52,4 +54,4 @@ public:
   int getCurrentMinute() { return 0; }
 };
 
-#endif // ENABLE_SCHEDULER
+#endif// ENABLE_SCHEDULER

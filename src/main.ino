@@ -1,305 +1,239 @@
 #include "Sensors.h"
 #include "Actuators.h"
-#include "WiFiMQTT.h"
 #include "Display.h"
-#include "WebServer.h"
-#include "Scheduler.h"
+#include "WiFiMQTT.h"
+#include "pins.h"
 #include "config.h"
+#include <Arduino.h>
 #include <ArduinoJson.h>
 
+// Simplified core objects
 Sensors sensors;
 Actuators actuators;
-NetworkManager network;
+//NetworkManager network;
 Display display;
-SmartHomeWebServer webServer;
-Scheduler scheduler;
 
-// Enhanced thresholds and configurations
-const int GAS_THRESHOLD = 100;        // Increased for better sensitivity
-const int TEMP_THRESHOLD = 25;
-const int LDR_DARK = 500;
-const int LDR_BRIGHT = 1000;
-const int BLINDS_OPEN = 0;
-const int BLINDS_CLOSED = 90;
+// Consider making NetworkManager a pointer for better control
+NetworkManager* network = nullptr;
 
-// System state variables
-bool systemEnabled = true;
-bool autoMode = true;
-unsigned long lastDataPublish = 0;
+// System configuration thresholds - simplified
+const int TEMP_THRESHOLD_AC = 20;     // Temperature threshold for AC activation
+const int GAS_THRESHOLD = 3000;        // Gas leak detection threshold
+const int BLINDS_OPEN = 0;            // Servo position for open blinds
+const int BLINDS_CLOSED = 180;        // Servo position for closed blinds
+
+// System timing variables
 unsigned long lastDisplayUpdate = 0;
-const unsigned long PUBLISH_INTERVAL = 5000;    // 5 seconds
-const unsigned long DISPLAY_INTERVAL = 1000;    // 1 second
+unsigned long lastDataPublish = 0;
+const unsigned long DISPLAY_INTERVAL = 3000;    // Display update interval
+const unsigned long PUBLISH_INTERVAL = 5000;    // MQTT publish interval
 
-// Energy monitoring
-unsigned long energyStartTime = 0;
-int acRunTime = 0;
-int lightingTime = 0;
+// System start time for uptime calculation
+unsigned long systemStartTime = 0;
 
-String createJSON(const SensorData& data) {
-  StaticJsonDocument<512> doc;
-  
-  // Basic sensor data
-  doc["temperature"]["room1"] = data.temp1;
-  doc["temperature"]["room2"] = data.temp2;
-  doc["humidity"]["room1"] = data.humidity1;
-  doc["humidity"]["room2"] = data.humidity2;
-  doc["gas"] = data.gasValue;
-  doc["light"] = data.ldrValue;
-  doc["motion"]["hall"] = data.motionHall;
-  doc["motion"]["room2"] = data.motionRoom2;
-  doc["door"]["distance"] = data.doorDistance;
-  doc["door"]["status"] = data.doorDistance > 50 ? "open" : "closed";
-  
-  // System information
-  doc["system"]["version"] = "2.1";
-  doc["system"]["uptime"] = millis() / 1000;
-  doc["system"]["wifi_signal"] = WiFi.RSSI();
-  doc["system"]["free_heap"] = ESP.getFreeHeap();
-  doc["system"]["auto_mode"] = autoMode;
-  doc["system"]["enabled"] = systemEnabled;
-  
-  // Energy monitoring
-  doc["energy"]["ac_runtime"] = acRunTime;
-  doc["energy"]["lighting_time"] = lightingTime;
-  
-  doc["timestamp"] = millis();
-
-  String payload;
-  serializeJson(doc, payload);
-  return payload;
-}
+unsigned long lastHallMotionTime = 0;
+const unsigned long motionTimeout = 5000; // 5 seconds for more stable lighting
+bool lastLEDState = false; // To track if the LED was on/off
+long lightLevel = 0; // To store the last light level reading 
+long potOldValue = 0; // To store the last potentiometer value
 
 void setup() {
-  Serial.begin(115200);
+  
+  //Serial.begin(115200); //Fast, standard for ESP32 ⭐
+  //Serial.begin(57600); // Medium speed
+  Serial.begin(230400); // Very fast for Wokwi simulation
+  //Serial.begin(921600); // Maximum speed
+  //Serial.begin(9600); // Slow but reliable for real hardware
+
   delay(1000);
-  
-  // Print feature configuration
-  printFeatureStatus();
-  
+
   Serial.println("=================================");
-  Serial.println("Smart Home Simulation v2.1");
+  Serial.println("Smart Home Simulation - Simplified");
+  Serial.println("=================================");
+  Serial.println("Core Functionalities:");
+  Serial.println("1. Bedroom AC control (DHT1 + Relay1)");
+  Serial.println("2. Kitchen gas detection + Exhaust fan");
+  Serial.println("3. Blinds control (Potentiometer ONLY → Servo)");
+  Serial.println("4. Hall RGB lighting (Motion + Photoresistor color)");
+  Serial.println("5. Toilet lighting (Motion + LED)");
   Serial.println("=================================");
   
-  // Initialize components
+  // Initialize system components
   sensors.begin();
   actuators.begin();
   display.initialize();
+  systemStartTime = millis();
   
-  // Show startup message
-  display.showStatus("Smart Home v2.1", "Initializing...");
-  delay(2000);
+  // Initialize network dynamically
+  network = new NetworkManager();
+
+  // Show startup message on display
+  display.showStatus("Smart Home", "Simplified Mode");
+  delay(1000);
   
+
   // Connect to WiFi
   display.showStatus("Connecting WiFi", "Please wait...");
-  network.connectWiFi();
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(100);
+  //network.connectWiFi();
+  network->connectWiFi();
+
+  // Wait for WiFi connection
+  int wifiAttempts = 0;
+  while (WiFi.status() != WL_CONNECTED && wifiAttempts < 30) {
+    delay(1000);
+    wifiAttempts++;
     Serial.print(".");
   }
   
-  Serial.println();
-  Serial.printf("WiFi Connected! IP: %s\n", WiFi.localIP().toString().c_str());
-  
-  // Initialize web server (conditional)
-  #if ENABLE_WEB_SERVER
-    webServer.begin(&sensors, &actuators);
-  #else
-    Serial.println("✗ Web server disabled - using Node-RED for visualization");
-  #endif
-  
-  // Initialize scheduler (conditional)
-  #if ENABLE_SCHEDULER
-    scheduler.begin(&actuators);
-  #else
-    Serial.println("✗ Automation scheduler disabled");
-  #endif
-  
-  // Set actuator reference for MQTT callbacks
-  network.setActuators(&actuators);
-  
-  // Connect to MQTT
-  display.showStatus("Connecting MQTT", "Broker: " + String(MQTT_BROKER));
-  network.connectMQTT();
-  
-  // Subscribe to additional topics for v2
-  // This will be handled in the reconnect function
-  
-  display.showStatus("System Ready", "v2.1 Online");
-  Serial.println("Smart Home v2.1 - All systems ready!");
-  
-  energyStartTime = millis();
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("WiFi connected successfully!");
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
+    //network.connectMQTT();
+    network->connectMQTT();
+    display.showStatus("System Ready", "IP: " + WiFi.localIP().toString());  } else {
+    Serial.println("WiFi connection failed!");
+    display.showStatus("WiFi Failed", "Check config");
+    delete network;
+    network = nullptr;
+  }
+
+ 
+
+  Serial.println("Setup completed. Starting main loop...");
 }
+
 
 void loop() {
   unsigned long currentTime = millis();
   
-  // Handle web server requests (conditional)
-  #if ENABLE_WEB_SERVER
-    webServer.handleClient();
-  #endif
-  
-  // Check WiFi and MQTT connections
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("WiFi disconnected, attempting reconnect...");
-    display.showStatus("WiFi Lost", "Reconnecting...");
-    network.connectWiFi();
-    return; // Skip this loop iteration
+  // Handle network connectivity
+  //network.mqttLoop();
+  // Handle network connectivity (check if network exists)
+  if (network && network->isConnected()) {
+    network->mqttLoop();
   }
   
-  network.mqttLoop();
-  
-  // Check scheduled tasks
-  scheduler.checkTasks();
-  
-  // Read sensor data
+  // Read all sensor data
   SensorData data = sensors.readAll();
 
-  // Automated controls (only if system is enabled and in auto mode)
-  if (systemEnabled && autoMode) {
-    handleAutomaticControls(data);
-  }
-
-  // Safety checks (always active regardless of mode)
-  handleSafetyChecks(data);
-
-  // Update display periodically
-  if (currentTime - lastDisplayUpdate >= DISPLAY_INTERVAL) {
-    updateDisplay(data);
-    lastDisplayUpdate = currentTime;
-  }
+  // Process all core functions directly
   
-  // Publish data to MQTT periodically
-  if (currentTime - lastDataPublish >= PUBLISH_INTERVAL) {
-    if (network.isConnected()) {
-      network.publishData("smart_home/sensors", createJSON(data));
-      network.publishData("smart_home/status", getSystemStatus());
-    } else {
-      Serial.println("MQTT not connected, skipping publish");
-    }
-    lastDataPublish = currentTime;
-  }
-  
-  delay(100); // Small delay for system stability
-}
-
-void handleAutomaticControls(const SensorData& data) {
-  // Environmental controls
-  bool shouldRunAC = (data.temp1 > TEMP_THRESHOLD || data.temp2 > TEMP_THRESHOLD);
+  // 1. AC control - Turn on if temperature exceeds threshold
+  bool shouldRunAC = (data.bedroomTemp > TEMP_THRESHOLD_AC);
   actuators.controlAC(shouldRunAC);
   
-  // Track AC runtime for energy monitoring
-  static unsigned long acStartTime = 0;
-  static bool acWasRunning = false;
-  if (shouldRunAC && !acWasRunning) {
-    acStartTime = millis();
-    acWasRunning = true;
-  } else if (!shouldRunAC && acWasRunning) {
-    acRunTime += (millis() - acStartTime) / 1000;
-    acWasRunning = false;
-  }
-
-  // Automated blinds control
-  int blindsPosition = (data.ldrValue > LDR_BRIGHT) ? BLINDS_CLOSED : BLINDS_OPEN;
-  actuators.controlBlinds(blindsPosition);
-
-  // Intelligent lighting control
-  bool needsLight = (data.motionHall || data.motionRoom2) && (data.ldrValue < LDR_DARK);
-  int lightIntensity = needsLight ? 255 : 0;
-  
-  // Warm light in the evening (simulated)
-  int currentHour = scheduler.getCurrentHour();
-  if (needsLight && currentHour >= 18) {
-    actuators.rgbControl(255, 150, 50); // Warm light
-  } else {
-    actuators.rgbControl(lightIntensity, lightIntensity, lightIntensity); // White light
-  }
-  
-  // Track lighting time
-  static bool lightWasOn = false;
-  static unsigned long lightStartTime = 0;
-  if (lightIntensity > 0 && !lightWasOn) {
-    lightStartTime = millis();
-    lightWasOn = true;
-  } else if (lightIntensity == 0 && lightWasOn) {
-    lightingTime += (millis() - lightStartTime) / 1000;
-    lightWasOn = false;
-  }
-}
-
-void handleSafetyChecks(const SensorData& data) {
-  // Gas leak detection
+  // 2. Gas sensor and exhaust fan
   if (data.gasValue > GAS_THRESHOLD) {
     actuators.buzzerAlert(true);
-    display.showStatus("⚠️ GAS ALERT!", "Evacuate Now!");
-    
-    // Send emergency MQTT alert
-    if (network.isConnected()) {
-      network.publishData("smart_home/emergency", "{\"type\":\"gas_leak\",\"level\":" + String(data.gasValue) + "}");
-    }
-    
-    // Emergency actions
-    actuators.controlAC(false); // Turn off AC to prevent circulation
-    delay(2000);
-    actuators.buzzerAlert(false);
+    actuators.controlExhaustFan(true);
+    display.showStatus("GASALERT!", "Exhaust Fan ON");
   } else {
     actuators.buzzerAlert(false);
-  }
-  
-  // Security check - unexpected door opening
-  static bool doorWasOpen = false;
-  if (data.doorDistance > 50 && !doorWasOpen) {
-    if (network.isConnected()) {
-      network.publishData("smart_home/security", "{\"event\":\"door_opened\",\"timestamp\":" + String(millis()) + "}");
+    actuators.controlExhaustFan(false);
+  }  
+
+  // ✅ 3. Blinds control - Less frequent updates
+  static unsigned long lastBlindsUpdate = 0;
+  if (currentTime - lastBlindsUpdate >= 200) { 
+    if(data.potValue!=potOldValue){
+      potOldValue = data.potValue;
+     // Update every 200ms instead of every loop
+    int blindsAngle = map(data.potValue, 0, 4095, 0, 180); 
+    actuators.controlBlinds(blindsAngle);
+    lastBlindsUpdate = currentTime;
+    delay(10); // Short delay to ensure servo moves smoothly
     }
-    doorWasOpen = true;
-  } else if (data.doorDistance <= 50) {
-    doorWasOpen = false;
   }
-}
 
-void updateDisplay(const SensorData& data) {
-  // Cycle through different display screens
-  static int displayMode = 0;
-  static unsigned long modeChangeTime = 0;
-  
-  if (millis() - modeChangeTime > 3000) { // Change every 3 seconds
-    displayMode = (displayMode + 1) % 4;
-    modeChangeTime = millis();
-  }
-  
-  switch (displayMode) {
-    case 0:
-      display.showStatus("Temp: " + String(data.temp1, 1) + "°C", 
-                        "Humidity: " + String(data.humidity1, 1) + "%");
-      break;
-    case 1:
-      display.showStatus("Gas: " + String(data.gasValue), 
-                        "Light: " + String(data.ldrValue));
-      break;
-    case 2:
-      display.showStatus("Door: " + String(data.doorDistance > 50 ? "Open" : "Closed"),
-                        "Motion: " + String(data.motionHall ? "Yes" : "No"));
-      break;
-    case 3:
-      display.showStatus("WiFi: " + String(WiFi.RSSI()) + "dBm",
-                        "Uptime: " + String(millis()/1000) + "s");
-      break;
-  }
-}
+  // ✅ 4. Hall RGB lighting - Separate from blinds control
+  if(data.hallMotion){
+    lastHallMotionTime = currentTime; // Reset motion timer
+    lastLEDState = true;
+  } 
 
-String getSystemStatus() {
-  StaticJsonDocument<256> doc;
-  doc["version"] = "2.1";
-  doc["system_enabled"] = systemEnabled;
-  doc["auto_mode"] = autoMode;
-  doc["uptime"] = millis() / 1000;
-  doc["free_heap"] = ESP.getFreeHeap();
-  doc["wifi_signal"] = WiFi.RSSI();
-  doc["mqtt_connected"] = network.isConnected();
-  doc["web_server"] = "active";
-  doc["scheduler_tasks"] = scheduler.getTasksList();
+  if(currentTime- lastHallMotionTime < motionTimeout){
+      if(data.lightLevel != lightLevel) {
+        lightLevel = data.lightLevel; // Update light level only if it has changed
+        int r = map(lightLevel, 0, 4095, 255, 50);
+        //int g = 150;
+        int g= map(lightLevel, 0, 4095, 50, 150);
+        int b = map(lightLevel, 0, 4095, 50, 255);
+        actuators.hallRGBControl(r, g, b);
+        delay(10); // Short delay to ensure light turns on
+        lastLEDState = true;
+       // Serial.printf("LightLevel: %d, R: %d, G: %d, B: %d\n", lightLevel, r, g, b);
+      } 
+  }else if(currentTime - lastHallMotionTime > motionTimeout && lastLEDState) {
+      // Timeout reached, turn off RGB light
+     // Serial.println("Hall motion timeout reached, turning off RGB light.\n");
+      actuators.hallRGBControl(0, 0, 0);
+      delay(10); // Short delay to ensure light turns off
+      lastLEDState = false;
+  }
+    
+  // 5. Toilet lighting control
+  actuators.toiletLED(data.toiletMotion);
   
-  String output;
-  serializeJson(doc, output);
-  return output;
-}
+  // 6. Update display periodically with sensor readings
+  if (currentTime - lastDisplayUpdate >= DISPLAY_INTERVAL) {
+    // Simpler display that just shows core readings
+    display.showStatus("Temp: " + String(data.bedroomTemp) + "C", 
+                      "POT: " + String(data.potValue));
+    lastDisplayUpdate = currentTime;
+  }  
+  
+  // 7. Publish data to MQTT periodically for Node-RED
+  if (currentTime - lastDataPublish >= PUBLISH_INTERVAL) {
+    //if (network.isConnected()) {
+      // Create JSON document for sensor data
+      StaticJsonDocument<512> doc;
+      
+      // Temperature sensors
+      doc["bedroom"]["temperature"] = data.bedroomTemp;
+      doc["bedroom"]["humidity"] = data.bedroomHumidity;
+      doc["hall"]["temperature"] = data.hallTemp;
+      doc["hall"]["humidity"] = data.hallHumidity;
+        // Environmental sensors
+      doc["kitchen"]["gas_level"] = data.gasValue;
+      doc["ambient"]["light_level"] = data.lightLevel;
+      doc["blinds"]["pot_value"] = data.potValue;
+      doc["blinds"]["position"] = map(data.potValue, 0, 4095, 0, 180);
+      
+      // Motion sensors
+      doc["motion"]["hall"] = data.hallMotion;
+      doc["motion"]["toilet"] = data.toiletMotion;
+      
+      // Door sensor
+      doc["door"]["distance"] = data.doorDistance;
+      doc["door"]["status"] = data.doorDistance > 50 ? "open" : "closed";
+      
+      doc["timestamp"] = millis();
+
+      // Convert to string
+      String payload;
+      serializeJson(doc, payload);
+      
+      // Publish to Node-RED
+      //network.publishData("smart_home/sensors", payload);
+      network->publishData("smart_home/sensors", payload);
+      delay(100); // Small delay to ensure MQTT publish stability
+
+      // Also publish basic system status
+      StaticJsonDocument<300> statusDoc;
+      statusDoc["uptime"] = (millis() - systemStartTime) / 1000;
+      statusDoc["wifi_signal"] = WiFi.RSSI();
+      statusDoc["free_heap"] = ESP.getFreeHeap();
+      
+      String statusPayload;
+      serializeJson(statusDoc, statusPayload);
+      network->publishData("smart_home/status", statusPayload);
+      
+      lastDataPublish = currentTime;
+    }
+     delay(500); // Small delay for system stability
+  }
+   
+
+
+

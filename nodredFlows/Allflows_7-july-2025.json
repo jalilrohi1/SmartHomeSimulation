@@ -1,0 +1,4946 @@
+[
+    {
+        "id": "9a49f2e175222a56",
+        "type": "tab",
+        "label": "🗄️ Smart Home Data Logging & Analytics",
+        "disabled": false,
+        "info": "Comprehensive data logging system with SQLite database, analytics, and reporting for ESP32 Smart Home system"
+    },
+    {
+        "id": "5294cf51b940ebd1",
+        "type": "tab",
+        "label": "Practice",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ultimate-dashboard",
+        "type": "tab",
+        "label": "🚀 ESP32 Smart Home v2.1 Ultimate Dashboard",
+        "disabled": true,
+        "info": "Comprehensive 5-tab dashboard with enhanced functionality, bidirectional feedback, and complete IoT sensor suite"
+    },
+    {
+        "id": "simple_mqtt_flow",
+        "type": "tab",
+        "label": "Simple MQTT Flow",
+        "disabled": true,
+        "info": "Simplified single-topic MQTT processing for assignment"
+    },
+    {
+        "id": "d9455e0b91e55b21",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "55fc3998b342da1e",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ultimate-broker",
+        "type": "mqtt-broker",
+        "name": "Ultimate ESP32 Broker",
+        "broker": "3.73.173.107",
+        "port": "1883",
+        "clientid": "NodeRED-Ultimate",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "enhanced-main-tab",
+        "type": "ui_tab",
+        "name": "📊 Overview",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "rooms-tab",
+        "type": "ui_tab",
+        "name": "🏠 Rooms",
+        "icon": "fa-home",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "security-tab",
+        "type": "ui_tab",
+        "name": "🛡️ Security",
+        "icon": "fa-shield",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "enhanced-charts-tab",
+        "type": "ui_tab",
+        "name": "🌡️ Climate & Energy",
+        "icon": "fa-line-chart",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "enhanced-controls-tab",
+        "type": "ui_tab",
+        "name": "⚙️ System Controls",
+        "icon": "fa-sliders",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "sensors-ultimate-group",
+        "type": "ui_group",
+        "name": "🌡️ System Status",
+        "tab": "enhanced-main-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "overview-summary-group",
+        "type": "ui_group",
+        "name": "📊 Quick Overview",
+        "tab": "enhanced-main-tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "charts-ultimate-group",
+        "type": "ui_group",
+        "name": "📈 Real-time Trends",
+        "tab": "enhanced-main-tab",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "hall-room-group",
+        "type": "ui_group",
+        "name": "🏡 Hall",
+        "tab": "rooms-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "room1-group",
+        "type": "ui_group",
+        "name": "🛏️ Room 1",
+        "tab": "rooms-tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "room2-group",
+        "type": "ui_group",
+        "name": "🛋️ Room 2",
+        "tab": "rooms-tab",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "kitchen-group",
+        "type": "ui_group",
+        "name": "🍳 Kitchen",
+        "tab": "rooms-tab",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "motion-ultimate-group",
+        "type": "ui_group",
+        "name": "🏃 Motion Detection",
+        "tab": "security-tab",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "door-security-group",
+        "type": "ui_group",
+        "name": "🚪 Door Monitoring",
+        "tab": "security-tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "security-logs-group",
+        "type": "ui_group",
+        "name": "📋 Security Logs",
+        "tab": "security-tab",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "temperature-analysis-group",
+        "type": "ui_group",
+        "name": "🌡️ Temperature Analysis",
+        "tab": "enhanced-charts-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "climate-control-group",
+        "type": "ui_group",
+        "name": "❄️ AC Controls",
+        "tab": "enhanced-charts-tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "energy-monitoring-group",
+        "type": "ui_group",
+        "name": "⚡ Energy Monitoring",
+        "tab": "enhanced-charts-tab",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "controls-ultimate-group",
+        "type": "ui_group",
+        "name": "🎛️ Device Controls",
+        "tab": "enhanced-controls-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "feedback-ultimate-group",
+        "type": "ui_group",
+        "name": "🔄 Bidirectional Feedback",
+        "tab": "enhanced-controls-tab",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt-status-group",
+        "type": "ui_group",
+        "name": "📡 MQTT Status",
+        "tab": "enhanced-controls-tab",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "system-config-group",
+        "type": "ui_group",
+        "name": "⚙️ System Configuration",
+        "tab": "enhanced-controls-tab",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e1cc5989d7adbd27",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 12,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ed43e6bcad7bb1b7",
+        "type": "mqtt-broker",
+        "name": "Home Assistant Broker",
+        "broker": "3.73.173.107",
+        "port": "1883",
+        "clientid": "node-red-dashboard",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60"
+    },
+    {
+        "id": "cc3d165c3c9bd707",
+        "type": "ui_group",
+        "name": "Security",
+        "tab": "security-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "ad7152df83978ecf",
+        "type": "ui_tab",
+        "name": "🎛️ Controls",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "7538d26d39cb8298",
+        "type": "mqtt-broker",
+        "name": "Home Assistant Broker",
+        "broker": "3.73.173.107",
+        "port": "1883",
+        "clientid": "node-red-dashboard",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60"
+    },
+    {
+        "id": "9358044c026f18ec",
+        "type": "ui_group",
+        "name": "Security",
+        "tab": "security-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "e477974dc46d108e",
+        "type": "ui_tab",
+        "name": "🎛️ Controls",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "6509157c2a4f9f5b",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "ad7152df83978ecf",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "3b6449a632ca2e39",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "e477974dc46d108e",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "ecdac47db1821423",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "52f80f2bd17c277b",
+        "type": "ui_tab",
+        "name": "tab 1",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b58ec36682004211",
+        "type": "ui_group",
+        "name": "Temperature Monitor (same as above)",
+        "tab": "52f80f2bd17c277b",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fc9671eec16e6a5c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "3.73.173.107",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dc2812fc15911be6",
+        "type": "ui_group",
+        "name": "Monitoring",
+        "tab": "52f80f2bd17c277b",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b4b12adde682a7e0",
+        "type": "ui_group",
+        "name": "Climate Controls",
+        "tab": "52f80f2bd17c277b",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "314ba722f13877b9",
+        "type": "ui_group",
+        "name": "Safety Controls",
+        "tab": "52f80f2bd17c277b",
+        "order": 4,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3fbb9e3ef3ecab4",
+        "type": "ui_group",
+        "name": "Analytics",
+        "tab": "52f80f2bd17c277b",
+        "order": 5,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3f5da30f3904bfb2",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "🟢",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "92bb7a4c63ed5c6c",
+        "type": "ui_group",
+        "name": "System Health Monitor",
+        "tab": "3f5da30f3904bfb2",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c65109137eefa314",
+        "type": "ui_group",
+        "name": "Lighting Controls",
+        "tab": "3f5da30f3904bfb2",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d55321a5486880a4",
+        "type": "sqlitedb",
+        "db": "/data/SmartHomeDB.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "mqtt-broker-config",
+        "type": "mqtt-broker",
+        "name": "ESP32 MQTT Broker",
+        "broker": "3.73.173.107",
+        "port": "1883",
+        "clientid": "NodeRED-DataLogger",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true
+    },
+    {
+        "id": "smart-home-db",
+        "type": "sqlitedb",
+        "db": "/data/SmartHomeDB.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "logging-dashboard",
+        "type": "ui_tab",
+        "name": "📊 Data Analytics 11",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "environmental-group",
+        "type": "ui_group",
+        "name": "🌡️ Environmental Sensors",
+        "tab": "logging-dashboard",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "safety-group",
+        "type": "ui_group",
+        "name": "🛡️ Safety Monitoring",
+        "tab": "logging-dashboard",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "analytics-group",
+        "type": "ui_group",
+        "name": "📊 Analytics",
+        "tab": "logging-dashboard",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "Local MQTT",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "smart_home_db",
+        "type": "sqlitedb",
+        "db": "/data/SmartHomeDB.db"
+    },
+    {
+        "id": "smart_home_tab",
+        "type": "ui_tab",
+        "name": "Smart Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "sensors_group",
+        "type": "ui_group",
+        "name": "Sensors",
+        "tab": "smart_home_tab",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "controls_group",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "smart_home_tab",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c79f1144e406f704",
+        "type": "ui_spacer",
+        "z": "simple_mqtt_flow",
+        "name": "spacer",
+        "group": "controls_group",
+        "order": 3,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "a21a386bf93e1f44",
+        "type": "mqtt in",
+        "z": "9a49f2e175222a56",
+        "name": "📡 ESP32 Sensor Stream",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "1172af3bd706bedc",
+                "7c01d25eee72bf26"
+            ]
+        ]
+    },
+    {
+        "id": "1172af3bd706bedc",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "🧠 Data Logger Processor",
+        "func": "// Smart Home Data Logger - Fixed Version\nconst data = msg.payload;\nconst timestamp = Date.now(); // Use Unix timestamp\n\n// Validate and extract sensor data\nconst temperature1 = parseFloat(data.temperature) || 0;\nconst temperature2 = parseFloat(data.temperature) || 0;\nconst humidity1 = parseFloat(data.humidity) || 0;\nconst humidity2 = parseFloat(data.humidity) || 0;\nconst gasLevel = parseInt(data.gas) || 0;\nconst lightLevel = parseInt(data.light) || 0;\nconst motionHall = data.motion_hall === true || data.motion_hall === \"true\" ? 1 : 0;\nconst motionRoom2 = data.motion_room2 === true || data.motion_room2 === \"true\" ? 1 : 0;\nconst doorDistance = data.door_distance ? parseFloat(data.door_distance) : null;\nconst doorStatus = doorDistance !== null && doorDistance > 50 ? \"open\" : \"closed\";\nconst wifiSignal = parseInt(data.wifi_signal) || -1;\nconst systemUptime = parseInt(data.timestamp) || 0;\n\n// Enhanced analytics\nlet tempStatus = \"normal\";\nlet humidityStatus = \"normal\";\nlet safetyStatus = \"safe\";\nlet comfortScore1 = 0;\nlet comfortScore2 = 0;\n\n// Temperature analysis\nif (temperature1 < 18) tempStatus = \"cold\";    \nelse if (temperature1 > 26) tempStatus = \"hot\";\nelse tempStatus = \"comfortable\";\n\nif (temperature2 < 18) tempStatus = \"cold\";    \nelse if (temperature2 > 26) tempStatus = \"hot\";\nelse tempStatus = \"comfortable\";\n\n// Humidity analysis\nif (humidity1 > 70) humidityStatus = \"too_humid\";\nelse if (humidity1 < 30) humidityStatus = \"too_dry\";   \nelse humidityStatus = \"optimal\";\n\nif (humidity2 > 70) humidityStatus = \"too_humid\";\nelse if (humidity2 < 30) humidityStatus = \"too_dry\";   \nelse humidityStatus = \"optimal\";\n\n// Safety analysis\nif (gasLevel > 100) {\n    safetyStatus = gasLevel > 500 ? \"critical\" : \"warning\";\n}\n\n// Comfort score calculation (0-100)\nlet tempScore1 = temperature1 >= 20 && temperature1 <= 25 ? 50 : temperature1 >= 18 && temperature1 <= 27 ? 30 : 10;\nlet tempScore2 = temperature2 >= 20 && temperature2 <= 25 ? 50 : temperature2 >= 18 && temperature2 <= 27 ? 30 : 10;\nlet humidScore1 = humidity1 >= 40 && humidity1 <= 60 ? 50 : humidity1 >= 30 && humidity1 <= 70 ? 30 : 10;\nlet humidScore2 = humidity2 >= 40 && humidity2 <= 60 ? 50 : humidity2 >= 30 && humidity2 <= 70 ? 30 : 10;\ncomfortScore1 = tempScore1 + humidScore1;\ncomfortScore2 = tempScore2 + humidScore2;\n// **Prepare database insert**\nconst dbInsert = {    \n    topic: `INSERT INTO sensor_readings \n    (timestamp, temperature1,temperature2, humidity1,humidity2, gas_level, light_level, motion_hall, motion_room2, door_distance, door_status, wifi_signal, system_uptime, temp_status, humidity_status, safety_status, comfort_score1, comfort_score2) \n    VALUES ($val1, $val2, $val3, $val4, $val5, $val6, $val7, $val8, $val9, $val10, $val11, $val12, $val13, $val14, $val15, $val16, $val17, $val18)`,\n    \n    payload: [\n        timestamp, temperature1,temperature2, humidity1,humidity2, gasLevel, lightLevel, \n        motionHall, motionRoom2, doorDistance, doorStatus, \n        wifiSignal, systemUptime, tempStatus, humidityStatus, \n        safetyStatus, comfortScore1,comfortScore2\n    ]\n};\n\n// **Debugging: Log payload before insertion**\n//node.warn(dbInsert.payload); // Check if payload contains values\n\n// **Enhanced data for dashboard**\nconst dashboardData = {\n    payload: {\n        timestamp: timestamp, temperature1: temperature1, temperature2: temperature2, humidity1: humidity1,humidity2: humidity2, gas_level: gasLevel,\n        light_level: lightLevel, motion_hall: motionHall, motion_room2: motionRoom2, door_status: doorStatus, \n        temp_status: tempStatus, humidity_status: humidityStatus, safety_status: safetyStatus, \n        comfort_score1: comfortScore1,comfort_score2: comfortScore2,\n        alerts: safetyStatus !== \"safe\" ? [`${safetyStatus.toUpperCase()}: Gas level ${gasLevel}`] : []    \n    }\n};         \n\n// **Return multiple outputs**\nreturn [dbInsert, dashboardData, msg];\n",
+        "outputs": 3,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "078295e55df63562"
+            ],
+            [
+                "258b779ef5e140c7"
+            ],
+            [
+                "f492d1e6a36e8e2a"
+            ]
+        ]
+    },
+    {
+        "id": "078295e55df63562",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "💾 Store to Database",
+        "x": 680,
+        "y": 40,
+        "wires": [
+            [
+                "da2205166a855b7c"
+            ]
+        ]
+    },
+    {
+        "id": "e19db9b08d224f4f",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "🏗️ Initialize Database",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 2,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "2e1c39d6ceb6e8bc"
+            ]
+        ]
+    },
+    {
+        "id": "2e1c39d6ceb6e8bc",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "🗄️ Create Database Schema",
+        "func": "// Database Schema Creation for Smart Home\nconst schemas = [\n    //`drop table sensor_readings`,\n    // Enhanced sensor readings table\n    `CREATE TABLE IF NOT EXISTS sensor_readings (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n        temperature1 REAL,\n        temperature2 REAL,\n        humidity1 REAL,\n        humidity2 REAL,\n        gas_level INTEGER,\n        light_level INTEGER,\n        motion_hall BOOLEAN,\n        motion_room2 BOOLEAN,\n        door_distance REAL,\n        door_status TEXT,\n        wifi_signal INTEGER,\n        system_uptime INTEGER,\n        temp_status TEXT,\n        humidity_status TEXT,\n        safety_status TEXT,\n        comfort_score1 INTEGER,\n        comfort_score2 INTEGER\n    )`,\n\n    // Device control events\n    `CREATE TABLE IF NOT EXISTS device_events (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n        device_type TEXT,\n        device_name TEXT,\n        command TEXT,\n        previous_state TEXT,\n        new_state TEXT,\n        triggered_by TEXT,\n        success BOOLEAN,\n        response_time_ms INTEGER\n    )`,\n\n    // Energy consumption tracking\n    `CREATE TABLE IF NOT EXISTS energy_consumption (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n        device TEXT,\n        power_state TEXT,\n        estimated_watts REAL,\n        runtime_minutes REAL,\n        energy_kwh REAL,\n        cost_estimate REAL,\n        efficiency_rating TEXT\n    )`,\n\n    // System alerts\n    `CREATE TABLE IF NOT EXISTS system_alerts (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n        alert_type TEXT,\n        severity TEXT,\n        message TEXT,\n        sensor_values TEXT,\n        action_taken TEXT,\n        resolved BOOLEAN DEFAULT FALSE,\n        resolution_time DATETIME\n    )`,\n\n    // Daily summaries for reporting\n    `CREATE TABLE IF NOT EXISTS daily_summaries (\n        id INTEGER PRIMARY KEY AUTOINCREMENT,\n        date DATE UNIQUE,\n        avg_temperature REAL,\n        avg_humidity REAL,\n        max_gas_level INTEGER,\n        total_motion_events INTEGER,\n        ac_runtime_hours REAL,\n        total_energy_kwh REAL,\n        estimated_cost REAL,\n        alerts_count INTEGER,\n        comfort_score_avg REAL,\n        efficiency_rating TEXT\n    )`,\n\n    // Performance indexes\n    `CREATE INDEX IF NOT EXISTS idx_sensor_timestamp ON sensor_readings(timestamp)`,\n    `CREATE INDEX IF NOT EXISTS idx_device_timestamp ON device_events(timestamp)`,\n    `CREATE INDEX IF NOT EXISTS idx_energy_timestamp ON energy_consumption(timestamp)`,\n    `CREATE INDEX IF NOT EXISTS idx_alerts_timestamp ON system_alerts(timestamp)`\n];\n\n// Send each schema as a separate message\nconst messages = schemas.map(schema => ({\n    topic: schema,\n    payload: []\n}));\n\nnode.warn(`Initializing database with ${schemas.length} tables...`);\nreturn [messages];\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "8779c1ba4162a9ab"
+            ]
+        ]
+    },
+    {
+        "id": "8779c1ba4162a9ab",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "smart-home-db",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "📋 Execute Schema",
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [
+                "02a584b9ff651100"
+            ]
+        ]
+    },
+    {
+        "id": "ca8ba69a58ce6929",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "📊 Daily Report (Manual)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "daily_report",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "3e2f2829b744f6a5"
+            ]
+        ]
+    },
+    {
+        "id": "3e2f2829b744f6a5",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "📈 Daily Summary Generator",
+        "func": "// Daily Summary Report Generator (Node-RED Function Node)\nconst today = new Date();\nconst yesterday = new Date(today);\nyesterday.setDate(yesterday.getDate() - 1);\nconst dateStr = yesterday.toISOString().split('T')[0];\n\n// Build the SQL using named parameters ($date)\nmsg.topic = `\nWITH daily_stats AS (\n  SELECT\n    COUNT(*)               AS total_readings,\n    ROUND(AVG(temperature1),2) AS avg_temp,\n    ROUND(MIN(temperature1), 1) AS min_temp,\n    ROUND(MAX(temperature1), 1) AS max_temp,\n    ROUND(AVG(humidity1),   2) AS avg_humidity,\n    MAX(gas_level)         AS max_gas,\n    COUNT(CASE WHEN motion_hall=1 OR motion_room2=1 THEN 1 END) AS motion_events,\n    ROUND(AVG(comfort_score1),1) AS avg_comfort,\n    COUNT(CASE WHEN safety_status!='safe' THEN 1 END)  AS safety_alerts\n  FROM sensor_readings\n  WHERE DATE(timestamp) = $date\n),\nenergy_stats AS (\n  SELECT\n    COALESCE(SUM(energy_kwh),0)    AS total_energy,\n    COALESCE(SUM(cost_estimate),0) AS total_cost,\n    COUNT(DISTINCT device)         AS devices_used\n  FROM energy_consumption\n  WHERE DATE(timestamp) = $date\n)\nINSERT OR REPLACE INTO daily_summaries (\n  date,\n  avg_temperature,\n  avg_humidity,\n  max_gas_level,\n  total_motion_events,\n  total_energy_kwh,\n  estimated_cost,\n  alerts_count,\n  comfort_score_avg\n)\nSELECT\n  $date           AS date,\n  ds.avg_temp,\n  ds.avg_humidity,\n  ds.max_gas,\n  ds.motion_events,\n  es.total_energy,\n  es.total_cost,\n  ds.safety_alerts,\n  ds.avg_comfort\nFROM daily_stats ds, energy_stats es\n`;\n\n// Supply the named parameter\nmsg.payload = {\n  $date: dateStr\n};\n\n// For downstream logging or display\nmsg.reportDate = dateStr;\nnode.warn(`Generating daily summary for ${dateStr}`);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "f323f0dfe6b9e74c"
+            ]
+        ]
+    },
+    {
+        "id": "f323f0dfe6b9e74c",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "smart-home-db",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "💾 Store Summary",
+        "x": 650,
+        "y": 320,
+        "wires": [
+            [
+                "c3846d6a92a1c14b"
+            ]
+        ]
+    },
+    {
+        "id": "0d66a7e45ec8b740",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "📊 Get Analytics (Manual)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "analytics",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 440,
+        "wires": [
+            [
+                "f44d216d9318c40c"
+            ]
+        ]
+    },
+    {
+        "id": "f44d216d9318c40c",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "📈 Analytics Processor",
+        "func": "// Smart Home Analytics Queries\nconst queries = {\n    // Last 24 hours sensor trends\n    sensor_trends: `\n        SELECT \n            strftime('%H:%M', timestamp) as time,\n            ROUND(AVG(temperature1), 1) as temperature,\n            ROUND(AVG(humidity1), 1) as humidity,\n            AVG(gas_level) as gas_level,\n            AVG(light_level) as light_level,\n            AVG(comfort_score1) as comfort\n        FROM sensor_readings \n        WHERE timestamp >= datetime('now', '-24 hours')\n        GROUP BY strftime('%Y-%m-%d %H', timestamp)\n        ORDER BY timestamp ASC\n    `,\n\n    // Energy consumption analysis\n    energy_analysis: `\n        SELECT \n            DATE(timestamp) as date,\n            device,\n            SUM(energy_kwh) as daily_kwh,\n            SUM(cost_estimate) as daily_cost,\n            AVG(estimated_watts) as avg_watts\n        FROM energy_consumption \n        WHERE timestamp >= datetime('now', '-7 days')\n        GROUP BY DATE(timestamp), device\n        ORDER BY date DESC, daily_cost DESC\n    `,\n\n    // Weekly summary report\n    weekly_summary: `\n        SELECT \n            date,\n            avg_temperature,\n            avg_humidity,\n            total_energy_kwh,\n            estimated_cost,\n            comfort_score_avg\n        FROM daily_summaries \n        WHERE date >= date('now', '-7 days')\n        ORDER BY date DESC\n    `,\n\n    // System health metrics\n    system_health: `\n        SELECT \n            COUNT(*) as total_readings_today,\n            MIN(timestamp) as first_reading,\n            MAX(timestamp) as last_reading,\n            AVG(wifi_signal) as avg_wifi_signal,\n            COUNT(CASE WHEN safety_status != 'safe' THEN 1 END) as safety_alerts_today\n        FROM sensor_readings \n        WHERE DATE(timestamp) = DATE('now')\n    `\n};\n\n// Determine which query to run\nconst queryType = msg.payload.query_type || 'sensor_trends';\nconst selectedQuery = queries[queryType];\n\nif (!selectedQuery) {\n    node.error(`Unknown query type: ${queryType}`);\n    return null;\n}\n\nmsg.topic = selectedQuery;\nmsg.payload = [];\nmsg.queryType = queryType;\n\nnode.warn(`Running ${queryType} analytics query`);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 440,
+        "wires": [
+            [
+                "cd5a82150d231c13"
+            ]
+        ]
+    },
+    {
+        "id": "cd5a82150d231c13",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "smart-home-db",
+        "sqlquery": "prepared",
+        "sql": "",
+        "name": "📊 Query Analytics",
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "b17e75634fea2b0a"
+            ]
+        ]
+    },
+    {
+        "id": "258b779ef5e140c7",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "📱 Dashboard Formatter",
+        "func": "// Format data for dashboard widgets\nconst data = msg.payload;\n\n// Create separate outputs for different dashboard widgets\nconst outputs = {\n    temperature: {\n        payload: data.temperature,\n        topic: \"temperature\",\n        status: data.temp_status\n    },\n    humidity: {\n        payload: data.humidity,\n        topic: \"humidity\",\n        status: data.humidity_status\n    },\n    gas_safety: {\n        payload: data.gas_level,\n        topic: \"gas\",\n        status: data.safety_status,\n        alert: data.safety_status !== \"safe\"\n    },\n    comfort_score: {\n        payload: data.comfort_score,\n        topic: \"comfort\",\n        timestamp: data.timestamp\n    },\n    motion_status: {\n        payload: {\n            hall: data.motion_hall,\n            room2: data.motion_room2,\n            door: data.door_status\n        },\n        topic: \"motion\"\n    }\n};\n\nreturn [\n    outputs.temperature,\n    outputs.humidity,\n    outputs.gas_safety,\n    outputs.comfort_score,\n    outputs.motion_status\n];\n",
+        "outputs": 5,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 100,
+        "wires": [
+            [
+                "bcf0aac5d826fc38"
+            ],
+            [
+                "15d44eba48f3cdbc"
+            ],
+            [
+                "d78ca40f756a75ac"
+            ],
+            [
+                "8e8bca2bda4765e9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bcf0aac5d826fc38",
+        "type": "ui_gauge",
+        "z": "9a49f2e175222a56",
+        "name": "🌡️ Temperature",
+        "group": "environmental-group",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#0080ff",
+            "#00ff00",
+            "#ff8000"
+        ],
+        "seg1": "18",
+        "seg2": "26",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "15d44eba48f3cdbc",
+        "type": "ui_gauge",
+        "z": "9a49f2e175222a56",
+        "name": "💧 Humidity",
+        "group": "environmental-group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ff8000",
+            "#00ff00",
+            "#0080ff"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "d78ca40f756a75ac",
+        "type": "ui_led",
+        "z": "9a49f2e175222a56",
+        "order": 1,
+        "group": "safety-group",
+        "width": 0,
+        "height": 0,
+        "label": "Gas Safety",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#00ff00",
+                "value": "safe",
+                "valueType": "str"
+            },
+            {
+                "color": "#ffff00",
+                "value": "warning",
+                "valueType": "str"
+            },
+            {
+                "color": "#ff0000",
+                "value": "critical",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "⚠️ Gas Level",
+        "x": 910,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8e8bca2bda4765e9",
+        "type": "ui_gauge",
+        "z": "9a49f2e175222a56",
+        "name": "😊 Comfort Score",
+        "group": "analytics-group",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Comfort Score",
+        "label": "/100",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ff0000",
+            "#ffff00",
+            "#00ff00"
+        ],
+        "seg1": "40",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 910,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7fa27984c77f5d8a",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "Raw ESP32 Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f492d1e6a36e8e2a",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "Processed Data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "da2205166a855b7c",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "DB Insert Result",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "02a584b9ff651100",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "Schema Created",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c3846d6a92a1c14b",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "Summary Generated",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b17e75634fea2b0a",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "Analytics Results",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "4bd7d764919c5570",
+        "type": "mqtt in",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "topic": "smart_home/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 480,
+        "wires": [
+            [
+                "478145cf1119d910"
+            ]
+        ]
+    },
+    {
+        "id": "2f31713389d33347",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "7cf3704b25b192c5",
+        "type": "mqtt in",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "topic": "smartHome/living_room/temperature",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "6ef951c701beab8b"
+            ]
+        ]
+    },
+    {
+        "id": "478145cf1119d910",
+        "type": "json",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 350,
+        "y": 480,
+        "wires": [
+            [
+                "2f31713389d33347"
+            ]
+        ]
+    },
+    {
+        "id": "6ef951c701beab8b",
+        "type": "json",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 520,
+        "wires": [
+            [
+                "d7d6b7ff4b7a38d9"
+            ]
+        ]
+    },
+    {
+        "id": "d7d6b7ff4b7a38d9",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "14dcd230619f3c50",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "--Delete from sensor_readings;\nSELECT * from sensor_readings ORDER BY timestamp DESC LIMIT 5;\n--SELECT * FROM test_table ORDER BY timestamp DESC LIMIT 5;\n",
+        "name": "testing",
+        "x": 530,
+        "y": 580,
+        "wires": [
+            [
+                "963a1ed2ad1cd889"
+            ]
+        ]
+    },
+    {
+        "id": "963a1ed2ad1cd889",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "115da3581d3673ed",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "Show Sensors Reading",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 380,
+        "y": 580,
+        "wires": [
+            [
+                "14dcd230619f3c50"
+            ]
+        ]
+    },
+    {
+        "id": "fb068e581236306e",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 470,
+        "y": 640,
+        "wires": [
+            [
+                "ed97ab33c928e580"
+            ]
+        ]
+    },
+    {
+        "id": "85b95e38750bb5a8",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "Create Test Table",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 640,
+        "wires": [
+            [
+                "a67d8e81812507c6"
+            ]
+        ]
+    },
+    {
+        "id": "ed97ab33c928e580",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a67d8e81812507c6",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "function 1",
+        "func": "msg.topic = `CREATE TABLE IF NOT EXISTS test_table (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    timestamp INTEGER NOT NULL,\n    name TEXT NOT NULL\n)`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 640,
+        "wires": [
+            [
+                "fb068e581236306e"
+            ]
+        ]
+    },
+    {
+        "id": "76bd544798bbc666",
+        "type": "function",
+        "z": "9a49f2e175222a56",
+        "name": "function 2",
+        "func": "// Generate test data\nconst timestamp = Date.now();\nconst name = \"Test User\";\n\n// Prepare database insert\nmsg.topic = `INSERT INTO test_table (timestamp, name) VALUES ($val1, $val2)`;\nmsg.payload = [timestamp, name];\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 740,
+        "wires": [
+            [
+                "33cd5ccc4cb7b1d4"
+            ]
+        ]
+    },
+    {
+        "id": "33cd5ccc4cb7b1d4",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "test",
+        "x": 430,
+        "y": 740,
+        "wires": [
+            [
+                "ed97ab33c928e580"
+            ]
+        ]
+    },
+    {
+        "id": "f94f63a87b4e75c7",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "inset Test Data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 740,
+        "wires": [
+            [
+                "76bd544798bbc666"
+            ]
+        ]
+    },
+    {
+        "id": "9ff968338c415226",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT * from daily_summaries;",
+        "name": "test",
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "ed97ab33c928e580"
+            ]
+        ]
+    },
+    {
+        "id": "94c0df083074479c",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "trigger daily summary",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 820,
+        "wires": [
+            [
+                "9ff968338c415226"
+            ]
+        ]
+    },
+    {
+        "id": "f1063517e2e0a15b",
+        "type": "inject",
+        "z": "9a49f2e175222a56",
+        "name": "🏗️ Initialize Database",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 2,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "3be0feaa0930ea4a"
+            ]
+        ]
+    },
+    {
+        "id": "3be0feaa0930ea4a",
+        "type": "sqlite",
+        "z": "9a49f2e175222a56",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "drop SmartHomeDB;",
+        "name": "📋 Drop Database",
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "02a584b9ff651100"
+            ]
+        ]
+    },
+    {
+        "id": "dcd55f4e49f07b1e",
+        "type": "mqtt in",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "topic": "smart_home/control/test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "026f16206a48c94a"
+            ]
+        ]
+    },
+    {
+        "id": "026f16206a48c94a",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7c01d25eee72bf26",
+        "type": "json",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 180,
+        "wires": [
+            [
+                "7fa27984c77f5d8a"
+            ]
+        ]
+    },
+    {
+        "id": "0143ff709a318d52",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "cf57ca8132ccb4a0",
+        "type": "json",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 920,
+        "wires": [
+            [
+                "0143ff709a318d52"
+            ]
+        ]
+    },
+    {
+        "id": "7b771ed88045ff92",
+        "type": "mqtt in",
+        "z": "9a49f2e175222a56",
+        "name": "",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 940,
+        "wires": [
+            [
+                "cf57ca8132ccb4a0",
+                "f6d90c8fb5ef0b46"
+            ]
+        ]
+    },
+    {
+        "id": "f6d90c8fb5ef0b46",
+        "type": "debug",
+        "z": "9a49f2e175222a56",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "b0588507aebdb0de",
+        "type": "inject",
+        "z": "5294cf51b940ebd1",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "smart_home/sensors",
+        "payload": "{\"temperature\": 25.3, \"humidity\": 60, \"gas\": 45, \"light\": 800, \"motion\": false}",
+        "payloadType": "json",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "3049d4d32257a50b"
+            ]
+        ]
+    },
+    {
+        "id": "96473c42bd609264",
+        "type": "debug",
+        "z": "5294cf51b940ebd1",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "cac5c17b26ab347b",
+        "type": "mqtt in",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "topic": "smart_home/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 60,
+        "wires": [
+            [
+                "17407dcd139ad95c",
+                "96473c42bd609264"
+            ]
+        ]
+    },
+    {
+        "id": "17407dcd139ad95c",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Extract temperature from ESP32 data",
+        "func": "// Extract temperature from ESP32 data\nconst data = msg.payload;\nconst temp = data.temperature || 0;\n\n// Create comfort analysis\nlet comfort = \"Unknown\";\nif (temp < 18) comfort = \"❄️ Too Cold\";\nelse if (temp > 26) comfort = \"🔥 Too Hot\";\nelse comfort = \"😊 Comfortable\";\n\n// Send processed data\nmsg.payload = {\n    temperature: temp,\n    comfort_level: comfort,\n    timestamp: new Date()\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 60,
+        "wires": [
+            [
+                "96473c42bd609264",
+                "2ea5293648f50eb0",
+                "e6161b4d36e38f83"
+            ]
+        ]
+    },
+    {
+        "id": "2ea5293648f50eb0",
+        "type": "ui_gauge",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "b58ec36682004211",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "<div class=\\\"room-card\\\" style=\\\"background:#f8f9fa;border-radius:10px;padding:15px\\\">\\n  <h3>🛏️ Room 1</h3>\\n  <div class=\\\"sensor-row\\\">\\n    <span>🌡️ Temperature: </span>\\n    <span style=\\\"color:{{msg.room1.temp > 25 ? '#e74c3c' : '#3498db'}};font-weight:bold\\\">\\n      {{msg.room1.temp}}°C\\n    </span>\\n  </div>\\n  <div class=\\\"sensor-row\\\">\\n    <span>💧 Humidity: </span>\\n    <span style=\\\"font-weight:bold\\\">{{msg.room1.humidity}}%</span>\\n  </div>\\n  <div class=\\\"sensor-row\\\">\\n    <span>🚶 Motion: </span>\\n    <span style=\\\"color:{{msg.room1.motion ? '#e74c3c' : '#2ecc71'}};font-weight:bold\\\">\\n      {{msg.room1.motion ? 'DETECTED' : 'CLEAR'}}\\n    </span>\\n  </div>\\n</div>",
+        "x": 590,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "8e7a15b52e9fb5b9",
+        "type": "ui_button",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "b58ec36682004211",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Turn On AC",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "AC_ON",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "92512407b3783fb6"
+            ]
+        ]
+    },
+    {
+        "id": "92512407b3783fb6",
+        "type": "mqtt out",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "topic": "smart_home/relay",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc9671eec16e6a5c",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e6161b4d36e38f83",
+        "type": "ui_chart",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "dc2812fc15911be6",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "1 hour",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f04b3a5dcd94f14e",
+        "type": "mqtt in",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "fc9671eec16e6a5c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 260,
+        "wires": [
+            [
+                "2647ca78124b9b3e"
+            ]
+        ]
+    },
+    {
+        "id": "3049d4d32257a50b",
+        "type": "debug",
+        "z": "5294cf51b940ebd1",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2647ca78124b9b3e",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Smart Home Data Processor",
+        "func": "// Smart Home Data Processor\nconst data = msg.payload;\n\n// Temperature Analysis\nconst temp = data.temperature || 0;\nlet tempStatus = \"Unknown\";\nlet tempColor = \"gray\";\n\nif (temp < 18) {\n    tempStatus = \"❄️ Too Cold\";\n    tempColor = \"blue\";\n} else if (temp > 26) {\n    tempStatus = \"🔥 Too Hot\"; \n    tempColor = \"red\";\n} else {\n    tempStatus = \"😊 Comfortable\";\n    tempColor = \"green\";\n}\n\n// Humidity Analysis\nconst humidity = data.humidity || 0;\nlet humidityStatus = \"Normal\";\nif (humidity > 70) humidityStatus = \"⚠️ Too Humid\";\nif (humidity < 30) humidityStatus = \"⚠️ Too Dry\";\n\n// Safety Check\nconst gas = data.gas || 0;\nlet safetyStatus = \"Safe\";\nlet emergencyAlert = false;\nif (gas > 100) {\n    safetyStatus = \"⚠️ Gas Detected\";\n    emergencyAlert = true;\n}\n\n// Enhanced output\nmsg.payload = {\n    // Raw data\n    temperature: temp,\n    humidity: humidity,\n    gas: gas,\n    light: data.light || 0,\n    motion: data.motion || false,\n    \n    // Processed intelligence\n    temperature_status: tempStatus,\n    temperature_color: tempColor,\n    humidity_status: humidityStatus,\n    safety_status: safetyStatus,\n    emergency_alert: emergencyAlert,\n    \n    // Metadata\n    timestamp: new Date().toLocaleString(),\n    comfort_score: temp >= 20 && temp <= 25 && humidity >= 40 && humidity <= 60 ? \"Excellent\" : \"Fair\"\n};\n\n// At the end of your function, return multiple outputs:\nconst tempMsg = {payload: temp};\nconst humidityMsg = {payload: humidity};\n\nreturn [tempMsg, humidityMsg];  // Two outputs\n//return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "3049d4d32257a50b",
+                "f923de5df0cb3396",
+                "89e068e803c21d02"
+            ]
+        ]
+    },
+    {
+        "id": "f923de5df0cb3396",
+        "type": "ui_gauge",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "b58ec36682004211",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity Level",
+        "label": "%",
+        "format": "{{value}} %",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 560,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f0c47979cb7b4cfc",
+        "type": "ui_button",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "b4b12adde682a7e0",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Air Conditioning",
+        "tooltip": "",
+        "color": "Blue",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-snowflake-o",
+        "payload": "AC_ON",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "964f4cb04684fb34"
+            ]
+        ]
+    },
+    {
+        "id": "964f4cb04684fb34",
+        "type": "mqtt out",
+        "z": "5294cf51b940ebd1",
+        "name": "AC Control",
+        "topic": "smart_home/relay",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fc9671eec16e6a5c",
+        "x": 550,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "541207c44c74c18f",
+        "type": "ui_button",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "314ba722f13877b9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "EMERGENCY STOP",
+        "tooltip": "",
+        "color": "Red",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-exclamation-triangle",
+        "payload": "EMERGENCY_STOP",
+        "payloadType": "str",
+        "topic": "smart_home/control",
+        "topicType": "msg",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "964f4cb04684fb34"
+            ]
+        ]
+    },
+    {
+        "id": "89e068e803c21d02",
+        "type": "ui_chart",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "e3fbb9e3ef3ecab4",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature History",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e9116f3f08e5175",
+        "type": "mqtt in",
+        "z": "5294cf51b940ebd1",
+        "name": "Motion Sensors",
+        "topic": "smart_home/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "fc9671eec16e6a5c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 460,
+        "wires": [
+            [
+                "afc89da33acfbda5",
+                "46b757cedeaad6c8",
+                "8bc729cdd8d1fa9f",
+                "0b6f8f5ed18e4bac"
+            ]
+        ]
+    },
+    {
+        "id": "afc89da33acfbda5",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Motion Detection Processor",
+        "func": "// Motion Detection Processor\nconst data = msg.payload;\n\n// Extract motion data from your ESP32\nconst motionHall = data.motion_hall || false;\nconst motionRoom2 = data.motion_room2 || false;\nconst doorDistance = data.door_distance || 0;\n\n// Determine door status\nconst doorOpen = doorDistance > 50;\n\n// Security analysis\nlet securityStatus = \"🟢 All Clear\";\nlet alertLevel = \"normal\";\n\nif (motionHall || motionRoom2) {\n    securityStatus = \"🟡 Motion Detected\";\n    alertLevel = \"warning\";\n}\n\nif (doorOpen && (motionHall || motionRoom2)) {\n    securityStatus = \"🔴 Security Breach\";\n    alertLevel = \"critical\";\n}\n\n// Create separate outputs for each indicator\nreturn [\n    {payload: motionHall, topic: \"motion_hall\"},\n    {payload: motionRoom2, topic: \"motion_room2\"}, \n    {payload: doorOpen, topic: \"door_status\"},\n    {payload: {\n        status: securityStatus,\n        level: alertLevel,\n        timestamp: new Date().toLocaleString()\n    }, topic: \"security_summary\"}\n];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 480,
+        "wires": [
+            [
+                "5cdd811a9621ba2b",
+                "0460ec3076f8e44d",
+                "446597801cbd27e7"
+            ]
+        ]
+    },
+    {
+        "id": "5cdd811a9621ba2b",
+        "type": "ui_led",
+        "z": "5294cf51b940ebd1",
+        "order": 0,
+        "group": "c65109137eefa314",
+        "width": 0,
+        "height": 0,
+        "label": "Hall Motion",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#808080",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 630,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "0460ec3076f8e44d",
+        "type": "ui_led",
+        "z": "5294cf51b940ebd1",
+        "order": 1,
+        "group": "c65109137eefa314",
+        "width": 0,
+        "height": 0,
+        "label": "Room 2 Motion",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 630,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "446597801cbd27e7",
+        "type": "ui_led",
+        "z": "5294cf51b940ebd1",
+        "order": 2,
+        "group": "c65109137eefa314",
+        "width": 0,
+        "height": 0,
+        "label": "Front Door",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ffa500",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "false",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 630,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ef8ace4e341f8696",
+        "type": "ui_colour_picker",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "label": "Room RGB Lighting",
+        "group": "c65109137eefa314",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 120,
+        "y": 780,
+        "wires": [
+            [
+                "982b8e1030a25999"
+            ]
+        ]
+    },
+    {
+        "id": "982b8e1030a25999",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "RGB Color Processor",
+        "func": "// RGB Color Processor\nconst color = msg.payload;\n\n// Extract RGB values (color picker sends hex or rgb object)\nlet r, g, b;\n\nif (typeof color === 'string') {\n    // Convert hex to RGB\n    const hex = color.replace('#', '');\n    r = parseInt(hex.substr(0, 2), 16);\n    g = parseInt(hex.substr(2, 2), 16);\n    b = parseInt(hex.substr(4, 2), 16);\n} else if (color.r !== undefined) {\n    // Direct RGB object\n    r = color.r;\n    g = color.g;\n    b = color.b;\n}\n\n// Create ESP32 RGB command format\nconst rgbCommand = `RGB:${r},${g},${b}`;\n\n// Calculate brightness for feedback\nconst brightness = Math.max(r, g, b);\nconst powerLevel = brightness > 200 ? \"High\" : brightness > 100 ? \"Medium\" : \"Low\";\n\n// Send command to ESP32\nmsg.payload = rgbCommand;\nmsg.topic = \"smart_home/lighting\";\n\n// Also send feedback data\nconst feedbackMsg = {\n    payload: {\n        red: r,\n        green: g, \n        blue: b,\n        brightness: brightness,\n        power_level: powerLevel,\n        hex_color: `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`\n    },\n    topic: \"lighting_feedback\"\n};\n\nreturn [msg, feedbackMsg];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 780,
+        "wires": [
+            [
+                "2567f655840f4f9f"
+            ]
+        ]
+    },
+    {
+        "id": "2567f655840f4f9f",
+        "type": "mqtt out",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "x": 590,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "3dbda29a601bc607",
+        "type": "ui_chart",
+        "z": "5294cf51b940ebd1",
+        "name": "",
+        "group": "92bb7a4c63ed5c6c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Environmental Trends",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "2",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 680,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46b757cedeaad6c8",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Multi-sensor Chart Data Processor",
+        "func": "// Multi-sensor Chart Data Processor\nconst data = msg.payload;\n\n// Prepare chart data with multiple series\nconst timestamp = new Date();\n\n// Create multiple data series\nconst series = [\n    {\n        series: \"Temperature\",\n        data: [{x: timestamp, y: data.temperature || 0}],\n        color: \"#ff6b6b\"\n    },\n    {\n        series: \"Humidity\", \n        data: [{x: timestamp, y: data.humidity || 0}],\n        color: \"#4ecdc4\"\n    },\n    {\n        series: \"Light Level\",\n        data: [{x: timestamp, y: (data.light || 0) / 10}], // Scale down for display\n        color: \"#ffe66d\"\n    }\n];\n\n// Send each series separately (Node-RED charts work better this way)\nreturn [\n    {payload: [{x: timestamp, y: data.temperature || 0}], topic: \"Temperature\"},\n    {payload: [{x: timestamp, y: data.humidity || 0}], topic: \"Humidity\"},\n    {payload: [{x: timestamp, y: (data.light || 0) / 10}], topic: \"Light\"}\n];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 560,
+        "wires": [
+            [
+                "3dbda29a601bc607"
+            ]
+        ]
+    },
+    {
+        "id": "d717b201956fdd51",
+        "type": "sqlite",
+        "z": "5294cf51b940ebd1",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 750,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8bc729cdd8d1fa9f",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "System Health Monitor Function",
+        "func": "// System Health Monitor Function\nconst data = msg.payload;\nconst now = new Date();\n\n// Check data freshness (ESP32 should send every 2 seconds)\nconst lastUpdate = new Date(data.timestamp * 1000); // ESP32 sends millis\nconst dataAge = (now - lastUpdate) / 1000; // seconds\n\n// Determine connection status\nlet connectionStatus = \"🟢 Connected\";\nlet connectionColor = \"green\";\n\nif (dataAge > 10) {\n    connectionStatus = \"🔴 Disconnected\";\n    connectionColor = \"red\";\n} else if (dataAge > 5) {\n    connectionStatus = \"🟡 Weak Signal\"; \n    connectionColor = \"orange\";\n}\n\n// System stats\nconst uptime = Math.floor((data.timestamp || 0) / 1000 / 60); // minutes\nconst wifiSignal = data.wifi_signal || \"N/A\";\n\nreturn {\n    payload: {\n        connection: connectionStatus,\n        color: connectionColor,\n        uptime: `${uptime} minutes`,\n        wifi_strength: wifiSignal,\n        last_seen: dataAge < 60 ? `${Math.floor(dataAge)}s ago` : `${Math.floor(dataAge/60)}m ago`\n    }\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 2,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 620,
+        "wires": [
+            [
+                "c1f1ed6aaf4e1c06"
+            ]
+        ]
+    },
+    {
+        "id": "c1f1ed6aaf4e1c06",
+        "type": "ui_text",
+        "z": "5294cf51b940ebd1",
+        "group": "92bb7a4c63ed5c6c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 630,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0b6f8f5ed18e4bac",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Advanced Gas Safety Monitor",
+        "func": "// Advanced Gas Safety Monitor\nconst data = msg.payload;\nconst gasLevel = data.gas || 0;\nconst now = new Date();\n\n// Gas safety thresholds (based on your ESP32 code)\nlet safetyLevel = \"SAFE\";\nlet alertColor = \"green\";\nlet actionRequired = \"\";\nlet emergencyCommand = null;\n\nif (gasLevel > 500) {\n    safetyLevel = \"CRITICAL - EVACUATE\";\n    alertColor = \"red\";\n    actionRequired = \"Immediate evacuation required!\";\n    emergencyCommand = \"EMERGENCY_STOP\"; // Will stop AC to prevent spark\n} else if (gasLevel > 200) {\n    safetyLevel = \"DANGEROUS\";\n    alertColor = \"orange\";\n    actionRequired = \"Turn off gas sources, ventilate area\";\n} else if (gasLevel > 100) {\n    safetyLevel = \"CAUTION\";\n    alertColor = \"yellow\";\n    actionRequired = \"Monitor closely, check for gas sources\";\n}\n\n// Emergency response\nconst response = {\n    payload: {\n        gas_level: gasLevel,\n        safety_status: safetyLevel,\n        color: alertColor,\n        action: actionRequired,\n        timestamp: now.toLocaleString(),\n        emergency_triggered: gasLevel > 500\n    }\n};\n\n// If emergency, also send stop command\nif (emergencyCommand) {\n    const emergencyMsg = {\n        payload: emergencyCommand,\n        topic: \"smart_home/control\"\n    };\n    return [response, emergencyMsg];\n}\n\nreturn response;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 680,
+        "wires": [
+            [
+                "0a7a4266cf290ad3"
+            ]
+        ]
+    },
+    {
+        "id": "0a7a4266cf290ad3",
+        "type": "ui_toast",
+        "z": "5294cf51b940ebd1",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 530,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "57c9321cb97adf57",
+        "type": "sqlite",
+        "z": "5294cf51b940ebd1",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "SmartHomeDB",
+        "x": 420,
+        "y": 880,
+        "wires": [
+            [
+                "61ccd985d0bd888f"
+            ]
+        ]
+    },
+    {
+        "id": "aa669355fa346d1d",
+        "type": "inject",
+        "z": "5294cf51b940ebd1",
+        "name": "SmartHomeDB Scehma creation",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": " CREATE TABLE IF NOT EXISTS sensor_readings ( id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, temperature REAL, humidity REAL, gas_level INTEGER, light_level INTEGER, motion_hall BOOLEAN, motion_room2 BOOLEAN, door_distance REAL, door_status TEXT, wifi_signal INTEGER, system_uptime INTEGER );  CREATE TABLE IF NOT EXISTS device_events ( id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, device_type TEXT, device_name TEXT, command TEXT, previous_state TEXT, new_state TEXT, triggered_by TEXT, success BOOLEAN );  CREATE TABLE IF NOT EXISTS energy_consumption ( id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, device TEXT, power_state TEXT, estimated_watts REAL, runtime_minutes REAL, energy_kwh REAL, cost_estimate REAL );  CREATE TABLE IF NOT EXISTS system_alerts ( id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, alert_type TEXT, severity TEXT, message TEXT, sensor_values TEXT, action_taken TEXT, resolved BOOLEAN DEFAULT FALSE );  CREATE TABLE IF NOT EXISTS daily_summaries ( id INTEGER PRIMARY KEY AUTOINCREMENT, date DATE UNIQUE, avg_temperature REAL, avg_humidity REAL, max_gas_level INTEGER, total_motion_events INTEGER, ac_runtime_hours REAL, total_energy_kwh REAL, estimated_cost REAL, alerts_count INTEGER );  CREATE INDEX IF NOT EXISTS idx_sensor_timestamp ON sensor_readings(timestamp); CREATE INDEX IF NOT EXISTS idx_device_timestamp ON device_events(timestamp); CREATE INDEX IF NOT EXISTS idx_energy_timestamp ON energy_consumption(timestamp); CREATE INDEX IF NOT EXISTS idx_alerts_timestamp ON system_alerts(timestamp); ",
+        "x": 170,
+        "y": 880,
+        "wires": [
+            [
+                "57c9321cb97adf57"
+            ]
+        ]
+    },
+    {
+        "id": "61ccd985d0bd888f",
+        "type": "debug",
+        "z": "5294cf51b940ebd1",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "6f5c97dbb83a0738",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Database Logger - Sensor Data",
+        "func": "// Database Logger - Sensor Data\nconst data = msg.payload;\nconst timestamp = new Date().toISOString();\n\n// Prepare SQL insert statement\nconst sql = `\nINSERT INTO sensor_readings (\n    timestamp, temperature, humidity, gas_level, light_level, \n    motion_hall, motion_room2, door_distance, door_status, \n    wifi_signal, system_uptime\n) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n`;\n\n// Extract and validate data from ESP32\nconst temperature = parseFloat(data.temperature) || null;\nconst humidity = parseFloat(data.humidity) || null;\nconst gasLevel = parseInt(data.gas) || null;\nconst lightLevel = parseInt(data.light) || null;\nconst motionHall = Boolean(data.motion_hall);\nconst motionRoom2 = Boolean(data.motion_room2);\nconst doorDistance = parseFloat(data.door_distance) || null;\nconst doorStatus = doorDistance > 50 ? \"open\" : \"closed\";\nconst wifiSignal = parseInt(data.wifi_signal) || null;\nconst systemUptime = parseInt(data.timestamp) || null;\n\n// Prepare database message\nmsg.topic = sql;\nmsg.payload = [\n    timestamp,\n    temperature,\n    humidity, \n    gasLevel,\n    lightLevel,\n    motionHall,\n    motionRoom2,\n    doorDistance,\n    doorStatus,\n    wifiSignal,\n    systemUptime\n];\n\n// Also pass through original data for other uses\nmsg.originalData = data;\nmsg.logTimestamp = timestamp;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4323c995778f745",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Device Control & Energy Logger",
+        "func": "// Device Control & Energy Logger\nconst command = msg.payload;\nconst device = msg.topic;\nconst timestamp = new Date().toISOString();\n\n// Determine device type and energy consumption\nlet deviceType = \"unknown\";\nlet estimatedWatts = 0;\nlet deviceName = \"Unknown Device\";\n\n// Parse device commands (based on your ESP32 MQTT topics)\nif (device.includes(\"relay\")) {\n    if (command === \"AC_ON\") {\n        deviceType = \"HVAC\";\n        deviceName = \"Air Conditioning\";\n        estimatedWatts = 1500; // 1.5kW for AC\n    } else if (command === \"AC_OFF\") {\n        deviceType = \"HVAC\";\n        deviceName = \"Air Conditioning\";\n        estimatedWatts = 0;\n    }\n} else if (device.includes(\"lighting\")) {\n    deviceType = \"Lighting\";\n    deviceName = \"RGB Lights\";\n    // Calculate RGB power consumption\n    if (command.startsWith(\"RGB:\")) {\n        const rgbValues = command.substring(4).split(\",\");\n        const brightness = Math.max(...rgbValues.map(v => parseInt(v)));\n        estimatedWatts = (brightness / 255) * 20; // Max 20W for RGB\n    }\n} else if (device.includes(\"blinds\")) {\n    deviceType = \"Motor\";\n    deviceName = \"Window Blinds\";\n    estimatedWatts = 15; // Motor power during movement\n}\n\n// Log device event\nconst deviceEventSql = `\nINSERT INTO device_events (\n    timestamp, device_type, device_name, command, \n    triggered_by, success\n) VALUES (?, ?, ?, ?, ?, ?)\n`;\n\n// Log energy consumption\nconst energySql = `\nINSERT INTO energy_consumption (\n    timestamp, device, power_state, estimated_watts, \n    runtime_minutes, energy_kwh\n) VALUES (?, ?, ?, ?, ?, ?)\n`;\n\n// Calculate energy (assuming 1-minute runtime for commands)\nconst runtimeMinutes = 1;\nconst energyKwh = (estimatedWatts * runtimeMinutes) / (1000 * 60);\n\n// Return multiple database operations\nreturn [\n    {\n        topic: deviceEventSql,\n        payload: [timestamp, deviceType, deviceName, command, \"Dashboard\", true]\n    },\n    {\n        topic: energySql,\n        payload: [timestamp, deviceName, command, estimatedWatts, runtimeMinutes, energyKwh]\n    }\n];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 170,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f897ab32b6c3dcf8",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Daily Summary Generator",
+        "func": "// Daily Summary Generator\n// Trigger this function once per day (use inject node with cron)\n\nconst today = new Date();\nconst yesterday = new Date(today);\nyesterday.setDate(yesterday.getDate() - 1);\n\nconst dateStr = yesterday.toISOString().split('T')[0]; // YYYY-MM-DD format\n\n// Query to generate daily summary\nconst summaryQuery = `\nWITH daily_stats AS (\n    SELECT \n        AVG(temperature) as avg_temp,\n        AVG(humidity) as avg_humidity,\n        MAX(gas_level) as max_gas,\n        COUNT(CASE WHEN motion_hall = 1 OR motion_room2 = 1 THEN 1 END) as motion_events,\n        COUNT(CASE WHEN alert_type = 'GAS_ALERT' THEN 1 END) as gas_alerts\n    FROM sensor_readings \n    WHERE DATE(timestamp) = ?\n),\nenergy_stats AS (\n    SELECT \n        SUM(CASE WHEN device = 'Air Conditioning' AND power_state LIKE '%ON%' \n            THEN runtime_minutes ELSE 0 END) / 60.0 as ac_hours,\n        SUM(energy_kwh) as total_energy,\n        SUM(energy_kwh * 0.12) as estimated_cost  -- $0.12 per kWh\n    FROM energy_consumption \n    WHERE DATE(timestamp) = ?\n),\nalert_stats AS (\n    SELECT COUNT(*) as alert_count\n    FROM system_alerts \n    WHERE DATE(timestamp) = ? AND resolved = 1\n)\nINSERT OR REPLACE INTO daily_summaries (\n    date, avg_temperature, avg_humidity, max_gas_level, \n    total_motion_events, ac_runtime_hours, total_energy_kwh, \n    estimated_cost, alerts_count\n)\nSELECT \n    ? as date,\n    ROUND(ds.avg_temp, 1),\n    ROUND(ds.avg_humidity, 1),\n    ds.max_gas,\n    ds.motion_events,\n    ROUND(es.ac_hours, 2),\n    ROUND(es.total_energy, 4),\n    ROUND(es.estimated_cost, 2),\n    als.alert_count\nFROM daily_stats ds, energy_stats es, alert_stats als\n`;\n\nmsg.topic = summaryQuery;\nmsg.payload = [dateStr, dateStr, dateStr, dateStr];\n\n// Also trigger report generation\nnode.send([msg, {payload: \"GENERATE_DAILY_REPORT\", date: dateStr}]);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51167841269def69",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Real-time Energy Analytics",
+        "func": "// Real-time Energy Analytics\nconst data = msg.payload;\n\n// Query recent energy data\nconst energyQuery = `\nSELECT \n    strftime('%H:%M', timestamp) as time,\n    device,\n    estimated_watts,\n    energy_kwh * 1000 as energy_wh  -- Convert to Wh for better display\nFROM energy_consumption \nWHERE timestamp >= datetime('now', '-2 hours')\nORDER BY timestamp ASC\n`;\n\n// Set up for chart display\nmsg.topic = energyQuery;\nmsg.chartConfig = {\n    type: \"line\",\n    title: \"Energy Consumption (Last 2 Hours)\",\n    yAxisLabel: \"Power (Watts)\",\n    series: [\"Air Conditioning\", \"RGB Lights\", \"Window Blinds\"]\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2038c84ddb0c3b0",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Environmental Data Analytics",
+        "func": "// Environmental Data Analytics\nconst hoursBack = 24; // Show last 24 hours\n\nconst environmentQuery = `\nSELECT \n    strftime('%m/%d %H:%M', timestamp) as time,\n    ROUND(AVG(temperature), 1) as temperature,\n    ROUND(AVG(humidity), 1) as humidity,\n    ROUND(AVG(gas_level), 0) as gas_level,\n    ROUND(AVG(light_level), 0) as light_level\nFROM sensor_readings \nWHERE timestamp >= datetime('now', '-${hoursBack} hours')\nGROUP BY strftime('%Y-%m-%d %H', timestamp)\nORDER BY timestamp ASC\n`;\n\nmsg.topic = environmentQuery;\nmsg.chartType = \"multi-line\";\nmsg.timeRange = `${hoursBack}h`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e52d6e7a9aa5e62",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Weekly Report Generator Function",
+        "func": "// Weekly Report Generator Function\n// Use this in a Node-RED function node, triggered weekly\n\nfunction generateWeeklyReport() {\n    const today = new Date();\n    const weekAgo = new Date(today);\n    weekAgo.setDate(weekAgo.getDate() - 7);\n    \n    const startDate = weekAgo.toISOString().split('T')[0];\n    const endDate = today.toISOString().split('T')[0];\n    \n    // Comprehensive weekly analytics query\n    const weeklyAnalytics = `\n    -- Weekly Summary Report\n    WITH weekly_stats AS (\n        SELECT \n            COUNT(*) as total_readings,\n            ROUND(AVG(temperature), 1) as avg_temperature,\n            ROUND(MIN(temperature), 1) as min_temperature,\n            ROUND(MAX(temperature), 1) as max_temperature,\n            ROUND(AVG(humidity), 1) as avg_humidity,\n            MAX(gas_level) as max_gas_reading,\n            COUNT(CASE WHEN gas_level > 100 THEN 1 END) as gas_warnings,\n            SUM(CASE WHEN motion_hall = 1 THEN 1 ELSE 0 END) as hall_motion_count,\n            SUM(CASE WHEN motion_room2 = 1 THEN 1 ELSE 0 END) as room2_motion_count\n        FROM sensor_readings \n        WHERE DATE(timestamp) BETWEEN ? AND ?\n    ),\n    energy_summary AS (\n        SELECT \n            SUM(CASE WHEN device = 'Air Conditioning' \n                THEN runtime_minutes ELSE 0 END) / 60.0 as total_ac_hours,\n            SUM(energy_kwh) as total_energy_kwh,\n            SUM(energy_kwh * 0.12) as total_cost,\n            COUNT(DISTINCT DATE(timestamp)) as active_days\n        FROM energy_consumption \n        WHERE DATE(timestamp) BETWEEN ? AND ?\n    ),\n    peak_usage AS (\n        SELECT \n            strftime('%H', timestamp) as hour,\n            SUM(estimated_watts) as total_watts\n        FROM energy_consumption \n        WHERE DATE(timestamp) BETWEEN ? AND ?\n        GROUP BY strftime('%H', timestamp)\n        ORDER BY total_watts DESC\n        LIMIT 1\n    ),\n    efficiency_metrics AS (\n        SELECT \n            ROUND(AVG(CASE WHEN device = 'Air Conditioning' AND power_state LIKE '%ON%' \n                THEN temperature END), 1) as avg_temp_during_ac,\n            COUNT(CASE WHEN device = 'Air Conditioning' AND power_state LIKE '%ON%' \n                AND temperature > 26 THEN 1 END) as inefficient_ac_runs\n        FROM energy_consumption ec\n        JOIN sensor_readings sr ON DATE(ec.timestamp) = DATE(sr.timestamp)\n        WHERE DATE(ec.timestamp) BETWEEN ? AND ?\n    )\n    SELECT \n        'Weekly Report: ' || ? || ' to ' || ? as report_title,\n        ws.*,\n        es.*,\n        pu.hour as peak_usage_hour,\n        pu.total_watts as peak_watts,\n        em.avg_temp_during_ac,\n        em.inefficient_ac_runs,\n        ROUND(es.total_energy_kwh / es.active_days, 2) as avg_daily_kwh,\n        ROUND(es.total_cost / es.active_days, 2) as avg_daily_cost\n    FROM weekly_stats ws, energy_summary es, peak_usage pu, efficiency_metrics em\n    `;\n    \n    return {\n        topic: weeklyAnalytics,\n        payload: [startDate, endDate, startDate, endDate, startDate, endDate, startDate, endDate, startDate, endDate],\n        reportType: \"weekly\",\n        dateRange: `${startDate}_to_${endDate}`\n    };\n}\n\n// Execute and return the report query\nconst reportMsg = generateWeeklyReport();\nreturn reportMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "36829f4f313f9e09",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Energy Efficiency Analyzer Function",
+        "func": "// Energy Efficiency Analyzer Function\n// Advanced analytics for energy optimization\n\nfunction analyzeEnergyEfficiency() {\n    const analysis = {\n        timestamp: new Date().toISOString(),\n        analysis_type: \"energy_efficiency\",\n        findings: [],\n        recommendations: [],\n        potential_savings: 0\n    };\n    \n    // Query for AC efficiency analysis\n    const acEfficiencyQuery = `\n    SELECT \n        ROUND(AVG(sr.temperature), 1) as avg_temp_when_ac_on,\n        COUNT(*) as ac_on_events,\n        SUM(ec.runtime_minutes) as total_runtime_minutes,\n        ROUND(SUM(ec.energy_kwh), 3) as total_energy_kwh,\n        ROUND(SUM(ec.energy_kwh * 0.12), 2) as total_cost\n    FROM energy_consumption ec\n    JOIN sensor_readings sr ON \n        ABS(strftime('%s', ec.timestamp) - strftime('%s', sr.timestamp)) < 300\n    WHERE ec.device = 'Air Conditioning' \n        AND ec.power_state LIKE '%ON%'\n        AND DATE(ec.timestamp) >= DATE('now', '-7 days')\n    `;\n    \n    // Query for lighting efficiency\n    const lightingQuery = `\n    SELECT \n        AVG(sr.light_level) as avg_ambient_light,\n        COUNT(*) as lighting_events,\n        SUM(ec.estimated_watts) as total_lighting_watts,\n        ROUND(SUM(ec.energy_kwh), 3) as lighting_energy_kwh\n    FROM energy_consumption ec\n    JOIN sensor_readings sr ON \n        ABS(strftime('%s', ec.timestamp) - strftime('%s', sr.timestamp)) < 60\n    WHERE ec.device = 'RGB Lights'\n        AND DATE(ec.timestamp) >= DATE('now', '-7 days')\n    `;\n    \n    // Motion-based efficiency analysis\n    const motionAnalysisQuery = `\n    SELECT \n        COUNT(*) as total_motion_events,\n        COUNT(CASE WHEN sr.light_level < 300 THEN 1 END) as motion_in_dark,\n        COUNT(CASE WHEN ec.device = 'RGB Lights' \n            AND ABS(strftime('%s', ec.timestamp) - strftime('%s', sr.timestamp)) < 300 \n            THEN 1 END) as lights_activated_with_motion\n    FROM sensor_readings sr\n    LEFT JOIN energy_consumption ec ON \n        DATE(sr.timestamp) = DATE(ec.timestamp)\n    WHERE (sr.motion_hall = 1 OR sr.motion_room2 = 1)\n        AND DATE(sr.timestamp) >= DATE('now', '-7 days')\n    `;\n    \n    return [\n        {topic: acEfficiencyQuery, payload: [], analysis: \"ac_efficiency\"},\n        {topic: lightingQuery, payload: [], analysis: \"lighting_efficiency\"},\n        {topic: motionAnalysisQuery, payload: [], analysis: \"motion_automation\"}\n    ];\n}\n\n// Generate efficiency analysis queries\nconst analysisQueries = analyzeEnergyEfficiency();\nreturn analysisQueries;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63bc00d7d154d9df",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Data Export Function for Node-RED",
+        "func": "// Data Export Function for Node-RED\n// Exports data to CSV for external analysis\n\nfunction exportData(exportType, dateRange) {\n    const exports = {\n        timestamp: new Date().toISOString(),\n        export_type: exportType,\n        date_range: dateRange\n    };\n\n    let query = \"\";\n    let filename = \"\";\n\n    switch (exportType) {\n        case \"sensor_data\":\n            query = `\n            SELECT \n                timestamp,\n                temperature,\n                humidity, \n                gas_level,\n                light_level,\n                motion_hall,\n                motion_room2,\n                door_status,\n                wifi_signal\n            FROM sensor_readings \n            WHERE DATE(timestamp) >= DATE('now', '-${dateRange} days')\n            ORDER BY timestamp DESC\n            `;\n            filename = `sensor_data_${dateRange}days.csv`;\n            break;\n\n        case \"energy_consumption\":\n            query = `\n            SELECT \n                timestamp,\n                device,\n                power_state,\n                estimated_watts,\n                runtime_minutes,\n                energy_kwh,\n                (energy_kwh * 0.12) as cost_usd\n            FROM energy_consumption \n            WHERE DATE(timestamp) >= DATE('now', '-${dateRange} days')\n            ORDER BY timestamp DESC\n            `;\n            filename = `energy_consumption_${dateRange}days.csv`;\n            break;\n\n        case \"daily_summaries\":\n            query = `\n            SELECT \n                date,\n                avg_temperature,\n                avg_humidity,\n                max_gas_level,\n                total_motion_events,\n                ac_runtime_hours,\n                total_energy_kwh,\n                estimated_cost\n            FROM daily_summaries \n            WHERE date >= DATE('now', '-${dateRange} days')\n            ORDER BY date DESC\n            `;\n            filename = `daily_summaries_${dateRange}days.csv`;\n            break;\n\n        case \"efficiency_report\":\n            query = `\n            SELECT \n                DATE(ec.timestamp) as date,\n                AVG(sr.temperature) as avg_temperature,\n                SUM(CASE WHEN ec.device = 'Air Conditioning' \n                    THEN ec.runtime_minutes ELSE 0 END) / 60.0 as ac_hours,\n                SUM(ec.energy_kwh) as daily_energy_kwh,\n                (SUM(ec.energy_kwh) * 0.12) as daily_cost,\n                COUNT(CASE WHEN sr.motion_hall = 1 OR sr.motion_room2 = 1 \n                    THEN 1 END) as motion_events\n            FROM energy_consumption ec\n            JOIN sensor_readings sr ON DATE(ec.timestamp) = DATE(sr.timestamp)\n            WHERE DATE(ec.timestamp) >= DATE('now', '-${dateRange} days')\n            GROUP BY DATE(ec.timestamp)\n            ORDER BY date DESC\n            `;\n            filename = `efficiency_report_${dateRange}days.csv`;\n            break;\n    }\n\n    return {\n        topic: query,\n        payload: [],\n        export_config: {\n            format: \"csv\",\n            filename: filename,\n            headers: true,\n            delimiter: \",\"\n        }\n    };\n}\n\n// Get export parameters from incoming message\nconst exportType = msg.payload.export_type || \"sensor_data\";\nconst dateRange = msg.payload.date_range || 7;\n\n// Generate export query\nconst exportMsg = exportData(exportType, dateRange);\nreturn exportMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 1320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68dcef941ba173a9",
+        "type": "function",
+        "z": "5294cf51b940ebd1",
+        "name": "Smart Insights Generator",
+        "func": "// Smart Insights Generator\n// Analyzes patterns and generates actionable insights\n\nfunction generateInsights(sensorData, energyData, timeRange = 7) {\n    const insights = {\n        timestamp: new Date().toISOString(),\n        analysis_period: `${timeRange} days`,\n        insights: [],\n        alerts: [],\n        recommendations: [],\n        efficiency_score: 0\n    };\n    \n    // Temperature pattern analysis\n    const tempInsights = analyzeTempPattern(sensorData);\n    insights.insights.push(...tempInsights);\n    \n    // Energy consumption insights\n    const energyInsights = analyzeEnergyPattern(energyData);\n    insights.insights.push(...energyInsights);\n    \n    // Motion pattern insights\n    const motionInsights = analyzeMotionPattern(sensorData);\n    insights.insights.push(...motionInsights);\n    \n    return insights;\n}\n\nfunction analyzeTempPattern(data) {\n    const insights = [];\n    \n    // Example temperature pattern analysis\n    const avgTemp = data.reduce((sum, reading) => sum + reading.temperature, 0) / data.length;\n    const tempVariation = Math.max(...data.map(r => r.temperature)) - Math.min(...data.map(r => r.temperature));\n    \n    if (avgTemp > 25) {\n        insights.push({\n            type: \"temperature\",\n            level: \"info\",\n            message: `Average temperature is ${avgTemp.toFixed(1)}°C - consider increasing AC efficiency`,\n            recommendation: \"Set AC to 24°C for optimal energy use\",\n            potential_savings: \"$5.20/week\"\n        });\n    }\n    \n    if (tempVariation > 8) {\n        insights.push({\n            type: \"temperature\",\n            level: \"warning\", \n            message: `High temperature variation (${tempVariation.toFixed(1)}°C) detected`,\n            recommendation: \"Check AC system performance and insulation\",\n            action_required: \"maintenance_check\"\n        });\n    }\n    \n    return insights;\n}\n\nfunction analyzeEnergyPattern(data) {\n    const insights = [];\n    \n    // AC runtime analysis\n    const acData = data.filter(d => d.device === 'Air Conditioning');\n    const totalAcHours = acData.reduce((sum, d) => sum + d.runtime_minutes, 0) / 60;\n    \n    if (totalAcHours > 8 * 7) { // More than 8 hours/day average\n        insights.push({\n            type: \"energy\",\n            level: \"warning\",\n            message: `AC running ${(totalAcHours/7).toFixed(1)} hours/day on average`,\n            recommendation: \"Consider smart scheduling or temperature adjustment\",\n            potential_savings: \"$12.50/week\"\n        });\n    }\n    \n    // Peak usage analysis\n    const peakHours = findPeakUsageHours(data);\n    insights.push({\n        type: \"energy\",\n        level: \"info\",\n        message: `Peak energy usage between ${peakHours.start}-${peakHours.end}`,\n        recommendation: \"Consider shifting non-essential loads to off-peak hours\"\n    });\n    \n    return insights;\n}\n\nfunction analyzeMotionPattern(data) {\n    const insights = [];\n    \n    // Motion-based automation opportunities\n    const motionEvents = data.filter(d => d.motion_hall || d.motion_room2);\n    const lowLightMotion = motionEvents.filter(d => d.light_level < 300);\n    \n    if (lowLightMotion.length > motionEvents.length * 0.3) {\n        insights.push({\n            type: \"automation\",\n            level: \"suggestion\",\n            message: `${lowLightMotion.length} motion events in low light conditions`,\n            recommendation: \"Implement automatic lighting with motion sensors\",\n            potential_savings: \"$3.40/month in manual lighting costs\"\n        });\n    }\n    \n    return insights;\n}\n\nfunction findPeakUsageHours(data) {\n    const hourlyUsage = {};\n    \n    data.forEach(d => {\n        const hour = new Date(d.timestamp).getHours();\n        hourlyUsage[hour] = (hourlyUsage[hour] || 0) + d.estimated_watts;\n    });\n    \n    const peakHour = Object.keys(hourlyUsage).reduce((a, b) => \n        hourlyUsage[a] > hourlyUsage[b] ? a : b\n    );\n    \n    return {\n        start: `${peakHour}:00`,\n        end: `${(parseInt(peakHour) + 1) % 24}:00`,\n        peak_watts: hourlyUsage[peakHour]\n    };\n}\n\n// Main execution\nconst sensorQuery = `\nSELECT temperature, humidity, gas_level, light_level, \n       motion_hall, motion_room2, timestamp\nFROM sensor_readings \nWHERE timestamp >= datetime('now', '-7 days')\nORDER BY timestamp ASC\n`;\n\nconst energyQuery = `\nSELECT device, estimated_watts, runtime_minutes, \n       energy_kwh, timestamp\nFROM energy_consumption \nWHERE timestamp >= datetime('now', '-7 days')\nORDER BY timestamp ASC  \n`;\n\n// Return queries to fetch data for analysis\nreturn [\n    {topic: sensorQuery, payload: [], analysis_type: \"sensor_insights\"},\n    {topic: energyQuery, payload: [], analysis_type: \"energy_insights\"}\n];\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 130,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "sensors-ultimate",
+        "type": "mqtt in",
+        "z": "ultimate-dashboard",
+        "name": "🌡️ Sensor Data Stream",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "ultimate-broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "sensor-ultimate-parser",
+                "raw-sensor-ultimate-debug"
+            ]
+        ]
+    },
+    {
+        "id": "feedback-ultimate",
+        "type": "mqtt in",
+        "z": "ultimate-dashboard",
+        "name": "🔄 Device Feedback Stream",
+        "topic": "smart_home/feedback",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "ultimate-broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "feedback-ultimate-parser",
+                "feedback-ultimate-debug"
+            ]
+        ]
+    },
+    {
+        "id": "sensor-ultimate-parser",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🧠 Ultimate Sensor Intelligence",
+        "func": "const data = msg.payload;\nconst timestamp = new Date();\n\n// Temperature with advanced analytics\nmsg.temperature = {\n    payload: data.temperature || 0,\n    topic: \"temperature\",\n    timestamp: timestamp,\n    comfort_level: data.temperature < 18 ? \"COLD\" : data.temperature > 26 ? \"HOT\" : \"COMFORTABLE\",\n    energy_efficiency: data.temperature > 24 ? \"HIGH_CONSUMPTION\" : \"OPTIMAL\"\n};\n\n// Humidity with mold risk analysis\nmsg.humidity = {\n    payload: data.humidity || 0,\n    topic: \"humidity\",\n    timestamp: timestamp,\n    mold_risk: data.humidity > 70 ? \"HIGH\" : data.humidity < 30 ? \"TOO_DRY\" : \"SAFE\",\n    comfort: data.humidity >= 40 && data.humidity <= 60 ? \"IDEAL\" : \"SUBOPTIMAL\"\n};\n\n// Gas with detailed safety analysis\nmsg.gas = {\n    payload: data.gas || 0,\n    topic: \"gas\",\n    safety: data.gas < 100 ? \"SAFE\" : data.gas < 500 ? \"CAUTION\" : \"DANGER\",\n    timestamp: timestamp,\n    evacuation_required: data.gas > 500\n};\n\n// Light with circadian rhythm support\nmsg.light = {\n    payload: data.light || 0,\n    topic: \"light\",\n    level: data.light < 300 ? \"DARK\" : data.light < 800 ? \"DIM\" : \"BRIGHT\",\n    circadian: data.light > 500 ? \"DAY_MODE\" : \"NIGHT_MODE\",\n    timestamp: timestamp\n};\n\n// ULTIMATE MOTION DETECTION SYSTEM\nmsg.motion_hall = {\n    payload: data.motion_hall || false,\n    topic: \"motion_hall\",\n    location: \"Hall/Entrance\",\n    sensor_type: \"PIR1_PIN\",\n    security_level: data.motion_hall ? \"ALERT\" : \"CLEAR\",\n    timestamp: timestamp\n};\n\nmsg.motion_room2 = {\n    payload: data.motion_room2 || false,\n    topic: \"motion_room2\",\n    location: \"Second Room\",\n    sensor_type: \"PIR2_PIN\",\n    security_level: data.motion_room2 ? \"ALERT\" : \"CLEAR\",\n    timestamp: timestamp\n};\n\n// Combined motion with intelligence\nmsg.motion_combined = {\n    payload: data.motion || false,\n    topic: \"motion_combined\",\n    active_sensors: (data.motion_hall ? 1 : 0) + (data.motion_room2 ? 1 : 0),\n    security_status: data.motion ? \"MOTION_DETECTED\" : \"ALL_CLEAR\",\n    automation_trigger: data.motion,\n    timestamp: timestamp\n};\n\n// Door/Distance with smart analysis\nmsg.door = {\n    payload: data.door_distance || 0,\n    topic: \"door\",\n    status: data.door === \"open\" ? \"OPEN\" : \"CLOSED\",\n    distance_cm: data.door_distance,\n    security_breach: data.door === \"open\" && !data.motion,\n    timestamp: timestamp\n};\n\n// System health monitoring\nmsg.system = {\n    payload: {\n        uptime: data.timestamp || 0,\n        data_age: (Date.now() - (data.timestamp * 1000)) / 1000,\n        sensors_active: 6,\n        last_update: timestamp\n    },\n    timestamp: timestamp\n};\n\nreturn [msg.temperature, msg.humidity, msg.gas, msg.light, msg.motion_hall, msg.motion_room2, msg.motion_combined, msg.door, msg.system];",
+        "outputs": 9,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [
+                "temp-multi-viz",
+                "overview-processor"
+            ],
+            [
+                "humidity-multi-viz",
+                "rooms-processor"
+            ],
+            [
+                "gas-multi-viz",
+                "security-processor"
+            ],
+            [
+                "light-multi-viz",
+                "climate-processor"
+            ],
+            [
+                "motion-hall-display",
+                "system-monitor"
+            ],
+            [
+                "motion-room2-display"
+            ],
+            [
+                "motion-combined-viz"
+            ],
+            [
+                "door-multi-viz"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "feedback-ultimate-parser",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🔄 Ultimate Feedback Intelligence",
+        "func": "const feedback = msg.payload;\nconst timestamp = new Date();\n\n// Enhanced device state tracking\nswitch(feedback.device) {\n    case \"AC\":\n        msg.ac_feedback = {\n            payload: feedback.state === \"ON\",\n            state: feedback.state,\n            pin: feedback.pin,\n            power_consumption: feedback.state === \"ON\" ? \"HIGH\" : \"NONE\",\n            energy_mode: feedback.state === \"ON\" ? \"COOLING\" : \"STANDBY\",\n            timestamp: timestamp\n        };\n        return [msg.ac_feedback, null, null, null];\n        \n    case \"RGB\":\n        const brightness = Math.max(feedback.red, feedback.green, feedback.blue);\n        msg.rgb_feedback = {\n            payload: {\n                red: feedback.red,\n                green: feedback.green,\n                blue: feedback.blue,\n                hex: `#${feedback.red.toString(16).padStart(2,'0')}${feedback.green.toString(16).padStart(2,'0')}${feedback.blue.toString(16).padStart(2,'0')}`,\n                brightness: brightness,\n                power_usage: brightness > 200 ? \"HIGH\" : brightness > 100 ? \"MEDIUM\" : \"LOW\"\n            },\n            timestamp: timestamp\n        };\n        return [null, msg.rgb_feedback, null, null];\n        \n    case \"BLINDS\":\n        msg.blinds_feedback = {\n            payload: feedback.angle,\n            state: feedback.state,\n            angle: feedback.angle,\n            privacy_level: feedback.angle > 90 ? \"HIGH\" : \"LOW\",\n            light_blocking: feedback.angle > 120 ? \"MAXIMUM\" : feedback.angle > 60 ? \"PARTIAL\" : \"MINIMAL\",\n            timestamp: timestamp\n        };\n        return [null, null, msg.blinds_feedback, null];\n        \n    case \"RELAY1\":\n        msg.relay1_feedback = {\n            payload: feedback.state === \"ON\",\n            state: feedback.state,\n            pin: feedback.pin,\n            device_type: \"General Relay\",\n            timestamp: timestamp\n        };\n        return [null, null, null, msg.relay1_feedback];\n        \n    default:\n        return [null, null, null, null];\n}",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "ac-ultimate-status"
+            ],
+            [
+                "rgb-ultimate-status"
+            ],
+            [
+                "blinds-ultimate-status"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "temp-multi-viz",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🌡️ Temperature Multi-Viz",
+        "func": "const temp = msg.payload;\nconst timestamp = new Date();\n\n// For gauge display\nmsg.gauge = {\n    payload: temp,\n    topic: \"temp_gauge\"\n};\n\n// For line chart (time series)\nmsg.line = {\n    payload: [{\n        \"series\": [\"Temperature\"],\n        \"data\": [[timestamp.getTime(), temp]],\n        \"labels\": [\"\"]\n    }],\n    topic: \"temp_line\"\n};\n\n// For area chart\nmsg.area = {\n    payload: [{\n        \"series\": [\"Temp Trend\"],\n        \"data\": [[temp]],\n        \"labels\": [timestamp.toLocaleTimeString()]\n    }],\n    topic: \"temp_area\"\n};\n\n// For bar chart (hourly average)\nconst hour = timestamp.getHours();\nmsg.bar = {\n    payload: [{\n        \"series\": [\"Hourly Temp\"],\n        \"data\": [[temp]],\n        \"labels\": [`${hour}:00`]\n    }],\n    topic: \"temp_bar\"\n};\n\nreturn [msg.gauge, msg.line, msg.area, msg.bar];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 40,
+        "wires": [
+            [
+                "temp-gauge-ultimate"
+            ],
+            [
+                "temp-line-chart"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "humidity-multi-viz",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "💧 Humidity Multi-Viz",
+        "func": "const humidity = msg.payload;\nconst timestamp = new Date();\n\n// For donut gauge\nmsg.donut = {\n    payload: humidity,\n    topic: \"humidity_donut\"\n};\n\n// For step line chart\nmsg.step = {\n    payload: [{\n        \"series\": [\"Humidity\"],\n        \"data\": [[timestamp.getTime(), humidity]],\n        \"labels\": [\"\"]\n    }],\n    topic: \"humidity_step\"\n};\n\n// For stacked area chart\nmsg.stacked = {\n    payload: [{\n        \"series\": [\"Current\", \"Comfort Zone\"],\n        \"data\": [[humidity, 50]],\n        \"labels\": [timestamp.toLocaleTimeString()]\n    }],\n    topic: \"humidity_stacked\"\n};\n\n// For polar chart\nmsg.polar = {\n    payload: [{\n        \"series\": [\"Humidity Level\"],\n        \"data\": [[humidity]],\n        \"labels\": [\"Current %\"]\n    }],\n    topic: \"humidity_polar\"\n};\n\nreturn [msg.donut, msg.step, msg.stacked, msg.polar];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 100,
+        "wires": [
+            [
+                "humidity-donut-ultimate"
+            ],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "gas-multi-viz",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🔥 Gas Multi-Viz",
+        "func": "const gas = msg.payload;\nconst timestamp = new Date();\n\n// For gauge with safety zones\nmsg.gauge = {\n    payload: gas,\n    topic: \"gas_gauge\"\n};\n\n// For line chart with threshold\nmsg.line = {\n    payload: [{\n        \"series\": [\"Gas Level\", \"Danger Zone\"],\n        \"data\": [[timestamp.getTime(), gas], [timestamp.getTime(), 500]],\n        \"labels\": [\"\", \"\"]\n    }],\n    topic: \"gas_line\"\n};\n\n// For bar chart with safety categories\nlet category = \"SAFE\";\nlet color = \"green\";\nif (gas > 500) {\n    category = \"DANGER\";\n    color = \"red\";\n} else if (gas > 100) {\n    category = \"CAUTION\";\n    color = \"orange\";\n}\n\nmsg.bar = {\n    payload: [{\n        \"series\": [category],\n        \"data\": [[gas]],\n        \"labels\": [category],\n        \"colors\": [color]\n    }],\n    topic: \"gas_bar\"\n};\n\n// For scatter plot (gas vs time)\nmsg.scatter = {\n    payload: [{\n        \"series\": [\"Gas Readings\"],\n        \"data\": [[timestamp.getTime(), gas]],\n        \"labels\": [\"\"]\n    }],\n    topic: \"gas_scatter\"\n};\n\nreturn [msg.gauge, msg.line, msg.bar, msg.scatter];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "gas-gauge-ultimate"
+            ],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "light-multi-viz",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "💡 Light Multi-Viz",
+        "func": "const light = msg.payload;\nconst timestamp = new Date();\n\n// For gauge display\nmsg.gauge = {\n    payload: light,\n    topic: \"light_gauge\"\n};\n\n// For pie chart (categories)\nlet category = \"DARK\";\nlet percentage = 33;\nif (light > 800) {\n    category = \"BRIGHT\";\n    percentage = 60;\n} else if (light > 300) {\n    category = \"DIM\";\n    percentage = 30;\n} else {\n    percentage = 10;\n}\n\nmsg.pie = {\n    payload: [{\n        \"series\": [category],\n        \"data\": [[percentage]],\n        \"labels\": [category]\n    }],\n    topic: \"light_pie\"\n};\n\n// For radar chart (multi-dimensional)\nmsg.radar = {\n    payload: [{\n        \"series\": [\"Current\"],\n        \"data\": [[light/10, (1000-light)/10, light > 500 ? 10 : 5]],\n        \"labels\": [\"Brightness\", \"Darkness\", \"Circadian\"]\n    }],\n    topic: \"light_radar\"\n};\n\n// For histogram (distribution)\nmsg.histogram = {\n    payload: [{\n        \"series\": [\"Light Distribution\"],\n        \"data\": [[light]],\n        \"labels\": [timestamp.toLocaleTimeString()]\n    }],\n    topic: \"light_histogram\"\n};\n\nreturn [msg.gauge, msg.pie, msg.radar, msg.histogram];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 220,
+        "wires": [
+            [
+                "light-gauge-ultimate"
+            ],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "motion-combined-viz",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🏃 Motion Activity Tracker",
+        "func": "const motion = msg.payload;\nconst active_sensors = msg.active_sensors || 0;\nconst timestamp = new Date();\n\n// Activity timeline chart\nmsg.timeline = {\n    payload: [{\n        \"series\": [\"Motion Activity\"],\n        \"data\": [[timestamp.getTime(), motion ? 1 : 0]],\n        \"labels\": [\"\"]\n    }],\n    topic: \"motion_timeline\"\n};\n\n// Heat map data\nmsg.heatmap = {\n    payload: [{\n        \"series\": [\"Hall\", \"Room2\"],\n        \"data\": [[msg.motion_hall ? 1 : 0, msg.motion_room2 ? 1 : 0]],\n        \"labels\": [timestamp.toLocaleTimeString()]\n    }],\n    topic: \"motion_heatmap\"\n};\n\n// Activity meter\nmsg.activity = {\n    payload: active_sensors * 50, // 0, 50, or 100\n    topic: \"motion_activity\"\n};\n\n// Security status\nmsg.security = {\n    payload: {\n        status: motion ? \"MOTION DETECTED\" : \"ALL CLEAR\",\n        sensors: active_sensors,\n        level: active_sensors > 1 ? \"HIGH\" : active_sensors > 0 ? \"MEDIUM\" : \"NONE\"\n    },\n    topic: \"motion_security\"\n};\n\nreturn [msg.timeline, msg.heatmap, msg.activity, msg.security];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 280,
+        "wires": [
+            [
+                "motion-timeline-chart"
+            ],
+            [
+                "motion-heatmap-chart"
+            ],
+            [
+                "motion-activity-meter"
+            ],
+            [
+                "motion-security-display"
+            ]
+        ]
+    },
+    {
+        "id": "door-multi-viz",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🚪 Door Analytics",
+        "func": "const distance = msg.payload;\nconst status = msg.status;\nconst timestamp = new Date();\n\n// Distance gauge\nmsg.distance_gauge = {\n    payload: distance,\n    topic: \"door_distance\"\n};\n\n// Status timeline\nmsg.status_timeline = {\n    payload: [{\n        \"series\": [\"Door Status\"],\n        \"data\": [[timestamp.getTime(), status === \"OPEN\" ? 100 : 0]],\n        \"labels\": [\"\"]\n    }],\n    topic: \"door_status\"\n};\n\n// Security analysis\nmsg.security_analysis = {\n    payload: {\n        distance: distance,\n        status: status,\n        security_level: status === \"OPEN\" ? \"MONITOR\" : \"SECURE\",\n        access_time: timestamp.toLocaleTimeString()\n    },\n    topic: \"door_security\"\n};\n\nreturn [msg.distance_gauge, msg.status_timeline, msg.security_analysis];",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 340,
+        "wires": [
+            [
+                "door-distance-gauge"
+            ],
+            [
+                "door-status-timeline"
+            ],
+            [
+                "door-security-display"
+            ]
+        ]
+    },
+    {
+        "id": "ac-command-ultimate",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "AC Command Ultimate",
+        "func": "const command = msg.payload ? \"AC_ON\" : \"AC_OFF\";\nmsg.payload = command;\nnode.status({fill: msg.payload === \"AC_ON\" ? \"blue\" : \"grey\", shape: \"dot\", text: `${command} - Sent to ESP32`});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 600,
+        "wires": [
+            [
+                "ac-mqtt-ultimate"
+            ]
+        ]
+    },
+    {
+        "id": "rgb-command-ultimate",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "RGB Command Ultimate",
+        "func": "const rgb = msg.payload;\nconst command = `RGB:${rgb.r},${rgb.g},${rgb.b}`;\nmsg.payload = command;\nnode.status({fill: \"ring\", shape: \"dot\", text: `RGB(${rgb.r},${rgb.g},${rgb.b}) - Sent to ESP32`});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 640,
+        "wires": [
+            [
+                "rgb-mqtt-ultimate"
+            ]
+        ]
+    },
+    {
+        "id": "blinds-command-ultimate",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "Blinds Command Ultimate",
+        "func": "const angle = msg.payload;\nmsg.payload = angle.toString();\nconst state = angle > 90 ? \"CLOSING\" : \"OPENING\";\nnode.status({fill: \"yellow\", shape: \"dot\", text: `${angle}° - ${state} - Sent to ESP32`});\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 680,
+        "wires": [
+            [
+                "blinds-mqtt-ultimate"
+            ]
+        ]
+    },
+    {
+        "id": "ac-mqtt-ultimate",
+        "type": "mqtt out",
+        "z": "ultimate-dashboard",
+        "name": "AC Control Out",
+        "topic": "smart_home/relay",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ultimate-broker",
+        "x": 680,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "rgb-mqtt-ultimate",
+        "type": "mqtt out",
+        "z": "ultimate-dashboard",
+        "name": "RGB Control Out",
+        "topic": "smart_home/lighting",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ultimate-broker",
+        "x": 690,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "blinds-mqtt-ultimate",
+        "type": "mqtt out",
+        "z": "ultimate-dashboard",
+        "name": "Blinds Control Out",
+        "topic": "smart_home/blinds",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ultimate-broker",
+        "x": 700,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "raw-sensor-ultimate-debug",
+        "type": "debug",
+        "z": "ultimate-dashboard",
+        "name": "📊 Raw Sensor Data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "feedback-ultimate-debug",
+        "type": "debug",
+        "z": "ultimate-dashboard",
+        "name": "🔄 Device Feedback",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "overview-processor",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "📊 Overview Data Processor",
+        "func": "const sensors = msg.payload;\nconst timestamp = new Date();\n\n// System status\nmsg.system_status = {\n    payload: {\n        system_status: 'ONLINE',\n        mqtt_status: 'CONNECTED',\n        active_sensors: Object.keys(sensors).length\n    },\n    topic: 'system_status'\n};\n\n// Sensor summary for bar chart\nmsg.sensor_summary = {\n    payload: [{\n        \"series\": [\"Temperature\", \"Humidity\", \"Gas\", \"Light\", \"Motion\", \"Door\"],\n        \"data\": [[\n            sensors.temperature || 0,\n            sensors.humidity || 0,\n            sensors.gas / 10 || 0, // Scale down gas for chart\n            sensors.light / 100 || 0, // Scale down light for chart\n            sensors.motion_detected ? 100 : 0,\n            sensors.door_distance ? (200 - sensors.door_distance) : 0\n        ]],\n        \"labels\": [timestamp.toLocaleTimeString()]\n    }],\n    topic: 'sensor_overview'\n};\n\nreturn [msg.system_status, msg.sensor_summary];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "system-status-display"
+            ],
+            [
+                "overview-summary-chart"
+            ]
+        ]
+    },
+    {
+        "id": "rooms-processor",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🏠 Rooms Data Processor",
+        "func": "const sensors = msg.payload;\n\n// Hall data\nmsg.hall_temp = {\n    payload: sensors.temperature || 0,\n    topic: 'hall_temperature'\n};\n\nmsg.hall_motion = {\n    payload: sensors.motion_hall || false,\n    topic: 'hall_motion'\n};\n\n// Room1 environment\nmsg.room1_env = {\n    payload: {\n        temperature: sensors.temperature || 0,\n        humidity: sensors.humidity || 0,\n        light: sensors.light || 0\n    },\n    topic: 'room1_environment'\n};\n\n// Room2 data\nmsg.room2_motion = {\n    payload: sensors.motion_room2 || false,\n    topic: 'room2_motion'\n};\n\nmsg.room2_humidity = {\n    payload: sensors.humidity || 0,\n    topic: 'room2_humidity'\n};\n\n// Kitchen data\nmsg.kitchen_gas = {\n    payload: sensors.gas || 0,\n    topic: 'kitchen_gas'\n};\n\nmsg.kitchen_light = {\n    payload: sensors.light || 0,\n    topic: 'kitchen_light'\n};\n\nreturn [msg.hall_temp, msg.hall_motion, msg.room1_env, msg.room2_motion, msg.room2_humidity, msg.kitchen_gas, msg.kitchen_light];",
+        "outputs": 7,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "hall-temp-display"
+            ],
+            [
+                "hall-motion-status"
+            ],
+            [
+                "room1-controls"
+            ],
+            [
+                "room2-motion-display"
+            ],
+            [
+                "room2-environment"
+            ],
+            [
+                "kitchen-gas-monitor"
+            ],
+            [
+                "kitchen-light-control"
+            ]
+        ]
+    },
+    {
+        "id": "security-processor",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🛡️ Security Data Processor",
+        "func": "const sensors = msg.payload;\nconst timestamp = new Date();\n\n// Security event logging\ncontext.events = context.events || [];\nif (sensors.motion_detected || sensors.door_status === 'OPEN') {\n    const event = `${timestamp.toLocaleTimeString()}: ${sensors.motion_detected ? 'Motion detected' : 'Door opened'}`;\n    context.events.unshift(event);\n    if (context.events.length > 10) context.events.pop();\n}\n\nmsg.security_events = {\n    payload: {\n        events: context.events.join('\\n')\n    },\n    topic: 'security_events'\n};\n\nreturn [msg.security_events];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 740,
+        "wires": [
+            [
+                "security-event-log"
+            ]
+        ]
+    },
+    {
+        "id": "climate-processor",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "🌡️ Climate Data Processor",
+        "func": "const sensors = msg.payload;\nconst timestamp = new Date();\n\n// Multi-room temperature comparison\nmsg.temp_comparison = {\n    payload: [{\n        \"series\": [\"Hall\", \"Room1\", \"Room2\"],\n        \"data\": [[\n            timestamp.getTime(),\n            sensors.temperature || 0,\n            (sensors.temperature || 0) + Math.random() * 2 - 1, // Simulated Room1\n            (sensors.temperature || 0) + Math.random() * 3 - 1.5  // Simulated Room2\n        ]],\n        \"labels\": [\"\"]\n    }],\n    topic: 'temperature_comparison'\n};\n\n// AC status\nmsg.ac_status = {\n    payload: {\n        ac_status: context.ac_on ? 'ON' : 'OFF',\n        target_temp: 22,\n        current_temp: sensors.temperature || 0\n    },\n    topic: 'ac_status'\n};\n\n// Energy usage simulation\nmsg.energy_usage = {\n    payload: [{\n        \"series\": [\"AC\", \"Lighting\", \"Sensors\", \"WiFi\"],\n        \"data\": [[\n            context.ac_on ? 150 : 10,\n            context.rgb_on ? 25 : 5,\n            15,\n            8\n        ]],\n        \"labels\": [\"Current Usage (W)\"]\n    }],\n    topic: 'energy_usage'\n};\n\nreturn [msg.temp_comparison, msg.ac_status, msg.energy_usage];",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 920,
+        "wires": [
+            [
+                "temp-comparison-chart"
+            ],
+            [
+                "ac-status-display"
+            ],
+            [
+                "energy-usage-chart"
+            ]
+        ]
+    },
+    {
+        "id": "system-monitor",
+        "type": "function",
+        "z": "ultimate-dashboard",
+        "name": "⚙️ System Monitor",
+        "func": "const timestamp = new Date();\nconst uptime = Math.floor((timestamp.getTime() - (context.start_time || timestamp.getTime())) / 1000);\nif (!context.start_time) context.start_time = timestamp.getTime();\n\n// MQTT status\nmsg.mqtt_status = {\n    payload: {\n        broker: '3.73.173.107',\n        status: 'CONNECTED',\n        topics: 6\n    },\n    topic: 'mqtt_status'\n};\n\n// System configuration\nmsg.system_config = {\n    payload: {\n        wifi_status: 'CONNECTED',\n        uptime: `${Math.floor(uptime/3600)}h ${Math.floor((uptime%3600)/60)}m`,\n        memory: Math.floor(Math.random() * 50 + 200) // Simulated free memory\n    },\n    topic: 'system_config'\n};\n\nreturn [msg.mqtt_status, msg.system_config];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 1240,
+        "wires": [
+            [
+                "mqtt-connection-status"
+            ],
+            [
+                "system-config-display"
+            ]
+        ]
+    },
+    {
+        "id": "ac-control-ultimate",
+        "type": "ui_switch",
+        "z": "ultimate-dashboard",
+        "name": "AC Control Ultimate",
+        "label": "❄️ Air Conditioning",
+        "tooltip": "Control AC with instant feedback",
+        "group": "controls-ultimate-group",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "decouple": "true",
+        "topic": "AC",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-snowflake-o",
+        "oncolor": "blue",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-power-off",
+        "offcolor": "grey",
+        "animate": true,
+        "className": "",
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "ac-command-ultimate"
+            ]
+        ]
+    },
+    {
+        "id": "blinds-control-ultimate",
+        "type": "ui_slider",
+        "z": "ultimate-dashboard",
+        "name": "Blinds Ultimate",
+        "label": "🪟 Blinds Position",
+        "tooltip": "0° = Open, 180° = Closed",
+        "group": "controls-ultimate-group",
+        "order": 3,
+        "width": 6,
+        "height": 2,
+        "passthru": false,
+        "outs": "end",
+        "topic": "blinds",
+        "topicType": "str",
+        "min": 0,
+        "max": "180",
+        "step": "5",
+        "className": "",
+        "x": 100,
+        "y": 680,
+        "wires": [
+            [
+                "blinds-command-ultimate"
+            ]
+        ]
+    },
+    {
+        "id": "rgb-control-ultimate",
+        "type": "ui_colour_picker",
+        "z": "ultimate-dashboard",
+        "name": "RGB Ultimate",
+        "label": "🌈 RGB Lighting",
+        "group": "controls-ultimate-group",
+        "format": "rgb",
+        "outformat": "object",
+        "showSwatch": true,
+        "showPicker": true,
+        "showValue": true,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "passthru": false,
+        "topic": "lighting",
+        "topicType": "str",
+        "className": "",
+        "x": 90,
+        "y": 640,
+        "wires": [
+            [
+                "rgb-command-ultimate"
+            ]
+        ]
+    },
+    {
+        "id": "temp-line-chart",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Temperature Trend",
+        "group": "charts-ultimate-group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "🌡️ Temperature Timeline",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No temperature data",
+        "dot": false,
+        "ymin": "15",
+        "ymax": "35",
+        "removeOlder": 60,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#9467bd",
+            "#8c564b",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1060,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "motion-timeline-chart",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Motion Activity Timeline",
+        "group": "charts-ultimate-group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "label": "🏃 Motion Activity Over Time",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "No motion data",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 120,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#d62728",
+            "#ff7f0e",
+            "#2ca02c",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "overview-summary-chart",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Sensor Summary",
+        "group": "overview-summary-group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "label": "📊 All Sensors Overview",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "sensors",
+        "interpolate": "linear",
+        "nodata": "No sensor data",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#9467bd",
+            "#8c564b",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1030,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "motion-heatmap-chart",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Motion Heat Map",
+        "group": "motion-ultimate-group",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "label": "🔥 Motion Heat Map",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No motion data",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 60,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#d62728",
+            "#ff7f0e",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "door-status-timeline",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Door Status Timeline",
+        "group": "door-security-group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "🚪 Door Activity Log",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "step",
+        "nodata": "No door activity",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 120,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2ca02c",
+            "#d62728",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "temp-comparison-chart",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Temperature Comparison",
+        "group": "temperature-analysis-group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "label": "🌡️ Multi-Room Temperature",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No temperature data",
+        "dot": false,
+        "ymin": "15",
+        "ymax": "35",
+        "removeOlder": 60,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "energy-usage-chart",
+        "type": "ui_chart",
+        "z": "ultimate-dashboard",
+        "name": "Energy Usage",
+        "group": "energy-monitoring-group",
+        "order": 1,
+        "width": 12,
+        "height": 4,
+        "label": "⚡ Energy Consumption Monitoring",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "devices",
+        "interpolate": "linear",
+        "nodata": "No energy data",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1000,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "temp-gauge-ultimate",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Temperature Gauge",
+        "group": "sensors-ultimate-group",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "🌡️ Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "humidity-donut-ultimate",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Humidity Donut",
+        "group": "sensors-ultimate-group",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "donut",
+        "title": "💧 Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "gas-gauge-ultimate",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Gas Safety Gauge",
+        "group": "sensors-ultimate-group",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "wave",
+        "title": "🔥 Gas Level",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "100",
+        "seg2": "500",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "light-gauge-ultimate",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Light Intensity",
+        "group": "sensors-ultimate-group",
+        "order": 4,
+        "width": 3,
+        "height": 3,
+        "gtype": "compass",
+        "title": "💡 Light Level",
+        "label": "lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#1f1f1f",
+            "#e6e600",
+            "#ffffff"
+        ],
+        "seg1": "300",
+        "seg2": "800",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "motion-activity-meter",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Motion Activity Level",
+        "group": "motion-ultimate-group",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "🎯 Activity Level",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "25",
+        "seg2": "75",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "door-distance-gauge",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Door Distance",
+        "group": "sensors-ultimate-group",
+        "order": 5,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "🚪 Door Distance",
+        "label": "cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "30",
+        "seg2": "100",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "hall-temp-display",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Hall Temperature",
+        "group": "hall-room-group",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gage",
+        "title": "🌡️ Hall Temp",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 980,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "room2-environment",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Room2 Humidity",
+        "group": "room2-group",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "donut",
+        "title": "💧 Room2 Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 980,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "kitchen-gas-monitor",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Kitchen Gas Monitor",
+        "group": "kitchen-group",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "wave",
+        "title": "🔥 Gas Safety",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "100",
+        "seg2": "500",
+        "diff": false,
+        "className": "",
+        "x": 980,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "kitchen-light-control",
+        "type": "ui_gauge",
+        "z": "ultimate-dashboard",
+        "name": "Kitchen Light",
+        "group": "kitchen-group",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "compass",
+        "title": "💡 Light Level",
+        "label": "lux",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "2000",
+        "colors": [
+            "#1f1f1f",
+            "#e6e600",
+            "#ffffff"
+        ],
+        "seg1": "300",
+        "seg2": "800",
+        "diff": false,
+        "className": "",
+        "x": 980,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "motion-hall-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "motion-ultimate-group",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "Hall Motion Sensor",
+        "label": "🚶 Hall PIR Sensor (PIR1_PIN)",
+        "format": "{{msg.payload ? '🔴 MOTION DETECTED' : '🟢 AREA CLEAR'}} | Sensor: {{msg.sensor_type}} | Location: {{msg.location}} | Security: {{msg.security_level}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1050,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "motion-room2-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "motion-ultimate-group",
+        "order": 2,
+        "width": 6,
+        "height": 2,
+        "name": "Room2 Motion Sensor",
+        "label": "🏠 Room2 PIR Sensor (PIR2_PIN)",
+        "format": "{{msg.payload ? '🔴 MOTION DETECTED' : '🟢 AREA CLEAR'}} | Sensor: {{msg.sensor_type}} | Location: {{msg.location}} | Security: {{msg.security_level}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1050,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ac-ultimate-status",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "feedback-ultimate-group",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "name": "AC Status Ultimate",
+        "label": "❄️ AC Feedback",
+        "format": "{{msg.state === 'ON' ? '🟢 AC RUNNING' : '🔴 AC OFF'}} | Pin: {{msg.pin}} | Power: {{msg.power_consumption}} | Mode: {{msg.energy_mode}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 570,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "rgb-ultimate-status",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "feedback-ultimate-group",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "RGB Status Ultimate",
+        "label": "🌈 RGB Feedback",
+        "format": "RGB: {{msg.payload.hex}} | R:{{msg.payload.red}} G:{{msg.payload.green}} B:{{msg.payload.blue}} | Brightness: {{msg.payload.brightness}} | Power: {{msg.payload.power_usage}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 580,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "blinds-ultimate-status",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "feedback-ultimate-group",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "Blinds Status Ultimate",
+        "label": "🪟 Blinds Feedback",
+        "format": "Position: {{msg.angle}}° | State: {{msg.state}} | Privacy: {{msg.privacy_level}} | Light Blocking: {{msg.light_blocking}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 580,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "system-status-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "overview-summary-group",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "System Status",
+        "label": "🚀 ESP32 Smart Home v2.1 Status",
+        "format": "System: {{msg.system_status || 'ONLINE'}} | MQTT: {{msg.mqtt_status || 'CONNECTED'}} | Sensors: {{msg.active_sensors || 0}}/6 Active",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1020,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "hall-motion-status",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "hall-room-group",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "name": "Hall Motion",
+        "label": "🚶 Hall Motion",
+        "format": "{{msg.payload ? '🔴 DETECTED' : '🟢 CLEAR'}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "room1-controls",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "room1-group",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "Room 1 Status",
+        "label": "🛏️ Room 1 Environment",
+        "format": "Temperature: {{msg.temperature || '--'}}°C | Humidity: {{msg.humidity || '--'}}% | Light: {{msg.light || '--'}} lux",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "room2-motion-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "room2-group",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "name": "Room2 Motion",
+        "label": "🛋️ Room2 Motion",
+        "format": "{{msg.payload ? '🔴 DETECTED' : '🟢 CLEAR'}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1000,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "motion-security-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "motion-ultimate-group",
+        "order": 5,
+        "width": 6,
+        "height": 2,
+        "name": "Security Status",
+        "label": "🛡️ Security Analysis",
+        "format": "Status: {{msg.status || 'UNKNOWN'}} | Active Sensors: {{msg.sensors || 0}} | Level: {{msg.level || 'NONE'}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "door-security-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "door-security-group",
+        "order": 2,
+        "width": 6,
+        "height": 2,
+        "name": "Door Security",
+        "label": "🔐 Access Control",
+        "format": "Distance: {{msg.distance || '--'}}cm | Status: {{msg.status || 'UNKNOWN'}} | Security: {{msg.security_level || 'UNKNOWN'}} | Last: {{msg.access_time || '--'}}",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "security-event-log",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "security-logs-group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "name": "Security Events",
+        "label": "📋 Recent Security Events",
+        "format": "{{msg.events || 'No recent events'}}",
+        "layout": "col-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "ac-status-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "climate-control-group",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "AC Status",
+        "label": "❄️ Air Conditioning Status",
+        "format": "Status: {{msg.ac_status || 'UNKNOWN'}} | Target: {{msg.target_temp || '--'}}°C | Current: {{msg.current_temp || '--'}}°C",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "mqtt-connection-status",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "mqtt-status-group",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "MQTT Status",
+        "label": "📡 MQTT Broker Status",
+        "format": "Broker: {{msg.broker || '3.73.173.107'}} | Status: {{msg.status || 'CONNECTED'}} | Topics: {{msg.topics || 0}} Active",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "system-config-display",
+        "type": "ui_text",
+        "z": "ultimate-dashboard",
+        "group": "system-config-group",
+        "order": 1,
+        "width": 6,
+        "height": 2,
+        "name": "System Config",
+        "label": "⚙️ ESP32 Configuration",
+        "format": "Version: v2.1 | WiFi: {{msg.wifi_status || 'CONNECTED'}} | Uptime: {{msg.uptime || '--'}} | Free Memory: {{msg.memory || '--'}}KB",
+        "layout": "row-left",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 980,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "motion-explanation",
+        "type": "ui_template",
+        "z": "ultimate-dashboard",
+        "group": "motion-ultimate-group",
+        "name": "Motion Sensor Explanation",
+        "order": 4,
+        "width": 12,
+        "height": "12",
+        "format": "<div style=\"padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white; font-family: 'Arial', sans-serif;\">\n  <h2 style=\"margin-top: 0; color: #fff; text-align: center;\">🔍 Motion Sensor System Explained</h2>\n  \n  <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;\">\n    \n    <div style=\"background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(10px);\">\n      <h3 style=\"color: #FFD700; margin-top: 0;\">🚶 PIR1_PIN - Hall Sensor</h3>\n      <p><strong>Location:</strong> Hall/Entrance Area</p>\n      <p><strong>Function:</strong> <code>digitalRead(PIR1_PIN)</code></p>\n      <p><strong>Detection:</strong> Human motion in entry area</p>\n      <p><strong>Range:</strong> ~7 meters, 120° field of view</p>\n      <p><strong>Response:</strong> Instant motion detection</p>\n      <p><strong>Security:</strong> Primary entrance monitoring</p>\n    </div>\n    \n    <div style=\"background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; backdrop-filter: blur(10px);\">\n      <h3 style=\"color: #FFD700; margin-top: 0;\">🏠 PIR2_PIN - Room2 Sensor</h3>\n      <p><strong>Location:</strong> Second Room/Living Area</p>\n      <p><strong>Function:</strong> <code>digitalRead(PIR2_PIN)</code></p>\n      <p><strong>Detection:</strong> Human motion in living space</p>\n      <p><strong>Range:</strong> ~7 meters, 120° field of view</p>\n      <p><strong>Response:</strong> Instant motion detection</p>\n      <p><strong>Security:</strong> Interior space monitoring</p>\n    </div>\n    \n  </div>\n  \n  <div style=\"background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-top: 20px; backdrop-filter: blur(10px);\">\n    <h3 style=\"color: #90EE90; margin-top: 0;\">🧠 Combined Intelligence System</h3>\n    <div style=\"display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;\">\n      \n      <div>\n        <h4 style=\"color: #FFB6C1;\">📊 Data Processing</h4>\n        <p><strong>Individual Status:</strong><br>\n        <code>motion_hall = digitalRead(PIR1_PIN)</code><br>\n        <code>motion_room2 = digitalRead(PIR2_PIN)</code></p>\n      </div>\n      \n      <div>\n        <h4 style=\"color: #FFB6C1;\">🔗 Combined Logic</h4>\n        <p><strong>Overall Motion:</strong><br>\n        <code>motion = motion_hall || motion_room2</code><br>\n        Boolean OR operation</p>\n      </div>\n      \n      <div>\n        <h4 style=\"color: #FFB6C1;\">🎯 Smart Actions</h4>\n        <p><strong>Automation Triggers:</strong><br>\n        • Lighting control<br>\n        • Security alerts<br>\n        • Energy optimization</p>\n      </div>\n      \n    </div>\n  </div>\n  \n  <div style=\"background: rgba(255,255,255,0.15); padding: 15px; border-radius: 8px; margin-top: 20px; backdrop-filter: blur(10px);\">\n    <h3 style=\"color: #FFA500; margin-top: 0;\">⚡ Real-Time Features</h3>\n    <div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 15px;\"> \n      \n      <div>\n        <h4 style=\"color: #98FB98;\">📈 Live Monitoring</h4>\n        <ul style=\"margin: 5px 0;\">\n          <li>Individual sensor status</li>\n          <li>Combined motion state</li>\n          <li>Security level assessment</li>\n          <li>Activity timeline tracking</li>\n        </ul>\n      </div>\n      \n      <div>\n        <h4 style=\"color: #98FB98;\">🔄 Bidirectional Feedback</h4>\n        <ul style=\"margin: 5px 0;\">\n          <li>ESP32 → Node-RED data flow</li>\n          <li>Node-RED → ESP32 commands</li>\n          <li>Real-time state synchronization</li>\n          <li>Device status confirmation</li>\n        </ul>\n      </div>\n      \n    </div>\n  </div>\n  \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1100,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "mqtt_in_sensors",
+        "type": "mqtt in",
+        "z": "simple_mqtt_flow",
+        "name": "ESP32 Sensors",
+        "topic": "smartHome/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "mqtt_broker",
+        "inputs": 0,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "json_parser"
+            ]
+        ]
+    },
+    {
+        "id": "json_parser",
+        "type": "json",
+        "z": "simple_mqtt_flow",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "debug_output",
+                "dashboard_temp",
+                "dashboard_humidity",
+                "database_insert"
+            ]
+        ]
+    },
+    {
+        "id": "debug_output",
+        "type": "debug",
+        "z": "simple_mqtt_flow",
+        "name": "Sensor Data",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 500,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "dashboard_temp",
+        "type": "ui_gauge",
+        "z": "simple_mqtt_flow",
+        "name": "Temperature",
+        "group": "sensors_group",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Living Room Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 50,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": 20,
+        "seg2": 30,
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "dashboard_humidity",
+        "type": "ui_gauge",
+        "z": "simple_mqtt_flow",
+        "name": "Humidity",
+        "group": "sensors_group",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Living Room Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": 30,
+        "seg2": 70,
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "database_insert",
+        "type": "sqlite",
+        "z": "simple_mqtt_flow",
+        "mydb": "smart_home_db",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO sensor_readings (temperature1, temperature2, humidity1, humidity2, gas_level, light_level, motion_hall, motion_room2, door_status, comfort_score, timestamp) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+        "name": "Store Sensor Data",
+        "x": 500,
+        "y": 240,
+        "wires": [
+            [
+                "db_success"
+            ]
+        ]
+    },
+    {
+        "id": "db_success",
+        "type": "debug",
+        "z": "simple_mqtt_flow",
+        "name": "DB Result",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 700,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "mqtt_out_ac",
+        "type": "mqtt out",
+        "z": "simple_mqtt_flow",
+        "name": "AC Control",
+        "topic": "smart_home/relay",
+        "qos": "0",
+        "retain": false,
+        "broker": "mqtt_broker",
+        "x": 570,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ac_on_button",
+        "type": "ui_button",
+        "z": "simple_mqtt_flow",
+        "name": "AC ON",
+        "group": "controls_group",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "AC ON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#4CAF50",
+        "className": "",
+        "icon": "",
+        "payload": "AC_ON",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "mqtt_out_ac"
+            ]
+        ]
+    },
+    {
+        "id": "ac_off_button",
+        "type": "ui_button",
+        "z": "simple_mqtt_flow",
+        "name": "AC OFF",
+        "group": "controls_group",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "AC OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#F44336",
+        "icon": "",
+        "payload": "AC_OFF",
+        "payloadType": "str",
+        "topic": "",
+        "x": 300,
+        "y": 340,
+        "wires": [
+            [
+                "mqtt_out_ac"
+            ]
+        ]
+    },
+    {
+        "id": "b7e6a3f7556e2a81",
+        "type": "mqtt in",
+        "z": "d9455e0b91e55b21",
+        "name": "ESP32 Sensor Data",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "ed43e6bcad7bb1b7",
+        "inputs": 0,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "092518011acf8f94"
+            ]
+        ]
+    },
+    {
+        "id": "092518011acf8f94",
+        "type": "function",
+        "z": "d9455e0b91e55b21",
+        "name": "Process Sensor Data",
+        "func": "const data = msg.payload;\n\nmsg.room1 = {\n  temp: data.temperature1,\n  humidity: data.humidity1,\n  motion: data.motion_hall\n};\n\nmsg.door = {\n  status: data.door,\n  distance: data.door_distance\n};\n\nmsg.timestamp = data.timestamp;\nmsg.combined_motion = data.motion;\n\nreturn msg;",
+        "outputs": 1,
+        "x": 470,
+        "y": 100,
+        "wires": [
+            [
+                "6c2b2ec51dab5560",
+                "01167c26bb977dc5"
+            ]
+        ]
+    },
+    {
+        "id": "6c2b2ec51dab5560",
+        "type": "ui_template",
+        "z": "d9455e0b91e55b21",
+        "group": "room1-group",
+        "name": "Room 1 Status",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "format": "<div class=\"room-card\" style=\"background:#f8f9fa;border-radius:10px;padding:15px\">\n  <h3>🛏️ Room 1</h3>\n  <div class=\"sensor-row\">\n    <span>🌡️ Temperature: </span>\n    <span style=\"color:{{msg.room1.temp > 25 ? '#e74c3c' : '#3498db'}};font-weight:bold\">\n      {{msg.room1.temp}}°C\n    </span>\n  </div>\n  <div class=\"sensor-row\">\n    <span>💧 Humidity: </span>\n    <span style=\"font-weight:bold\">{{msg.room1.humidity}}%</span>\n  </div>\n  <div class=\"sensor-row\">\n    <span>🚶 Motion: </span>\n    <span style=\"color:{{msg.room1.motion ? '#e74c3c' : '#2ecc71'}};font-weight:bold\">\n      {{msg.room1.motion ? 'DETECTED' : 'CLEAR'}}\n    </span>\n  </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "x": 720,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9acb020d926dd91c",
+        "type": "ui_switch",
+        "z": "d9455e0b91e55b21",
+        "name": "AC Control",
+        "label": "❄️ Air Conditioning",
+        "tooltip": "Toggle AC unit",
+        "group": "b58ec36682004211",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "smart_home/relay",
+        "topicType": "str",
+        "onvalue": "AC_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "AC_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "0e1e873148c0b381"
+            ]
+        ]
+    },
+    {
+        "id": "0d302c1f048d419a",
+        "type": "ui_colour_picker",
+        "z": "d9455e0b91e55b21",
+        "name": "RGB Controller",
+        "label": "🌈 Lighting Color",
+        "group": "6509157c2a4f9f5b",
+        "format": "rgb",
+        "outformat": "object",
+        "showSwatch": true,
+        "showValue": true,
+        "order": 1,
+        "topic": "smart_home/lighting",
+        "x": 270,
+        "y": 250,
+        "wires": [
+            [
+                "e69b7e15dbd1e0ec"
+            ]
+        ]
+    },
+    {
+        "id": "e69b7e15dbd1e0ec",
+        "type": "function",
+        "z": "d9455e0b91e55b21",
+        "name": "Format RGB Command",
+        "func": "msg.payload = `RGB:${msg.payload.r},${msg.payload.g},${msg.payload.b}`;\nreturn msg;",
+        "outputs": 1,
+        "x": 470,
+        "y": 250,
+        "wires": [
+            [
+                "0f637a6697766d59"
+            ]
+        ]
+    },
+    {
+        "id": "0e1e873148c0b381",
+        "type": "mqtt out",
+        "z": "d9455e0b91e55b21",
+        "name": "AC Command",
+        "topic": "smart_home/relay",
+        "qos": "0",
+        "retain": false,
+        "broker": "ed43e6bcad7bb1b7",
+        "x": 470,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "0f637a6697766d59",
+        "type": "mqtt out",
+        "z": "d9455e0b91e55b21",
+        "name": "RGB Command",
+        "topic": "smart_home/lighting",
+        "qos": "0",
+        "retain": false,
+        "broker": "ed43e6bcad7bb1b7",
+        "x": 670,
+        "y": 250,
+        "wires": []
+    },
+    {
+        "id": "01167c26bb977dc5",
+        "type": "ui_template",
+        "z": "d9455e0b91e55b21",
+        "group": "cc3d165c3c9bd707",
+        "name": "Security Status",
+        "order": 1,
+        "width": "6",
+        "height": "3",
+        "format": "<div style=\"background:{{msg.door.status === 'open' ? '#ffebee' : '#e8f5e9'}};padding:10px;border-radius:5px\">\n  <h3>🚪 Door Status: \n    <span style=\"color:{{msg.door.status === 'open' ? '#c62828' : '#2e7d32'}}\">\n      {{msg.door.status.toUpperCase()}}\n    </span>\n  </h3>\n  <p>Distance: {{msg.door.distance}} cm</p>\n  <p>Motion Detected: {{msg.combined_motion ? 'YES' : 'NO'}}</p>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "x": 720,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dea5426bf5417430",
+        "type": "mqtt in",
+        "z": "d9455e0b91e55b21",
+        "name": "Device Feedback",
+        "topic": "smart_home/feedback",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "ed43e6bcad7bb1b7",
+        "inputs": 0,
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "c469fc4b2dd6ac1d"
+            ]
+        ]
+    },
+    {
+        "id": "c469fc4b2dd6ac1d",
+        "type": "ui_text",
+        "z": "d9455e0b91e55b21",
+        "group": "6509157c2a4f9f5b",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "name": "Device Status",
+        "label": "Device Feedback",
+        "format": "{{msg.payload.device}} ➤ State: {{msg.payload.state}} | Power: {{msg.payload.power_consumption}}",
+        "layout": "row-spread",
+        "x": 470,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "cfdf4af2622a8a9c",
+        "type": "mqtt in",
+        "z": "55fc3998b342da1e",
+        "name": "ESP32 Sensor Data",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "7538d26d39cb8298",
+        "inputs": 0,
+        "x": 330,
+        "y": 140,
+        "wires": [
+            [
+                "573f07013b1916e8"
+            ]
+        ]
+    },
+    {
+        "id": "573f07013b1916e8",
+        "type": "function",
+        "z": "55fc3998b342da1e",
+        "name": "Process Sensor Data",
+        "func": "// Extract values from ESP32 JSON payload\nconst data = msg.payload;\n\n// Room-specific data grouping\nmsg.room1 = {\n  temp: data.temperature1,\n  humidity: data.humidity1,\n  motion: data.motion_hall\n};\n\nmsg.room2 = {\n  temp: data.temperature2,\n  humidity: data.humidity2,\n  motion: data.motion_room2\n};\n\nmsg.kitchen = {\n  gas: data.gas,\n  light: data.light\n};\n\nmsg.door = {\n  status: data.door,\n  distance: data.door_distance\n};\n\n// System-wide values\nmsg.timestamp = data.timestamp;\nmsg.combined_motion = data.motion;\n\nreturn msg;",
+        "outputs": 1,
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "a8f0c7814cf9b044",
+                "b06a59b786048645"
+            ]
+        ]
+    },
+    {
+        "id": "a8f0c7814cf9b044",
+        "type": "ui_template",
+        "z": "55fc3998b342da1e",
+        "group": "room1-group",
+        "name": "Room 1 Status",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "format": "<div class=\"room-card\" style=\"background:#f8f9fa;border-radius:10px;padding:15px\">\n  <h3>🛏️ Room 1</h3>\n  <div class=\"sensor-row\">\n    <span>🌡️ Temperature: </span>\n    <span style=\"color:{{msg.room1.temp > 25 ? '#e74c3c' : '#3498db'}};font-weight:bold\">\n      {{msg.room1.temp}}°C\n    </span>\n  </div>\n  <div class=\"sensor-row\">\n    <span>💧 Humidity: </span>\n    <span style=\"font-weight:bold\">{{msg.room1.humidity}}%</span>\n  </div>\n  <div class=\"sensor-row\">\n    <span>🚶 Motion: </span>\n    <span style=\"color:{{msg.room1.motion ? '#e74c3c' : '#2ecc71'}};font-weight:bold\">\n      {{msg.room1.motion ? 'DETECTED' : 'CLEAR'}}\n    </span>\n  </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "x": 780,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a808137681a8146",
+        "type": "ui_switch",
+        "z": "55fc3998b342da1e",
+        "name": "AC Control",
+        "label": "❄️ Air Conditioning",
+        "tooltip": "Toggle AC unit",
+        "group": "3b6449a632ca2e39",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "smart_home/relay",
+        "onvalue": "AC_ON",
+        "onvalueType": "str",
+        "offvalue": "AC_OFF",
+        "offvalueType": "str",
+        "x": 330,
+        "y": 240,
+        "wires": [
+            [
+                "9e8bb4ed27e12224"
+            ]
+        ]
+    },
+    {
+        "id": "746deba420675539",
+        "type": "ui_colour_picker",
+        "z": "55fc3998b342da1e",
+        "name": "RGB Controller",
+        "label": "🌈 Lighting Color",
+        "group": "3b6449a632ca2e39",
+        "format": "rgb",
+        "outformat": "object",
+        "showSwatch": true,
+        "showValue": true,
+        "topic": "smart_home/lighting",
+        "x": 330,
+        "y": 290,
+        "wires": [
+            [
+                "14a5e1ef77a75acf"
+            ]
+        ]
+    },
+    {
+        "id": "14a5e1ef77a75acf",
+        "type": "function",
+        "z": "55fc3998b342da1e",
+        "name": "Format RGB Command",
+        "func": "msg.payload = `RGB:${msg.payload.r},${msg.payload.g},${msg.payload.b}`;\nreturn msg;",
+        "outputs": 1,
+        "x": 530,
+        "y": 290,
+        "wires": [
+            [
+                "0ba21244a9cd5522"
+            ]
+        ]
+    },
+    {
+        "id": "9e8bb4ed27e12224",
+        "type": "mqtt out",
+        "z": "55fc3998b342da1e",
+        "name": "AC Command",
+        "topic": "smart_home/relay",
+        "qos": "0",
+        "retain": false,
+        "broker": "7538d26d39cb8298",
+        "x": 530,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0ba21244a9cd5522",
+        "type": "mqtt out",
+        "z": "55fc3998b342da1e",
+        "name": "RGB Command",
+        "topic": "smart_home/lighting",
+        "qos": "0",
+        "retain": false,
+        "broker": "7538d26d39cb8298",
+        "x": 730,
+        "y": 290,
+        "wires": []
+    },
+    {
+        "id": "b06a59b786048645",
+        "type": "ui_template",
+        "z": "55fc3998b342da1e",
+        "group": "9358044c026f18ec",
+        "name": "Security Status",
+        "order": 1,
+        "width": "6",
+        "height": "3",
+        "format": "<div style=\"background:{{msg.door.status === 'open' ? '#ffebee' : '#e8f5e9'}};padding:10px;border-radius:5px\">\n  <h3>🚪 Door Status: \n    <span style=\"color:{{msg.door.status === 'open' ? '#c62828' : '#2e7d32'}}\">\n      {{msg.door.status.toUpperCase()}}\n    </span>\n  </h3>\n  <p>Distance: {{msg.door.distance}} cm</p>\n  <p>Motion Detected: {{msg.combined_motion ? 'YES' : 'NO'}}</p>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "x": 780,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ccf4662d6d54afe5",
+        "type": "mqtt in",
+        "z": "55fc3998b342da1e",
+        "name": "Device Feedback",
+        "topic": "smart_home/feedback",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "7538d26d39cb8298",
+        "inputs": 0,
+        "x": 330,
+        "y": 340,
+        "wires": [
+            [
+                "0a98dc9c3700aa18"
+            ]
+        ]
+    },
+    {
+        "id": "0a98dc9c3700aa18",
+        "type": "ui_text",
+        "z": "55fc3998b342da1e",
+        "group": "feedback-group",
+        "order": 1,
+        "width": "12",
+        "height": "2",
+        "name": "Device Status",
+        "label": "Device Feedback",
+        "format": "{{msg.payload.device}} ➤ \nState: {{msg.payload.state}} | \nPower: {{msg.payload.power_consumption}} | \nMode: {{msg.payload.energy_mode}}",
+        "layout": "row-spread",
+        "x": 530,
+        "y": 340,
+        "wires": []
+    }
+]

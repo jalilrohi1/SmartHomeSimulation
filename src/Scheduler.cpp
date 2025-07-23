@@ -14,7 +14,7 @@ void Scheduler::begin(Actuators* actuatorPtr) {
   addTask(22, 0, "ac_off");         // Turn off AC at 10:00 PM
   addTask(18, 30, "rgb", "255,100,0"); // Warm light at 6:30 PM
   addTask(23, 0, "rgb", "0,0,0");   // Turn off lights at 11:00 PM
-  addTask(8, 0, "blinds_open");     // Open blinds at 8:00 AM
+  //addTask(8, 0, "blinds_open");     // Open blinds at 8:00 AM
   addTask(20, 0, "blinds_close");   // Close blinds at 8:00 PM
 }
 
@@ -64,14 +64,14 @@ void Scheduler::executeTask(const ScheduleTask& task) {
   } else if (task.action == "ac_off") {
     actuators->controlAC(false);
   } else if (task.action == "blinds_open") {
-    actuators->controlBlinds(0);
+    //actuators->controlBlinds(0);
   } else if (task.action == "blinds_close") {
-    actuators->controlBlinds(90);
+    //actuators->controlBlinds(90);
   } else if (task.action == "rgb") {
     // Parse RGB values from parameter (format: "r,g,b")
     int r = 0, g = 0, b = 0;
     sscanf(task.parameter.c_str(), "%d,%d,%d", &r, &g, &b);
-    actuators->rgbControl(r, g, b);
+    actuators->hallRGBControl(r, g, b);
   }
 }
 

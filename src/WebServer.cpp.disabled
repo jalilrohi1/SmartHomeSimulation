@@ -101,14 +101,15 @@ String SmartHomeWebServer::getApiData() {
   SensorData data = sensors->readAll();
   
   StaticJsonDocument<512> doc;
-  doc["temperature"]["room1"] = data.temp1;
-  doc["temperature"]["room2"] = data.temp2;
-  doc["humidity"]["room1"] = data.humidity1;
-  doc["humidity"]["room2"] = data.humidity2;
+  doc["temperature"]["bedroom"] = data.bedroomTemp;
+  doc["temperature"]["hall"] = data.hallTemp;
+  doc["humidity"]["bedroom"] = data.bedroomHumidity;
+  doc["humidity"]["hall"] = data.hallHumidity;
   doc["gas"] = data.gasValue;
-  doc["light"] = data.ldrValue;
-  doc["motion"]["hall"] = data.motionHall;
-  doc["motion"]["room2"] = data.motionRoom2;
+  doc["light"] = data.lightLevel;
+  doc["pot"] = data.potValue;
+  doc["motion"]["hall"] = data.hallMotion;
+  doc["motion"]["toilet"] = data.toiletMotion;
   doc["door"]["distance"] = data.doorDistance;
   doc["door"]["status"] = data.doorDistance > 50 ? "open" : "closed";
   doc["timestamp"] = millis();
@@ -317,17 +318,16 @@ String SmartHomeWebServer::getSimplePage() {
 <body>
     <div class="container">
         <h1>🏠 Smart Home v2.1 - Quick Access</h1>
-        
-        <div class="sensor-grid">
+          <div class="sensor-grid">
             <div class="sensor-card">
-                <h3>🌡️ Room 1</h3>
-                <div class="sensor-value">)HTML" + String(data.temp1, 1) + R"HTML(°C</div>
-                <div>)HTML" + String(data.humidity1, 1) + R"HTML(%</div>
+                <h3>� Bedroom</h3>
+                <div class="sensor-value">)HTML" + String(data.bedroomTemp, 1) + R"HTML(°C</div>
+                <div>)HTML" + String(data.bedroomHumidity, 1) + R"HTML(%</div>
             </div>
             <div class="sensor-card">
-                <h3>🌡️ Room 2</h3>
-                <div class="sensor-value">)HTML" + String(data.temp2, 1) + R"HTML(°C</div>
-                <div>)HTML" + String(data.humidity2, 1) + R"HTML(%</div>
+                <h3>�️ Hall</h3>
+                <div class="sensor-value">)HTML" + String(data.hallTemp, 1) + R"HTML(°C</div>
+                <div>)HTML" + String(data.hallHumidity, 1) + R"HTML(%</div>
             </div>
             <div class="sensor-card">
                 <h3>💨 Gas Level</h3>
@@ -335,7 +335,16 @@ String SmartHomeWebServer::getSimplePage() {
             </div>
             <div class="sensor-card">
                 <h3>💡 Light Level</h3>
-                <div class="sensor-value">)HTML" + String(data.ldrValue) + R"HTML(</div>
+                <div class="sensor-value">)HTML" + String(data.lightLevel) + R"HTML(</div>
+            </div>
+            <div class="sensor-card">
+                <h3>🚪 Door</h3>
+                <div class="sensor-value">)HTML" + String(data.doorDistance > 50 ? "OPEN" : "CLOSED") + R"HTML(</div>
+            </div>
+            <div class="sensor-card">
+                <h3>👥 Motion</h3>
+                <div class="sensor-value">Hall: )HTML" + String(data.hallMotion ? "YES" : "NO") + R"HTML(</div>
+                <div>Toilet: )HTML" + String(data.toiletMotion ? "YES" : "NO") + R"HTML(</div>
             </div>
         </div>
         

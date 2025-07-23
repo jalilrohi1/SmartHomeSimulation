@@ -10,27 +10,35 @@ Actuators* NetworkManager::actuatorsPtr = nullptr;
 void NetworkManager::connectMQTT() {
   client.setServer(MQTT_BROKER, 1883);
   client.setCallback(mqttCallback);
+  client.setKeepAlive(300); // 5 minutes
+  client.setBufferSize(1024);
+
   reconnect();
 }
 
 // Keep only ONE mqttLoop() implementation
 void NetworkManager::mqttLoop() {
-  if (!client.connected()) reconnect();
+    if (!client.connected()) {
+    Serial.println("MQTT disconnected, attempting reconnect...");
+    reconnect();
+  }
   client.loop();
 }
 
 void NetworkManager::reconnect() {
-  if (WiFi.status() != WL_CONNECTED) return; // Skip if WiFi is down
-  
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("WiFi not connected, skipping MQTT reconnect");
+    return;
+  }
   int attempts = 0;
   const int maxAttempts = 3;
   
   while (!client.connected() && attempts < maxAttempts) {
     Serial.print("Attempting MQTT connection...");
     String clientId = "ESP32Client-" + String(random(0xffff), HEX);
-      if (client.connect(clientId.c_str())) {
+    if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      // Subscribe to topics after successful connection
+      //Subscribe to topics after successful connection
       client.subscribe("smart_home/relay");
       client.subscribe("smart_home/control");
       client.subscribe("smart_home/lighting");
@@ -44,9 +52,9 @@ void NetworkManager::reconnect() {
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
       attempts++;
-      delay(5000);
+      delay(3000);
     }
-  }
+   }
   
   if (attempts >= maxAttempts) {
     Serial.println("MQTT connection failed after maximum attempts");
@@ -55,11 +63,15 @@ void NetworkManager::reconnect() {
 
 void NetworkManager::connectWiFi() {
   WiFi.begin(WIFI_SSID, WIFI_PASS);
-  while (WiFi.status() != WL_CONNECTED) delay(500);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
 }
 
 void NetworkManager::publishData(const char* topic, const String& payload) {
   client.publish(topic, payload.c_str());
+  Serial.printf("Published to %s: %s\n", topic, payload.c_str());
 }
 
 void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int length) {
@@ -75,21 +87,21 @@ void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int lengt
   Serial.println(message);
   
   // Handle relay control
-  if (String(topic) == "smart_home/relay") {
-    if (message == "AC_ON") {
-      digitalWrite(RELAY2_PIN, HIGH);
-      Serial.println("AC turned ON");
-    } else if (message == "AC_OFF") {
-      digitalWrite(RELAY2_PIN, LOW);
-      Serial.println("AC turned OFF");
-    } else if (message == "RELAY1_ON") {
-      digitalWrite(RELAY1_PIN, HIGH);
-      Serial.println("Relay 1 turned ON");
-    } else if (message == "RELAY1_OFF") {
-      digitalWrite(RELAY1_PIN, LOW);
-      Serial.println("Relay 1 turned OFF");
-    }
-  }
+  // if (String(topic) == "smart_home/relay") {
+  //   if (message == "AC_ON") {
+  //     digitalWrite(RELAY2_PIN, HIGH);
+  //     Serial.println("AC turned ON");
+  //   } else if (message == "AC_OFF") {
+  //     digitalWrite(RELAY2_PIN, LOW);
+  //     Serial.println("AC turned OFF");
+  //   } else if (message == "RELAY1_ON") {
+  //     digitalWrite(RELAY1_PIN, HIGH);
+  //     Serial.println("Relay 1 turned ON");
+  //   } else if (message == "RELAY1_OFF") {
+  //     digitalWrite(RELAY1_PIN, LOW);
+  //     Serial.println("Relay 1 turned OFF");
+  //   }
+  // }
   
   // Handle lighting control
   if (String(topic) == "smart_home/lighting") {
@@ -97,9 +109,9 @@ void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int lengt
       // Format: RGB:255,128,64
       int r, g, b;
       sscanf(message.c_str(), "RGB:%d,%d,%d", &r, &g, &b);
-      ledcWrite(PWM_RED, r);
-      ledcWrite(PWM_GREEN, g);
-      ledcWrite(PWM_BLUE, b);
+      //ledcWrite(PWM_RED, r)
+      //ledcWrite(PWM_GREEN, g);
+      //ledcWrite(PWM_BLUE, b);
       Serial.printf("RGB set to R:%d G:%d B:%d\n", r, g, b);
     }
   }
@@ -107,11 +119,11 @@ void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int lengt
   if (String(topic) == "smart_home/blinds") {
     int angle = message.toInt();
     if (angle >= 0 && angle <= 180 && actuatorsPtr != nullptr) {
-      actuatorsPtr->controlBlinds(angle);
+      //actuatorsPtr->controlBlinds(angle);
       Serial.printf("Blinds set to angle: %d\n", angle);
     }
   }
-  
+
   // Handle general control commands
   if (String(topic) == "smart_home/control") {
     if (message == "EMERGENCY_STOP") {
@@ -123,7 +135,7 @@ void NetworkManager::mqttCallback(char* topic, byte* payload, unsigned int lengt
       digitalWrite(BUZZER_PIN, LOW);
       Serial.println("EMERGENCY STOP activated");
     } else if (message == "SYSTEM_RESET") {
-      ESP.restart();
+      //ESP.restart();
     }
   }
 }
