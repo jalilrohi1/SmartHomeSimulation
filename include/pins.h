@@ -8,7 +8,7 @@ const int DHT2_PIN = 16;       // Hall temperature sensor
 // Actuators
 const int RELAY1_PIN = 27;     // AC control for bedroom
 const int RELAY2_PIN = 14;     // Exhaust fan for kitchen
-const int SERVO_PIN = 12;      // Blinds control servo
+//const int SERVO_PIN = 12;      // Blinds control servo
 
 // Motion Sensors
 const int PIR1_PIN = 5;        // Hall motion sensor
@@ -17,7 +17,7 @@ const int PIR2_PIN = 17;       // Toilet motion sensor
 // Environmental Sensors
 const int GAS_PIN = 36;        // Kitchen gas sensor (VP pin)
 const int LDR_PIN = 34;        // Light sensor for brightness control
-const int POT_PIN = 39;        // Potentiometer for blinds control (VN pin)
+//const int POT_PIN = 39;        // Potentiometer for blinds control (VN pin)
 
 // Door Sensor
 const int TRIG_PIN = 18;       // Ultrasonic sensor trigger

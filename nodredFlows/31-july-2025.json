@@ -1,0 +1,4274 @@
+[
+    {
+        "id": "0dddd7e8954a6083",
+        "type": "tab",
+        "label": "Dashbord Input Management",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9e51caeca7ff5b4a",
+        "type": "tab",
+        "label": "Dashbord Output Management",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1329f30dedb9b5b8",
+        "type": "tab",
+        "label": "Database managment",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6aeb838eecd9063d",
+        "type": "tab",
+        "label": "Reports",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4c15fc92b4b003a3",
+        "type": "tab",
+        "label": "Custom Reports",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "91115cb77d10aa3f",
+        "type": "tab",
+        "label": "Msc",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bdf132459811a00e",
+        "type": "group",
+        "z": "1329f30dedb9b5b8",
+        "name": "Testing the DB",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "38816791d317df9e",
+            "29ee899c8ef2b8d0",
+            "1216010c6d923ebf",
+            "54a039cf32982cce",
+            "615f1cabae3feaa8",
+            "9e1c82c496fd0601",
+            "9612fe017e5faac5",
+            "7c896d33d6e8cfb8"
+        ],
+        "x": 54,
+        "y": 639,
+        "w": 1112,
+        "h": 182
+    },
+    {
+        "id": "b712dae8262c787b",
+        "type": "group",
+        "z": "1329f30dedb9b5b8",
+        "name": "Database Managment",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0e745d0a2f557cd5",
+            "fd46be3211e7a1f2",
+            "46d80e15e0bc6bd7",
+            "759438ed6f0953c5",
+            "b8f4a3c35edcd5cb",
+            "01d761457d2a551d",
+            "b61627a7a0c33cf5",
+            "b7b5eac99b82f848",
+            "9c076c0cad1d474d",
+            "3c1721955544d227",
+            "f1dad3d59d2fa14b",
+            "ff7b1a5e02da627c",
+            "79c392726e91798b",
+            "dbdc3fa650873164"
+        ],
+        "x": 34,
+        "y": 44,
+        "w": 1132,
+        "h": 352
+    },
+    {
+        "id": "88b3242d8b066f65",
+        "type": "group",
+        "z": "9e51caeca7ff5b4a",
+        "name": "Sending Data To the System",
+        "style": {
+            "stroke": "#ffff00",
+            "label": true,
+            "fill": "#e3f3d3",
+            "fill-opacity": "0.51"
+        },
+        "nodes": [
+            "d57169d1a7a1bc08",
+            "358b3f868ce42025",
+            "ffbae899e2ae6873",
+            "e80fc548bab4ab04",
+            "fbde8aa909936310",
+            "d5e90de756a1d35a",
+            "65bf359407234471",
+            "64441acc6177eb15",
+            "df7892b6715bc24b",
+            "6e56c68db40ea80f",
+            "00d9c7b8f0869b17"
+        ],
+        "x": 94,
+        "y": 39,
+        "w": 852,
+        "h": 422
+    },
+    {
+        "id": "fcfcfc4cf980088e",
+        "type": "group",
+        "z": "0dddd7e8954a6083",
+        "name": "Dashboard Inputs",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "204bc1c593adbd3c",
+            "acd9375fe0ef0f86",
+            "a7974a06a46f7d8d",
+            "16cbe5011973b6fe",
+            "c227d35637ceadd4",
+            "5c0655ca9b6ca1f8",
+            "3870a53267027a0e",
+            "37111d6fca93c21c",
+            "7a1dc5d2a5710331",
+            "b5fbee09eba56150",
+            "71fd91eda78cb4b2",
+            "d042dd31687ec9b0",
+            "96bf48cc154acd51",
+            "312e863118075923",
+            "e0e2d54e25083f28",
+            "d0d5422b5a4e9eab",
+            "6ed9f1eb72e301e2",
+            "2db45960dcbf0ee5",
+            "fc66ad1fe67f5620",
+            "60b7982ab5aaac6d",
+            "e72926103976e12f",
+            "f747134296882a0d",
+            "4267cb7bab08537e",
+            "4a17cc0ab5164d18",
+            "5ff205cdbaf10bb5",
+            "0b186a4b63d9c163",
+            "6ca9b1afe5f19a5d",
+            "a9805a0220dfeb50"
+        ],
+        "x": 594,
+        "y": 19,
+        "w": 1152,
+        "h": 662
+    },
+    {
+        "id": "5bbc7f484193f7e0",
+        "type": "group",
+        "z": "0dddd7e8954a6083",
+        "name": "Sending Data To Database",
+        "style": {
+            "label": true,
+            "label-position": "n"
+        },
+        "nodes": [
+            "29027f2d5c99a3fb",
+            "4174f7f76a7307e8",
+            "bf6053f2b31ac1f1",
+            "8795c4d1f5a240c0",
+            "96b39aaa027c1a96",
+            "ce6a7e49dcba3531",
+            "4a1cee35e9ee8479",
+            "abccb4e5410aa4f5",
+            "9afe14ae9864af23"
+        ],
+        "x": 594,
+        "y": 699,
+        "w": 932,
+        "h": 269.5
+    },
+    {
+        "id": "e0e2347d3419b46d",
+        "type": "group",
+        "z": "0dddd7e8954a6083",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "ecf738bebac59a7c",
+            "9ff47b6a9317aa85",
+            "f728ec483909dc80",
+            "3ac9e950e6d9b42f",
+            "77a02ed66f742b8c"
+        ],
+        "x": 594,
+        "y": 979,
+        "w": 252,
+        "h": 262
+    },
+    {
+        "id": "c7c0bb6a3c3a5403",
+        "type": "group",
+        "z": "1329f30dedb9b5b8",
+        "name": "Inserting Sample Data For Reports for the mont of June 2025 Data",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "43b7e432cefb8e95",
+            "cb476c242fcaccd7",
+            "a8234c5d70355402",
+            "cd824e4668f8ce80",
+            "d6f127450b384693",
+            "d8cdbe5a7abfa1f3",
+            "36b9a9087cf9c65b",
+            "3fb9692c116eca6d"
+        ],
+        "x": 54,
+        "y": 419,
+        "w": 1112,
+        "h": 202
+    },
+    {
+        "id": "1f9bcff40567d4d4",
+        "type": "group",
+        "z": "91115cb77d10aa3f",
+        "name": "Chart",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "2057c92dc2a09d3f",
+            "c6f31a34f968c652",
+            "e0cd5049e3a7a6e7",
+            "525a30eeffaf4a1b",
+            "bb5f35b842352718"
+        ],
+        "x": 174,
+        "y": 59,
+        "w": 772,
+        "h": 142
+    },
+    {
+        "id": "ecdac47db1821423",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "3",
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d55321a5486880a4",
+        "type": "sqlitedb",
+        "db": "/data/SmartHomeDB.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "86084d9609abde1b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 1,
+                "py": 1
+            }
+        }
+    },
+    {
+        "id": "b36e9052da9d0fe6",
+        "type": "ui_tab",
+        "name": "🖥️ System Overview",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "cc42ddaf0972a476",
+        "type": "ui_tab",
+        "name": "🌿 Envirnmental Monitoring ",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0e9f9692a9919ccd",
+        "type": "ui_tab",
+        "name": "⚙️ Automation Control ",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c2dd3def2ab50e3e",
+        "type": "ui_tab",
+        "name": "🛡️ Security & Motion",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b923ae4fa36e6ad5",
+        "type": "ui_tab",
+        "name": "📊 Analytics & Reports",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ecbd7847503758c4",
+        "type": "ui_group",
+        "name": "Status Indicator",
+        "tab": "b36e9052da9d0fe6",
+        "order": 3,
+        "disp": true,
+        "width": "4",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "a41ddabb57b830e9",
+        "type": "ui_group",
+        "name": "Contorls Buttons",
+        "tab": "b36e9052da9d0fe6",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "c24ae389463396ec",
+        "type": "ui_group",
+        "name": "Trends",
+        "tab": "cc42ddaf0972a476",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8bc1f2d97bc34ef5",
+        "type": "ui_group",
+        "name": "Current Status",
+        "tab": "c2dd3def2ab50e3e",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "9356c5199bb9b264",
+        "type": "ui_group",
+        "name": "Notification",
+        "tab": "c2dd3def2ab50e3e",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "221121deb67a6d35",
+        "type": "ui_group",
+        "name": "Current Readings",
+        "tab": "cc42ddaf0972a476",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c7e8f1d2.5d8f28",
+        "type": "ui_group",
+        "name": "Climate & Ventilation",
+        "tab": "0e9f9692a9919ccd",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "d2b4c3e1.9e8f9",
+        "type": "ui_group",
+        "name": "Lighting Controls",
+        "tab": "0e9f9692a9919ccd",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "ebc2b6eecf4600f1",
+        "type": "ui_group",
+        "name": "System Metrics",
+        "tab": "b36e9052da9d0fe6",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "088d916b06a5950e",
+        "type": "ui_group",
+        "name": "Motion History",
+        "tab": "c2dd3def2ab50e3e",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "42bd3733872e496f",
+        "type": "ui_group",
+        "name": "Trends ",
+        "tab": "b923ae4fa36e6ad5",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "feae0a3a6e277f76",
+        "type": "ui_group",
+        "name": "Event Log",
+        "tab": "b923ae4fa36e6ad5",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "tab_1",
+        "type": "ui_tab",
+        "name": "Misc",
+        "icon": "dashboard",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "group_1",
+        "type": "ui_group",
+        "name": "Temperature Trends",
+        "tab": "tab_1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "864b451c064548f3",
+        "type": "ui_tab",
+        "name": "Cutome Report",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "641235355f36f5d7",
+        "type": "ui_group",
+        "name": "Cutome Data Table",
+        "tab": "864b451c064548f3",
+        "order": 1,
+        "disp": true,
+        "width": "13",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "95fa1c75b210e67e",
+        "type": "ui_group",
+        "name": "Group",
+        "tab": "tab_1",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "cda8d302847c2de4",
+        "type": "ui_group",
+        "name": "Motions & Gas Level History",
+        "tab": "b923ae4fa36e6ad5",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "456a095a13b4eb16",
+        "type": "ui_spacer",
+        "z": "6aeb838eecd9063d",
+        "name": "spacer",
+        "group": "cda8d302847c2de4",
+        "order": 3,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "ae0bb708ce1f42f5",
+        "type": "ui_spacer",
+        "z": "6aeb838eecd9063d",
+        "name": "spacer",
+        "group": "cda8d302847c2de4",
+        "order": 5,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "7e161f0e6ebd7c70",
+        "type": "mqtt in",
+        "z": "0dddd7e8954a6083",
+        "name": "Sensor Data",
+        "topic": "smart_home/sensors",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "d74973c76cfeedde"
+            ]
+        ]
+    },
+    {
+        "id": "d74973c76cfeedde",
+        "type": "json",
+        "z": "0dddd7e8954a6083",
+        "name": "Parse Sensor Data",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "204bc1c593adbd3c",
+                "bf6053f2b31ac1f1",
+                "96b39aaa027c1a96",
+                "8795c4d1f5a240c0",
+                "4a1cee35e9ee8479",
+                "0b0b72a540ae625e"
+            ]
+        ]
+    },
+    {
+        "id": "29027f2d5c99a3fb",
+        "type": "sqlite",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Insert Data",
+        "x": 1150,
+        "y": 820,
+        "wires": [
+            [
+                "4174f7f76a7307e8",
+                "ce6a7e49dcba3531"
+            ]
+        ]
+    },
+    {
+        "id": "acd9375fe0ef0f86",
+        "type": "ui_gauge",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Bedroom Temperature",
+        "group": "221121deb67a6d35",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Bedroom Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": true,
+        "className": "",
+        "x": 1560,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a7974a06a46f7d8d",
+        "type": "ui_gauge",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Hall Temprature",
+        "group": "221121deb67a6d35",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Hall Temprature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": true,
+        "className": "",
+        "x": 1540,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "16cbe5011973b6fe",
+        "type": "ui_gauge",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Gas Level",
+        "group": "221121deb67a6d35",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Gas Level",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "2000",
+        "seg2": "3000",
+        "diff": true,
+        "className": "",
+        "x": 1520,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c227d35637ceadd4",
+        "type": "ui_led",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "order": 1,
+        "group": "8bc1f2d97bc34ef5",
+        "width": "0",
+        "height": "0",
+        "label": "Hall Motion",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#9e9a9a",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Hall Motion Led",
+        "x": 1540,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5c0655ca9b6ca1f8",
+        "type": "ui_chart",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Bedroom Temperature History",
+        "group": "c24ae389463396ec",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Bedroom Temperature History",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1590,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3870a53267027a0e",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Gas Alert Check",
+        "func": "const gasLevel = msg.payload.gas_level;\n\nif (gasLevel > 3000) {\n    msg.payload = {\n        alert: \"GAS LEAK DETECTED!\",\n        level: \"critical\",\n        timestamp: new Date(),\n        value: gasLevel\n    };\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 540,
+        "wires": [
+            [
+                "37111d6fca93c21c"
+            ]
+        ]
+    },
+    {
+        "id": "37111d6fca93c21c",
+        "type": "ui_toast",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "position": "top right",
+        "displayTime": "10",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Gas Alert",
+        "x": 1520,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "0b0b72a540ae625e",
+        "type": "debug",
+        "z": "0dddd7e8954a6083",
+        "name": "MQTT Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7a1dc5d2a5710331",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Extract Gas Level",
+        "func": "msg.payload = msg.payload.gas_level;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 460,
+        "wires": [
+            [
+                "16cbe5011973b6fe",
+                "a9805a0220dfeb50"
+            ]
+        ]
+    },
+    {
+        "id": "204bc1c593adbd3c",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Split Sensor Data",
+        "func": "// Split incoming sensor data into individual outputs\nconst data = msg.payload;\n\n// Output 1: Temperature data\nconst msg1 = {\n    payload: {\n        bedroom_temp: data.bedroom.temperature,\n        hall_temp: data.hall.temperature,\n        bedroom_humi:data.bedroom.humidity,\n        hall_humi: data.hall.humidity\n    },\n    topic: \"temperature\"\n};\n\n// Output 2: Motion data\nconst msg2 = {\n    payload: {\n        hall_motion: data.motion.hall,\n        toilet_motion: data.motion.toilet\n    },\n    topic: \"motion\"\n};\n\n// Output 3: Environmental data\nconst msg3 = {\n    payload: {\n        gas_level: data.kitchen.gas_level,\n        light_level: data.ambient.light_level,\n    },\n    topic: \"environment\"\n};\n\n// Output 4: Door status\nconst msg4 = {\n    payload: {\n        distance: data.door.distance,\n        status: data.door.status\n    },\n    topic: \"door\"\n};\n\nreturn [msg1, msg2, msg3, msg4];",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 260,
+        "wires": [
+            [
+                "b5fbee09eba56150",
+                "d042dd31687ec9b0",
+                "6ed9f1eb72e301e2",
+                "d0d5422b5a4e9eab"
+            ],
+            [
+                "71fd91eda78cb4b2",
+                "96bf48cc154acd51"
+            ],
+            [
+                "7a1dc5d2a5710331",
+                "3870a53267027a0e"
+            ],
+            [
+                "4a17cc0ab5164d18",
+                "0b186a4b63d9c163"
+            ]
+        ]
+    },
+    {
+        "id": "b5fbee09eba56150",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Extract Bedroom Temprature",
+        "func": "msg.payload = msg.payload.bedroom_temp;\nmsg.payload = Number(msg.payload.toFixed(2));\n//msg.precision = 2;\nmsg.topic=\"Bedroom Temp\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 80,
+        "wires": [
+            [
+                "acd9375fe0ef0f86",
+                "5c0655ca9b6ca1f8"
+            ]
+        ]
+    },
+    {
+        "id": "71fd91eda78cb4b2",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Extract Hall Motion",
+        "func": "msg.payload = msg.payload.hall_motion;\nmsg.topic=\"Hall Motion\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 340,
+        "wires": [
+            [
+                "c227d35637ceadd4",
+                "6ca9b1afe5f19a5d"
+            ]
+        ]
+    },
+    {
+        "id": "d042dd31687ec9b0",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Hall Temprature",
+        "func": "msg.payload = msg.payload.hall_temp;\nmsg.payload = Number(msg.payload.toFixed(2));\n//msg.precision = 2;\nmsg.topic=\"Hall Temp\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 120,
+        "wires": [
+            [
+                "a7974a06a46f7d8d",
+                "5c0655ca9b6ca1f8"
+            ]
+        ]
+    },
+    {
+        "id": "96bf48cc154acd51",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Extract Toilet Motion",
+        "func": "msg.payload = msg.payload.toilet_motion;\nmsg.topic=\"Toilet Motion\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 380,
+        "wires": [
+            [
+                "312e863118075923",
+                "6ca9b1afe5f19a5d"
+            ]
+        ]
+    },
+    {
+        "id": "312e863118075923",
+        "type": "ui_led",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "order": 2,
+        "group": "8bc1f2d97bc34ef5",
+        "width": "0",
+        "height": "0",
+        "label": "Toilet Motion",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#9e9a9a",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Toilet Motion Led",
+        "x": 1550,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "4174f7f76a7307e8",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "DB Error Handler",
+        "func": "if (msg.error) {\n    node.error('DB Error: ' + msg.error, msg);\n    }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf6053f2b31ac1f1",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "Prepare System Events Insertion Data",
+        "func": "const data = msg.payload;\nlet msg1 = null, msg2 = null;\n\n// Check for gas level alert\nif (data.kitchen.gas_level > 3000) {\n    msg1 = {\n        topic: `INSERT INTO system_events (event_type, description, severity) VALUES ('gas_alert', 'Critical gas level: ${data.kitchen.gas_level}', 'critical')`\n    };\n}\n\n// Check for open door\nif (data.door.status === 'open') {\n    msg2 = {\n        topic: `INSERT INTO system_events (event_type, description, severity) VALUES ('door_opened', 'Door opened - Distance: ${data.door.distance}cm', 'info')`\n    };\n}\nreturn [msg1,msg2];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 860,
+        "wires": [
+            [
+                "29027f2d5c99a3fb"
+            ],
+            [
+                "29027f2d5c99a3fb"
+            ]
+        ]
+    },
+    {
+        "id": "8795c4d1f5a240c0",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "Prepare Sensors Reading Insertion Data",
+        "func": "const data = msg.payload;\n\n// Prepare SQL for sensor readings\nmsg.topic = `INSERT INTO sensor_readings \n    (bedroom_temp, bedroom_humidity, hall_temp, hall_humidity, \n     gas_level, light_level,  \n     door_distance, door_status) \n    VALUES ($val1, $val2, $val3, $val4, $val5, $val6, $val7, $val8)`;\n\nmsg.payload = [\n    data.bedroom.temperature || 0,\n    data.bedroom.humidity || 0,\n    data.hall.temperature || 0,\n    data.hall.humidity || 0,\n    data.kitchen.gas_level || 0,\n    data.ambient.light_level || 0,\n  //  data.blinds.pot_value || 0,\n  //  data.blinds.position || 0,\n    data.door.distance || 0,\n    data.door.status || 'unknown'\n];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 740,
+        "wires": [
+            [
+                "29027f2d5c99a3fb"
+            ]
+        ]
+    },
+    {
+        "id": "96b39aaa027c1a96",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "Prepare device status Insertion Data",
+        "func": "const data = msg.payload;\nlet msg1 = null, msg2 = null, msg3 = null;\n\n// AC Device Status\nmsg1 = {\n    topic: `INSERT INTO device_status (device_name, status, value) VALUES ('bedroom_ac', '${data.bedroom.temperature > 25 ? 'on' : 'off'}', '${data.bedroom.temperature}°C')`\n    \n};\n\n// Exhust fan000 Device Status \nmsg2 = {\n    topic: `INSERT INTO device_status (device_name, status, value) VALUES ('exhust_fan', '${data.kitchen.gas_level > 3000 ? 'on' : 'off'}', '${data.kitchen.gas_level}°C')`\n};\n\n// RGB Light Status\nmsg3 = {\n    topic: `INSERT INTO device_status (device_name, status, value) VALUES ('hall_rgb','${data.motion.hall ? 'on' : 'off'}','Light Level: ${data.ambient.light_level}')`\n};\n\nreturn [msg1, msg2, msg3];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 920,
+        "wires": [
+            [
+                "29027f2d5c99a3fb"
+            ],
+            [
+                "29027f2d5c99a3fb"
+            ],
+            [
+                "29027f2d5c99a3fb"
+            ]
+        ]
+    },
+    {
+        "id": "e0e2d54e25083f28",
+        "type": "comment",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Dashboard",
+        "info": "This group presents the Dashboard nodes:\n1. ",
+        "x": 700,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ce6a7e49dcba3531",
+        "type": "debug",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "Database Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "4a1cee35e9ee8479",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "Prepare Motion Detuction Insertion Data",
+        "func": "const data = msg.payload;\nlet msg1 = null;\n\n// Log motion events if detected\nif (data.motion.hall || data.motion.toilet) {\n    msg1 = { // Correctly initialize as an object\n    topic : `INSERT INTO motion_events (location, motion) VALUES ('${data.motion.hall ? 'hall' : 'toilet'}',1)`\n    };\n    return msg1;\n}\n\nreturn null;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 800,
+        "wires": [
+            [
+                "29027f2d5c99a3fb"
+            ]
+        ]
+    },
+    {
+        "id": "f253910183435f4a",
+        "type": "mqtt in",
+        "z": "0dddd7e8954a6083",
+        "name": "System Status",
+        "topic": "smart_home/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ecdac47db1821423",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1100,
+        "wires": [
+            [
+                "ecf738bebac59a7c",
+                "9ff47b6a9317aa85",
+                "f728ec483909dc80",
+                "2bbc1a1a81d8ec6a"
+            ]
+        ]
+    },
+    {
+        "id": "ecf738bebac59a7c",
+        "type": "debug",
+        "z": "0dddd7e8954a6083",
+        "g": "e0e2347d3419b46d",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "9ff47b6a9317aa85",
+        "type": "ui_text",
+        "z": "0dddd7e8954a6083",
+        "g": "e0e2347d3419b46d",
+        "group": "ebc2b6eecf4600f1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "System Up Time",
+        "label": "System Up Time",
+        "format": "System Uptime: {{payload.uptime}}s | Free Heap: {{payload.free_heap}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 700,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "f728ec483909dc80",
+        "type": "ui_gauge",
+        "z": "0dddd7e8954a6083",
+        "g": "e0e2347d3419b46d",
+        "name": "WiFi Signal Strength",
+        "group": "ebc2b6eecf4600f1",
+        "order": 6,
+        "width": 8,
+        "height": 8,
+        "gtype": "gage",
+        "title": "WiFi Signal Strength",
+        "label": "dBm",
+        "format": "{{payload.wifi_signal}}",
+        "min": "-100",
+        "max": "0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "-50",
+        "seg2": "-70",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "3ac9e950e6d9b42f",
+        "type": "ui_led",
+        "z": "0dddd7e8954a6083",
+        "g": "e0e2347d3419b46d",
+        "order": 1,
+        "group": "ecbd7847503758c4",
+        "width": 0,
+        "height": 0,
+        "label": "System Status",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "System Status",
+        "x": 700,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "d0d5422b5a4e9eab",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Hall Humidity",
+        "func": "msg.payload = msg.payload.hall_humi;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 240,
+        "wires": [
+            [
+                "fc66ad1fe67f5620",
+                "60b7982ab5aaac6d"
+            ]
+        ]
+    },
+    {
+        "id": "6ed9f1eb72e301e2",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Extract Bedroom Humidity",
+        "func": "msg.payload = msg.payload.bedroom_humi;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 200,
+        "wires": [
+            [
+                "2db45960dcbf0ee5",
+                "60b7982ab5aaac6d"
+            ]
+        ]
+    },
+    {
+        "id": "2db45960dcbf0ee5",
+        "type": "ui_text",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "group": "221121deb67a6d35",
+        "order": 2,
+        "width": "12",
+        "height": "4",
+        "name": "Bedroom Humidity",
+        "label": "Bedroom Humidity",
+        "format": "{{msg.payload}} %",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fc66ad1fe67f5620",
+        "type": "ui_text",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "group": "221121deb67a6d35",
+        "order": 4,
+        "width": "12",
+        "height": "4",
+        "name": "Hall Humidity",
+        "label": "Hall Humidity",
+        "format": "{{msg.payload}} %",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1530,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "60b7982ab5aaac6d",
+        "type": "ui_chart",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "BedroomTemperatureHistory",
+        "group": "c24ae389463396ec",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1580,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e72926103976e12f",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Extract Light Level",
+        "func": "msg.payload = msg.payload.light_level;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 500,
+        "wires": [
+            [
+                "f747134296882a0d"
+            ]
+        ]
+    },
+    {
+        "id": "f747134296882a0d",
+        "type": "ui_text",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "group": "221121deb67a6d35",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "Light Level",
+        "label": "Light Level",
+        "format": "{{msg.payload}} lux",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1530,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "abccb4e5410aa4f5",
+        "type": "catch",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "",
+        "scope": [
+            "4174f7f76a7307e8"
+        ],
+        "uncaught": false,
+        "x": 1150,
+        "y": 880,
+        "wires": [
+            [
+                "9afe14ae9864af23"
+            ]
+        ]
+    },
+    {
+        "id": "4267cb7bab08537e",
+        "type": "ui_text",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "group": "8bc1f2d97bc34ef5",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Door Status",
+        "label": "Door Status",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "<div style=\"padding:10px; border-radius:5px; background: {{msg.payload === 'open' ? 'red' : 'green'}}; color: white;\">   Door: {{msg.payload}} </div>",
+        "style": true,
+        "font": "",
+        "fontSize": "18",
+        "color": "#000000",
+        "x": 1530,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "4a17cc0ab5164d18",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Door Status",
+        "func": "msg.payload = msg.payload.status;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 600,
+        "wires": [
+            [
+                "4267cb7bab08537e"
+            ]
+        ]
+    },
+    {
+        "id": "5ff205cdbaf10bb5",
+        "type": "ui_gauge",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "",
+        "group": "8bc1f2d97bc34ef5",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Door Distance",
+        "label": "cm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "400",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1540,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "0b186a4b63d9c163",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Door distance",
+        "func": "msg.payload = msg.payload.distance;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 640,
+        "wires": [
+            [
+                "5ff205cdbaf10bb5"
+            ]
+        ]
+    },
+    {
+        "id": "6ca9b1afe5f19a5d",
+        "type": "ui_chart",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "name": "Motion Events",
+        "group": "088d916b06a5950e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Events",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1540,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9afe14ae9864af23",
+        "type": "debug",
+        "z": "0dddd7e8954a6083",
+        "g": "5bbc7f484193f7e0",
+        "name": "Database Debug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1390,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "2bbc1a1a81d8ec6a",
+        "type": "function",
+        "z": "0dddd7e8954a6083",
+        "name": "function 2",
+        "func": "msg.payload=msg.payload.status_ind;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1140,
+        "wires": [
+            [
+                "3ac9e950e6d9b42f",
+                "77a02ed66f742b8c"
+            ]
+        ]
+    },
+    {
+        "id": "77a02ed66f742b8c",
+        "type": "debug",
+        "z": "0dddd7e8954a6083",
+        "g": "e0e2347d3419b46d",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "a9805a0220dfeb50",
+        "type": "ui_template",
+        "z": "0dddd7e8954a6083",
+        "g": "fcfcfc4cf980088e",
+        "group": "9356c5199bb9b264",
+        "name": "Gas Alert Panel",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-class=\"{'critical-alert': msg.payload > 3000, 'normal-status': msg.payload <= 3000}\" style=\"padding: 15px; border-radius: 8px; text-align: center; margin: 10px 0;\">\n  <div style=\"font-size: 1.8em; margin-bottom: 10px;\">\n    <i ng-class=\"msg.payload > 3000 ? 'fa fa-fire' : 'fa fa-wind'\"></i>\n  </div>\n  <h3 style=\"margin: 0 0 10px 0; font-weight: bold;\">GAS LEVEL: {{msg.payload}}</h3>\n  <div ng-if=\"msg.payload > 3000\" style=\"color: #d32f2f; font-weight: bold; font-size: 1.2em;\">\n    <i class=\"fa fa-exclamation-triangle\"></i> CRITICAL! EXHAUST FAN ACTIVATED\n  </div>\n  <div ng-if=\"msg.payload <= 3000\" style=\"color: #388e3c; font-weight: bold;\">\n    <i class=\"fa fa-check-circle\"></i> NORMAL LEVEL\n  </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1360,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d57169d1a7a1bc08",
+        "type": "mqtt out",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Control Output",
+        "topic": "",
+        "qos": "0",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ecdac47db1821423",
+        "x": 820,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "358b3f868ce42025",
+        "type": "ui_switch",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "AC Control",
+        "label": "AC Control",
+        "tooltip": "",
+        "group": "c7e8f1d2.5d8f28",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "smart_home/relay",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "AC_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "AC_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "e80fc548bab4ab04",
+                "d57169d1a7a1bc08"
+            ]
+        ]
+    },
+    {
+        "id": "ffbae899e2ae6873",
+        "type": "ui_colour_picker",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Hall RGB Light",
+        "label": "Hall RGB Light",
+        "group": "d2b4c3e1.9e8f9",
+        "format": "rgb",
+        "outformat": "string",
+        "showSwatch": true,
+        "showPicker": false,
+        "showValue": false,
+        "showHue": false,
+        "showAlpha": false,
+        "showLightness": true,
+        "square": "false",
+        "dynOutput": "false",
+        "order": 2,
+        "width": "3",
+        "height": "2",
+        "passthru": true,
+        "topic": "smart_home/lighting",
+        "topicType": "str",
+        "className": "",
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "d57169d1a7a1bc08",
+                "e80fc548bab4ab04"
+            ]
+        ]
+    },
+    {
+        "id": "e80fc548bab4ab04",
+        "type": "debug",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Control Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "fbde8aa909936310",
+        "type": "ui_button",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Emergency Stop",
+        "group": "a41ddabb57b830e9",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Emergency Stop",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "EMERGENCY_STOP",
+        "payloadType": "str",
+        "topic": "smart_home/control",
+        "topicType": "str",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "d57169d1a7a1bc08",
+                "e80fc548bab4ab04"
+            ]
+        ]
+    },
+    {
+        "id": "d5e90de756a1d35a",
+        "type": "ui_button",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "System Reset",
+        "group": "a41ddabb57b830e9",
+        "order": 1,
+        "width": 6,
+        "height": "1",
+        "passthru": false,
+        "label": "System Reset",
+        "tooltip": "",
+        "color": "red",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "SYSTEM_RESET",
+        "payloadType": "str",
+        "topic": "smart_home/control",
+        "topicType": "str",
+        "x": 200,
+        "y": 380,
+        "wires": [
+            [
+                "d57169d1a7a1bc08",
+                "e80fc548bab4ab04"
+            ]
+        ]
+    },
+    {
+        "id": "65bf359407234471",
+        "type": "comment",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "",
+        "info": "",
+        "x": 820,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "64441acc6177eb15",
+        "type": "ui_switch",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Exhuaust Control",
+        "label": "Exhaust Control",
+        "tooltip": "",
+        "group": "c7e8f1d2.5d8f28",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "smart_home/relay",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "EX_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "EX_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "d57169d1a7a1bc08"
+            ]
+        ]
+    },
+    {
+        "id": "df7892b6715bc24b",
+        "type": "ui_switch",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Toilet Light",
+        "label": "Toilet Light",
+        "tooltip": "",
+        "group": "d2b4c3e1.9e8f9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "smart_home/lighting",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "toilet_led_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "toilet_led_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "d57169d1a7a1bc08"
+            ]
+        ]
+    },
+    {
+        "id": "00d9c7b8f0869b17",
+        "type": "ui_numeric",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "AC Setpoint",
+        "label": "AC Setpoint",
+        "tooltip": "",
+        "group": "c7e8f1d2.5d8f28",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "16",
+        "max": "30",
+        "step": "0.5",
+        "className": "",
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "d57169d1a7a1bc08"
+            ]
+        ]
+    },
+    {
+        "id": "6e56c68db40ea80f",
+        "type": "ui_switch",
+        "z": "9e51caeca7ff5b4a",
+        "g": "88b3242d8b066f65",
+        "name": "Hall Light",
+        "label": "Hall Light",
+        "tooltip": "",
+        "group": "d2b4c3e1.9e8f9",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "smart_home/lighting",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "Hall_led_ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "Hall_led_OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "d57169d1a7a1bc08"
+            ]
+        ]
+    },
+    {
+        "id": "38816791d317df9e",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "-- select * from sensor_readings\n-- Where id=(select max(id)from sensor_readings)\n\nselect  * from device_status;\n--order by id desc\n--limit 5;",
+        "name": "Fetch All Device Status Data",
+        "x": 640,
+        "y": 700,
+        "wires": [
+            [
+                "29ee899c8ef2b8d0"
+            ]
+        ]
+    },
+    {
+        "id": "29ee899c8ef2b8d0",
+        "type": "debug",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "1216010c6d923ebf",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 700,
+        "wires": [
+            [
+                "38816791d317df9e"
+            ]
+        ]
+    },
+    {
+        "id": "54a039cf32982cce",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "\nselect * from system_events;",
+        "name": "Fetch All System Events Data",
+        "x": 650,
+        "y": 740,
+        "wires": [
+            [
+                "29ee899c8ef2b8d0"
+            ]
+        ]
+    },
+    {
+        "id": "615f1cabae3feaa8",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 740,
+        "wires": [
+            [
+                "54a039cf32982cce"
+            ]
+        ]
+    },
+    {
+        "id": "9e1c82c496fd0601",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT name, type, sql\nFROM sqlite_master\nORDER BY name;",
+        "name": "Fetcht DataBase Schema",
+        "x": 630,
+        "y": 780,
+        "wires": [
+            [
+                "29ee899c8ef2b8d0"
+            ]
+        ]
+    },
+    {
+        "id": "9612fe017e5faac5",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 780,
+        "wires": [
+            [
+                "9e1c82c496fd0601"
+            ]
+        ]
+    },
+    {
+        "id": "7c896d33d6e8cfb8",
+        "type": "comment",
+        "z": "1329f30dedb9b5b8",
+        "g": "bdf132459811a00e",
+        "name": "Testing Query",
+        "info": "",
+        "x": 1050,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0e745d0a2f557cd5",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Create Database Schema",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "01d761457d2a551d"
+            ]
+        ]
+    },
+    {
+        "id": "fd46be3211e7a1f2",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Database Schema",
+        "x": 810,
+        "y": 200,
+        "wires": [
+            [
+                "46d80e15e0bc6bd7",
+                "dbdc3fa650873164"
+            ]
+        ]
+    },
+    {
+        "id": "46d80e15e0bc6bd7",
+        "type": "debug",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "759438ed6f0953c5",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "f1dad3d59d2fa14b"
+            ]
+        ]
+    },
+    {
+        "id": "b8f4a3c35edcd5cb",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "9c076c0cad1d474d"
+            ]
+        ]
+    },
+    {
+        "id": "01d761457d2a551d",
+        "type": "function",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Preparaing Schem Query",
+        "func": "return [\n    {\n        topic: `CREATE TABLE IF NOT EXISTS sensor_readings (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n            bedroom_temp REAL,\n            bedroom_humidity REAL,\n            hall_temp REAL,\n            hall_humidity REAL,\n            gas_level INTEGER,\n            light_level INTEGER,\n            door_distance REAL,\n            door_status TEXT\n        );`\n    },\n    {\n        topic: `CREATE TABLE IF NOT EXISTS motion_events (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n            location TEXT,\n            motion INTEGER,\n            duration_seconds INTEGER\n        );`\n    },\n    {\n        topic: `CREATE TABLE IF NOT EXISTS system_events (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n            event_type TEXT,\n            description TEXT,\n            severity TEXT\n        );`\n    },\n    {\n        topic: `CREATE TABLE IF NOT EXISTS device_status (\n            id INTEGER PRIMARY KEY AUTOINCREMENT,\n            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n            device_name TEXT,\n            status TEXT,\n            value TEXT\n        );`\n    }\n];\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ]
+        ]
+    },
+    {
+        "id": "b61627a7a0c33cf5",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Drop Data Base Tables",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 180,
+        "wires": [
+            [
+                "b7b5eac99b82f848"
+            ]
+        ]
+    },
+    {
+        "id": "b7b5eac99b82f848",
+        "type": "function",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Preparing Query to Drop Table",
+        "func": "return [\n{topic:\"Drop TABLE IF EXISTS device_status;\"},\n{topic:\"DROP TABLE IF EXISTS motion_events;\"},\n{topic:\"DROP TABLE IF EXISTS sensor_readings;\"},\n{topic:\"DROP TABLE IF EXISTS system_events;\"}\n];\n\n\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ]
+        ]
+    },
+    {
+        "id": "9c076c0cad1d474d",
+        "type": "function",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Fetch All Tables Data",
+        "func": "return[\n    {topic: \"select * from sensor_readings;\"},\n    {topic: \"select * from motion_events\"},\n    {topic: \"select * from system_events\"},\n    {topic: \"select * from device_status\"}\n];\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 260,
+        "wires": [
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ]
+        ]
+    },
+    {
+        "id": "3c1721955544d227",
+        "type": "comment",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Database Management",
+        "info": "This group consist of node to:\n1. Create Schema (Create all Tables)\n2. To Reset the schema (Drop all Tables)\n3. fecthc data from all the Tables.\n4. inserting a single record for testing.",
+        "x": 920,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f1dad3d59d2fa14b",
+        "type": "function",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Insert Sample Data ",
+        "func": "return[\n    {topic: \n            `INSERT INTO sensor_readings (\n            bedroom_temp, bedroom_humidity, hall_temp, hall_humidity,\n            gas_level, light_level, \n            door_distance, door_status\n        ) VALUES (\n            22.5, 45.2, 23.1, 40.8,\n            300, 700, \n            1.25, 'closed'\n        );`\n    },\n    {topic: \n          `INSERT INTO motion_events (\n          location, motion_detected, duration_seconds\n        ) VALUES (\n            'hallway', 1, 12\n        );`\n    },\n    {topic: \n        `INSERT INTO device_status (\n          device_name, status, value\n        ) VALUES (\n            'hall_rgb', 'on', 'Light Level:123'\n        );`\n    },\n    {topic: \n         `INSERT INTO system_events (\n          event_type, description, severity\n        ) VALUES (\n            'temperature_alert', 'Bedroom temperature exceeded threshold', 'high'\n        );`\n    \n    }\n];\n\n\n\n\n",
+        "outputs": 4,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 340,
+        "wires": [
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ],
+            [
+                "fd46be3211e7a1f2"
+            ]
+        ]
+    },
+    {
+        "id": "ff7b1a5e02da627c",
+        "type": "debug",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "Database Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "dbdc3fa650873164",
+        "type": "function",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "DB Error Handler 2",
+        "func": "if (msg.error) {\n    node.error('DB Error: ' + msg.error, msg);\n    }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79c392726e91798b",
+        "type": "catch",
+        "z": "1329f30dedb9b5b8",
+        "g": "b712dae8262c787b",
+        "name": "",
+        "scope": [
+            "dbdc3fa650873164"
+        ],
+        "uncaught": false,
+        "x": 830,
+        "y": 260,
+        "wires": [
+            [
+                "ff7b1a5e02da627c"
+            ]
+        ]
+    },
+    {
+        "id": "43b7e432cefb8e95",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "-- Sample data for Smart Home Sensor Readings (June - July 2025)\n-- Realistic patterns: temperature varies by time of day, humidity changes with weather\n-- Gas levels mostly safe with occasional spikes, light varies day/night cycle\n\nINSERT INTO sensor_readings (timestamp, bedroom_temp, bedroom_humidity, \n                            hall_temp, hall_humidity, gas_level, light_level, \n                            door_distance, door_status) \nVALUES\n-- June 2025 Data (30 days, 4 readings per day)\n-- Early June - Cool weather\n('2025-06-01 06:00:00', 18.5, 65, 19.2, 62, 245, 150, 45.2, 'closed'),\n('2025-06-01 12:00:00', 24.3, 58, 25.1, 55, 280, 3200, 180.5, 'open'),\n('2025-06-01 18:00:00', 26.8, 55, 27.2, 52, 320, 2800, 45.8, 'closed'),\n('2025-06-01 23:00:00', 22.1, 61, 22.8, 59, 195, 80, 46.1, 'closed'),\n\n('2025-06-02 06:00:00', 19.2, 64, 19.8, 61, 250, 180, 45.5, 'closed'),\n('2025-06-02 12:00:00', 25.1, 56, 25.8, 53, 295, 3150, 175.3, 'open'),\n('2025-06-02 18:00:00', 27.3, 53, 27.9, 50, 340, 2750, 46.2, 'closed'),\n('2025-06-02 23:00:00', 21.8, 62, 22.4, 60, 210, 95, 45.9, 'closed'),\n\n('2025-06-03 06:00:00', 20.1, 63, 20.7, 60, 265, 200, 46.0, 'closed'),\n('2025-06-03 12:00:00', 26.2, 54, 26.9, 51, 310, 3300, 190.2, 'open'),\n('2025-06-03 18:00:00', 28.1, 51, 28.7, 48, 355, 2900, 45.7, 'closed'),\n('2025-06-03 23:00:00', 23.2, 59, 23.8, 57, 225, 110, 46.3, 'closed'),\n\n-- Mid June - Warmer weather\n('2025-06-15 06:00:00', 22.3, 60, 22.9, 57, 275, 220, 45.8, 'closed'),\n('2025-06-15 12:00:00', 29.1, 48, 29.8, 45, 385, 3800, 200.1, 'open'),\n('2025-06-15 18:00:00', 31.5, 45, 32.1, 42, 420, 3200, 46.1, 'closed'),\n('2025-06-15 23:00:00', 26.8, 52, 27.4, 50, 290, 130, 45.9, 'closed'),\n\n('2025-06-16 06:00:00', 23.1, 58, 23.7, 55, 285, 240, 46.2, 'closed'),\n('2025-06-16 12:00:00', 30.2, 46, 30.9, 43, 3150, 3900, 185.7, 'open'), -- Gas spike\n('2025-06-16 18:00:00', 32.3, 43, 32.9, 40, 450, 3300, 45.8, 'closed'),\n('2025-06-16 23:00:00', 27.6, 50, 28.2, 48, 320, 140, 46.0, 'closed'),\n\n-- Late June - Hot weather\n('2025-06-25 06:00:00', 25.2, 55, 25.8, 52, 310, 280, 46.1, 'closed'),\n('2025-06-25 12:00:00', 33.1, 42, 33.8, 39, 480, 4100, 220.3, 'open'),\n('2025-06-25 18:00:00', 35.2, 38, 35.8, 35, 520, 3600, 45.7, 'closed'),\n('2025-06-25 23:00:00', 29.8, 46, 30.4, 44, 380, 160, 46.2, 'closed'),\n\n('2025-06-30 06:00:00', 26.1, 53, 26.7, 50, 325, 300, 45.9, 'closed'),\n('2025-06-30 12:00:00', 34.2, 40, 34.9, 37, 495, 4200, 195.8, 'open'),\n('2025-06-30 18:00:00', 36.1, 36, 36.7, 33, 540, 3700, 46.0, 'closed'),\n('2025-06-30 23:00:00', 30.5, 44, 31.1, 42, 395, 170, 45.8, 'closed'),\n\n-- July 2025 Data - Peak summer\n-- Early July - Very hot\n('2025-07-01 06:00:00', 27.2, 51, 27.8, 48, 340, 320, 46.1, 'closed'),\n('2025-07-01 12:00:00', 35.3, 38, 36.0, 35, 510, 4300, 210.5, 'open'),\n('2025-07-01 18:00:00', 37.2, 34, 37.8, 31, 560, 3800, 45.9, 'closed'),\n('2025-07-01 23:00:00', 31.6, 42, 32.2, 40, 410, 180, 46.2, 'closed'),\n\n('2025-07-02 06:00:00', 28.1, 49, 28.7, 46, 355, 340, 45.8, 'closed'),\n('2025-07-02 12:00:00', 36.1, 36, 36.8, 33, 525, 4400, 205.2, 'open'),\n('2025-07-02 18:00:00', 38.3, 32, 38.9, 29, 580, 3900, 46.0, 'closed'),\n('2025-07-02 23:00:00', 32.4, 40, 33.0, 38, 425, 190, 45.7, 'closed'),\n\n-- Mid July - Heat wave\n('2025-07-15 06:00:00', 29.8, 46, 30.4, 43, 390, 380, 46.1, 'closed'),\n('2025-07-15 12:00:00', 38.2, 32, 38.9, 29, 570, 4600, 230.1, 'open'),\n('2025-07-15 18:00:00', 40.1, 28, 40.7, 25, 620, 4100, 45.8, 'closed'),\n('2025-07-15 23:00:00', 34.2, 36, 34.8, 34, 460, 210, 46.2, 'closed'),\n\n('2025-07-16 06:00:00', 30.5, 44, 31.1, 41, 405, 400, 45.9, 'closed'),\n('2025-07-16 12:00:00', 39.1, 30, 39.8, 27, 3450, 4700, 215.7, 'open'), -- Gas spike\n('2025-07-16 18:00:00', 41.2, 26, 41.8, 23, 650, 4200, 46.0, 'closed'),\n('2025-07-16 23:00:00', 35.1, 34, 35.7, 32, 485, 220, 45.8, 'closed'),\n\n-- Late July - Continued heat\n('2025-07-25 06:00:00', 31.2, 42, 31.8, 39, 420, 420, 46.1, 'closed'),\n('2025-07-25 12:00:00', 40.3, 28, 41.0, 25, 590, 4800, 240.3, 'open'),\n('2025-07-25 18:00:00', 42.1, 24, 42.7, 21, 670, 4300, 45.7, 'closed'),\n('2025-07-25 23:00:00', 36.8, 32, 37.4, 30, 505, 230, 46.2, 'closed'),\n\n('2025-07-31 06:00:00', 32.1, 40, 32.7, 37, 435, 450, 45.9, 'closed'),\n('2025-07-31 12:00:00', 41.2, 26, 41.9, 23, 605, 4900, 225.8, 'open'),\n('2025-07-31 18:00:00', 43.2, 22, 43.8, 19, 690, 4400, 46.0, 'closed'),\n('2025-07-31 23:00:00', 37.5, 30, 38.1, 28, 520, 240, 45.8, 'closed');\n\n-- Additional random samples throughout both months\nINSERT INTO sensor_readings (timestamp, bedroom_temp, bedroom_humidity, hall_temp, hall_humidity, gas_level, light_level, door_distance, door_status) VALUES\n('2025-06-05 08:30:00', 21.5, 62, 22.1, 59, 270, 1800, 165.3, 'open'),\n('2025-06-05 14:15:00', 27.8, 52, 28.4, 49, 335, 3400, 46.1, 'closed'),\n('2025-06-05 20:45:00', 25.3, 56, 25.9, 54, 295, 1200, 45.8, 'closed'),\n\n('2025-06-10 07:20:00', 20.8, 63, 21.4, 60, 260, 1600, 170.2, 'open'),\n('2025-06-10 13:40:00', 28.5, 50, 29.1, 47, 370, 3600, 45.9, 'closed'),\n('2025-06-10 21:10:00', 24.7, 57, 25.3, 55, 315, 800, 46.0, 'closed'),\n\n('2025-06-20 09:15:00', 24.2, 58, 24.8, 55, 305, 2200, 195.7, 'open'),\n('2025-06-20 15:30:00', 31.8, 44, 32.4, 41, 445, 3800, 45.8, 'closed'),\n('2025-06-20 22:45:00', 28.1, 49, 28.7, 47, 365, 950, 46.1, 'closed'),\n\n('2025-07-05 08:45:00', 28.9, 47, 29.5, 44, 375, 2400, 205.3, 'open'),\n('2025-07-05 14:20:00', 36.7, 35, 37.3, 32, 545, 4100, 45.9, 'closed'),\n('2025-07-05 21:35:00', 32.8, 41, 33.4, 39, 445, 1100, 46.2, 'closed'),\n\n('2025-07-10 07:50:00', 29.6, 45, 30.2, 42, 385, 2600, 180.8, 'open'),\n('2025-07-10 16:10:00', 37.9, 33, 38.5, 30, 565, 4200, 45.7, 'closed'),\n('2025-07-10 23:25:00', 33.7, 39, 34.3, 37, 465, 1250, 46.0, 'closed'),\n\n('2025-07-20 06:30:00', 30.8, 43, 31.4, 40, 415, 350, 46.1, 'closed'),\n('2025-07-20 12:45:00', 39.5, 29, 40.1, 26, 585, 4500, 220.5, 'open'),\n('2025-07-20 19:20:00', 41.8, 25, 42.4, 22, 645, 3500, 45.8, 'closed'),\n\n-- Emergency/Alert scenarios\n('2025-06-12 11:30:00', 26.5, 54, 27.1, 51, 3250, 3100, 46.0, 'closed'), -- Gas alert\n('2025-06-18 16:45:00', 30.1, 47, 30.7, 44, 3180, 3700, 285.7, 'open'), -- Gas + door",
+        "name": "Sample Sensor Readings Data",
+        "x": 550,
+        "y": 460,
+        "wires": [
+            [
+                "cd824e4668f8ce80"
+            ]
+        ]
+    },
+    {
+        "id": "cb476c242fcaccd7",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "-- Sample Motion Events Data for Smart Home (June - July 2025)\n-- Realistic patterns: More activity during day, typical home routines\n-- Locations: 'hall', 'toilet', 'bedroom', 'kitchen'\n-- Motion: 1 = detected, 0 = ended\n-- Duration: seconds motion was active\n\nINSERT INTO motion_events (timestamp, location, motion, duration_seconds) VALUES\n\n-- June 2025 Data - Daily life patterns\n-- Early June - Normal routine\n('2025-06-01 06:15:00', 'bedroom', 1, 45),\n('2025-06-01 06:20:00', 'hall', 1, 12),\n('2025-06-01 06:25:00', 'toilet', 1, 180),\n('2025-06-01 06:35:00', 'hall', 1, 8),\n('2025-06-01 06:40:00', 'kitchen', 1, 420),\n('2025-06-01 07:45:00', 'hall', 1, 5),\n('2025-06-01 12:30:00', 'hall', 1, 15),\n('2025-06-01 12:35:00', 'kitchen', 1, 600),\n('2025-06-01 13:15:00', 'hall', 1, 10),\n('2025-06-01 18:20:00', 'hall', 1, 20),\n('2025-06-01 18:25:00', 'kitchen', 1, 1800),\n('2025-06-01 19:45:00', 'hall', 1, 12),\n('2025-06-01 20:30:00', 'toilet', 1, 120),\n('2025-06-01 22:15:00', 'hall', 1, 8),\n('2025-06-01 22:20:00', 'bedroom', 1, 25),\n\n('2025-06-02 06:00:00', 'bedroom', 1, 38),\n('2025-06-02 06:10:00', 'hall', 1, 14),\n('2025-06-02 06:18:00', 'toilet', 1, 200),\n('2025-06-02 06:30:00', 'hall', 1, 9),\n('2025-06-02 06:35:00', 'kitchen', 1, 360),\n('2025-06-02 11:45:00', 'hall', 1, 7),\n('2025-06-02 11:50:00', 'toilet', 1, 90),\n('2025-06-02 12:15:00', 'kitchen', 1, 480),\n('2025-06-02 14:30:00', 'hall', 1, 18),\n('2025-06-02 17:45:00', 'hall', 1, 22),\n('2025-06-02 18:00:00', 'kitchen', 1, 1620),\n('2025-06-02 21:30:00', 'toilet', 1, 110),\n('2025-06-02 23:00:00', 'hall', 1, 6),\n('2025-06-02 23:05:00', 'bedroom', 1, 30),\n\n-- Weekend pattern (more activity)\n('2025-06-07 08:30:00', 'bedroom', 1, 55),\n('2025-06-07 08:45:00', 'hall', 1, 25),\n('2025-06-07 09:00:00', 'toilet', 1, 240),\n('2025-06-07 09:15:00', 'kitchen', 1, 900),\n('2025-06-07 10:30:00', 'hall', 1, 30),\n('2025-06-07 11:00:00', 'kitchen', 1, 720),\n('2025-06-07 14:20:00', 'hall', 1, 15),\n('2025-06-07 14:30:00', 'toilet', 1, 95),\n('2025-06-07 15:45:00', 'hall', 1, 40),\n('2025-06-07 16:00:00', 'kitchen', 1, 1200),\n('2025-06-07 19:30:00', 'hall', 1, 35),\n('2025-06-07 19:45:00', 'kitchen', 1, 2100),\n\n-- Mid June - Increased activity due to heat\n('2025-06-15 05:45:00', 'bedroom', 1, 50),\n('2025-06-15 06:00:00', 'hall', 1, 20),\n('2025-06-15 06:10:00', 'toilet', 1, 300),\n('2025-06-15 06:25:00', 'kitchen', 1, 540),\n('2025-06-15 10:15:00', 'hall', 1, 12),\n('2025-06-15 10:20:00', 'kitchen', 1, 180), -- Quick drink\n('2025-06-15 13:45:00', 'hall', 1, 8),\n('2025-06-15 13:50:00', 'kitchen', 1, 600),\n('2025-06-15 16:30:00', 'toilet', 1, 85),\n('2025-06-15 17:00:00', 'hall', 1, 25),\n('2025-06-15 18:30:00', 'kitchen', 1, 1800),\n('2025-06-15 21:45:00', 'toilet', 1, 130),\n\n-- Late June - Hot weather patterns\n('2025-06-25 05:30:00', 'bedroom', 1, 42),\n('2025-06-25 05:45:00', 'hall', 1, 18),\n('2025-06-25 05:55:00', 'toilet', 1, 210),\n('2025-06-25 06:15:00', 'kitchen', 1, 480),\n('2025-06-25 09:20:00', 'hall', 1, 10),\n('2025-06-25 09:25:00', 'kitchen', 1, 120), -- Cold drink\n('2025-06-25 12:00:00', 'hall', 1, 6),\n('2025-06-25 12:05:00', 'kitchen', 1, 300), -- Lunch\n('2025-06-25 15:45:00', 'hall', 1, 8),\n('2025-06-25 15:50:00', 'kitchen', 1, 90), -- Hydration break\n('2025-06-25 19:15:00', 'kitchen', 1, 2400), -- Extended cooking in cool evening\n\n-- July 2025 - Peak summer activity\n-- Early July - Heat adaptation\n('2025-07-01 05:15:00', 'bedroom', 1, 48),\n('2025-07-01 05:30:00', 'hall', 1, 22),\n('2025-07-01 05:40:00', 'toilet', 1, 180),\n('2025-07-01 06:00:00', 'kitchen', 1, 600), -- Early breakfast to avoid heat\n('2025-07-01 08:45:00', 'hall', 1, 7),\n('2025-07-01 08:50:00', 'kitchen', 1, 60), -- Quick water\n('2025-07-01 11:30:00', 'hall', 1, 5),\n('2025-07-01 11:35:00', 'kitchen', 1, 180), -- Cool drink\n('2025-07-01 14:20:00', 'hall', 1, 4),\n('2025-07-01 14:25:00', 'kitchen', 1, 90), -- Hydration\n('2025-07-01 17:30:00', 'toilet', 1, 75),\n('2025-07-01 19:45:00', 'kitchen', 1, 1980), -- Late dinner when cooler\n\n('2025-07-02 05:00:00', 'bedroom', 1, 52),\n('2025-07-02 05:20:00', 'hall', 1, 25),\n('2025-07-02 05:35:00', 'toilet', 1, 240),\n('2025-07-02 06:00:00', 'kitchen', 1, 720), -- Extended breakfast prep\n('2025-07-02 09:15:00', 'hall', 1, 8),\n('2025-07-02 09:20:00', 'kitchen', 1, 45), -- Quick water\n('2025-07-02 12:15:00', 'hall', 1, 6),\n('2025-07-02 12:20:00', 'kitchen', 1, 240), -- Light lunch\n('2025-07-02 15:30:00', 'hall', 1, 5),\n('2025-07-02 15:35:00', 'kitchen', 1, 60), -- Cooling drink\n\n-- Mid July - Heat wave behavior\n('2025-07-15 04:45:00', 'bedroom', 1, 60), -- Earlier wake due to heat\n('2025-07-15 05:15:00', 'hall', 1, 30),\n('2025-07-15 05:30:00', 'toilet', 1, 300),\n('2025-07-15 06:00:00', 'kitchen', 1, 900), -- Extended early cooking\n('2025-07-15 08:30:00', 'hall', 1, 10),\n('2025-07-15 08:35:00', 'kitchen', 1, 120), -- Cold breakfast\n('2025-07-15 10:45:00', 'hall', 1, 8),\n('2025-07-15 10:50:00', 'kitchen', 1, 90), -- Hydration\n('2025-07-15 13:20:00', 'hall', 1, 5),\n('2025-07-15 13:25:00', 'kitchen', 1, 150), -- Cold snack\n('2025-07-15 16:15:00', 'toilet', 1, 65),\n('2025-07-15 20:30:00', 'kitchen', 1, 2700), -- Very late cooking\n\n-- Late July - Continued heat patterns\n('2025-07-25 04:30:00', 'bedroom', 1, 65),\n('2025-07-25 05:00:00', 'hall', 1, 35),\n('2025-07-25 05:20:00', 'toilet', 1, 360),\n('2025-07-25 06:00:00', 'kitchen', 1, 1080), -- Very early, long cooking session\n('2025-07-25 09:00:00', 'hall', 1, 12),\n('2025-07-25 09:05:00', 'kitchen', 1, 180), -- Cold preparation\n('2025-07-25 11:45:00', 'hall', 1, 6),\n('2025-07-25 11:50:00', 'kitchen', 1, 75), -- Quick hydration\n('2025-07-25 14:30:00', 'hall', 1, 4),\n('2025-07-25 14:35:00', 'kitchen', 1, 60), -- Cooling drink\n('2025-07-25 21:15:00', 'kitchen', 1, 3000), -- Extended late cooking\n\n-- Random activity throughout both months\n('2025-06-03 10:20:00', 'hall', 1, 15),\n('2025-06-03 15:45:00', 'toilet', 1, 95),\n('2025-06-05 13:30:00', 'kitchen', 1, 450),\n('2025-06-08 16:20:00', 'hall', 1, 28),\n('2025-06-10 11:15:00', 'toilet', 1, 105),\n('2025-06-12 14:40:00', 'kitchen', 1, 540),\n('2025-06-14 09:30:00', 'hall', 1, 20),\n('2025-06-17 12:45:00', 'toilet', 1, 88),\n('2025-06-19 16:15:00', 'kitchen', 1, 720),\n('2025-06-22 10:50:00', 'hall', 1, 12),\n('2025-06-24 13:20:00', 'kitchen', 1, 300),\n('2025-06-27 15:30:00', 'toilet', 1, 78),\n('2025-06-29 11:40:00', 'hall', 1, 18),\n\n('2025-07-03 09:45:00', 'kitchen', 1, 240),\n('2025-07-05 14:15:00', 'hall', 1, 8),\n('2025-07-07 10:30:00', 'toilet', 1, 92),\n('2025-07-09 12:20:00', 'kitchen', 1, 180),\n('2025-07-11 16:45:00', 'hall', 1, 10),\n('2025-07-13 08:50:00', 'kitchen', 1, 150),\n('2025-07-17 11:25:00', 'toilet', 1, 85),\n('2025-07-19 13:40:00', 'hall', 1, 6),\n('2025-07-21 09:15:00', 'kitchen', 1, 200),\n('2025-07-23 15:20:00', 'toilet', 1, 70),\n('2025-07-26 10:35:00', 'hall', 1, 14),\n('2025-07-28 12:50:00', 'kitchen', 1, 280),\n('2025-07-30 14:25:00', 'hall', 1, 9),\n\n-- Night-time activity (minimal)\n('2025-06-06 02:30:00', 'hall', 1, 5),\n('2025-06-06 02:35:00', 'toilet', 1, 45),\n('2025-06-13 03:15:00', 'hall', 1, 4),\n('2025-06-13 03:20:00', 'kitchen', 1, 30), -- Water\n('2025-06-20 01:45:00', 'toilet', 1, 55),\n('2025-06-28 03:00:00', 'hall', 1, 6),\n('2025-07-04 02:20:00', 'toilet', 1, 50), -- Hot night\n('2025-07-11 01:30:00', 'hall', 1, 5),\n('2025-07-11 01:35:00', 'kitchen', 1, 60), -- Cool drink\n('2025-07-18 02:45:00', 'toilet', 1, 40),\n('2025-07-24 03:15:00', 'hall', 1, 4),\n('2025-07-24 03:20:00', 'kitchen', 1, 90); -- Hydration due to heat",
+        "name": "Sample Motion Events Data",
+        "x": 530,
+        "y": 500,
+        "wires": [
+            [
+                "cd824e4668f8ce80"
+            ]
+        ]
+    },
+    {
+        "id": "a8234c5d70355402",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "-- Sample System Events Data for Smart Home (June - July 2025)\n-- Event types: 'ac_control', 'gas_alert', 'door_security', 'lighting_auto', 'system_startup', 'network_error', 'sensor_fault', 'maintenance'\n-- Severity levels: 'low', 'medium', 'high', 'critical'\n\nINSERT INTO system_events (timestamp, event_type, description, severity) VALUES\n\n-- June 2025 Data - System operations and alerts\n-- Early June - System startup and normal operations\n('2025-06-01 00:00:15', 'system_startup', 'Smart home system initialized successfully', 'low'),\n('2025-06-01 06:15:30', 'lighting_auto', 'Hall RGB activated by motion sensor - PIR1', 'low'),\n('2025-06-01 12:45:22', 'ac_control', 'Bedroom AC activated - Temperature: 24.3°C exceeded threshold', 'medium'),\n('2025-06-01 14:30:15', 'ac_control', 'Bedroom AC deactivated - Temperature: 22.1°C below threshold', 'medium'),\n('2025-06-01 18:25:40', 'lighting_auto', 'Hall RGB activated by motion sensor - Light level: 2800', 'low'),\n('2025-06-01 23:45:12', 'lighting_auto', 'Hall RGB deactivated - Motion timeout', 'low'),\n\n('2025-06-02 08:20:33', 'door_security', 'Door opened - Distance sensor: 175.3cm', 'low'),\n('2025-06-02 08:25:18', 'door_security', 'Door closed - Distance sensor: 46.2cm', 'low'),\n('2025-06-02 13:15:45', 'ac_control', 'Bedroom AC activated - Temperature: 25.1°C exceeded threshold', 'medium'),\n('2025-06-02 16:30:22', 'ac_control', 'Bedroom AC deactivated - Temperature: 23.8°C below threshold', 'medium'),\n('2025-06-02 19:45:10', 'lighting_auto', 'Toilet LED activated by motion sensor - PIR2', 'low'),\n\n('2025-06-03 11:30:45', 'network_error', 'MQTT connection lost - Attempting reconnection', 'medium'),\n('2025-06-03 11:31:12', 'network_error', 'MQTT connection restored successfully', 'low'),\n('2025-06-03 14:20:18', 'ac_control', 'Bedroom AC activated - Temperature: 26.2°C exceeded threshold', 'medium'),\n('2025-06-03 17:45:33', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.1°C below threshold', 'medium'),\n\n-- Gas alert incidents\n('2025-06-04 16:45:30', 'gas_alert', 'Gas level warning - Level: 3050ppm detected in kitchen', 'high'),\n('2025-06-04 16:45:35', 'ac_control', 'Exhaust fan activated due to gas detection', 'high'),\n('2025-06-04 16:48:22', 'gas_alert', 'Gas level normalized - Level: 280ppm', 'medium'),\n('2025-06-04 16:50:15', 'ac_control', 'Exhaust fan deactivated - Gas levels safe', 'medium'),\n\n-- Mid June - Increased AC usage\n('2025-06-15 10:30:15', 'ac_control', 'Bedroom AC activated - Temperature: 29.1°C exceeded threshold', 'medium'),\n('2025-06-15 11:45:22', 'sensor_fault', 'DHT1 sensor reading anomaly detected - Temperature spike', 'medium'),\n('2025-06-15 11:46:10', 'sensor_fault', 'DHT1 sensor readings stabilized', 'low'),\n('2025-06-15 19:20:33', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.8°C below threshold', 'medium'),\n('2025-06-15 20:15:45', 'lighting_auto', 'Hall RGB color adjusted - Light level: 3200', 'low'),\n\n('2025-06-16 12:30:18', 'gas_alert', 'CRITICAL: Gas level spike - Level: 3150ppm detected', 'critical'),\n('2025-06-16 12:30:20', 'ac_control', 'Emergency exhaust fan activation', 'critical'),\n('2025-06-16 12:30:25', 'gas_alert', 'Buzzer alert activated for gas detection', 'critical'),\n('2025-06-16 12:33:45', 'gas_alert', 'Gas level decreasing - Level: 1200ppm', 'high'),\n('2025-06-16 12:35:12', 'gas_alert', 'Gas level safe - Level: 320ppm', 'medium'),\n('2025-06-16 12:37:30', 'ac_control', 'Exhaust fan deactivated - Emergency resolved', 'medium'),\n\n-- Network issues\n('2025-06-18 14:22:15', 'network_error', 'WiFi signal weak - RSSI: -78dBm', 'medium'),\n('2025-06-18 14:25:33', 'network_error', 'WiFi signal restored - RSSI: -65dBm', 'low'),\n('2025-06-18 16:45:22', 'door_security', 'Door open during gas alert - Distance: 285.7cm', 'high'),\n\n-- Late June - Heat wave begins\n('2025-06-25 09:15:30', 'ac_control', 'Bedroom AC activated - Temperature: 33.1°C exceeded threshold', 'medium'),\n('2025-06-25 09:20:15', 'system_startup', 'High temperature mode activated', 'medium'),\n('2025-06-25 21:45:22', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.5°C below threshold', 'medium'),\n('2025-06-25 22:30:18', 'lighting_auto', 'Extended hall lighting due to late activity', 'low'),\n\n('2025-06-30 08:30:45', 'ac_control', 'Bedroom AC activated - Temperature: 34.2°C exceeded threshold', 'medium'),\n('2025-06-30 12:15:33', 'sensor_fault', 'Temperature sensor calibration check - Extreme readings', 'medium'),\n('2025-06-30 12:16:10', 'sensor_fault', 'Temperature sensors validated - Readings accurate', 'low'),\n('2025-06-30 23:20:22', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.2°C below threshold', 'medium'),\n\n-- July 2025 - Peak summer operations\n-- Early July - Extreme heat management\n('2025-07-01 07:45:15', 'ac_control', 'Bedroom AC activated - Temperature: 35.3°C exceeded threshold', 'medium'),\n('2025-07-01 07:45:20', 'system_startup', 'Extreme heat protocol activated', 'high'),\n('2025-07-01 08:30:33', 'ac_control', 'Extended AC operation due to high ambient temperature', 'medium'),\n('2025-07-01 22:15:45', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.8°C below threshold', 'medium'),\n\n('2025-07-02 06:30:22', 'ac_control', 'Bedroom AC activated - Temperature: 36.1°C exceeded threshold', 'medium'),\n('2025-07-02 09:45:18', 'maintenance', 'AC system performance check - High usage detected', 'medium'),\n('2025-07-02 09:46:30', 'maintenance', 'AC system operating within normal parameters', 'low'),\n('2025-07-02 23:30:15', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.1°C below threshold', 'medium'),\n\n-- Network stress during heat\n('2025-07-05 13:20:45', 'network_error', 'High data transmission load - Temperature monitoring', 'medium'),\n('2025-07-05 13:22:18', 'network_error', 'Data transmission optimized successfully', 'low'),\n('2025-07-05 15:45:33', 'sensor_fault', 'Multiple sensor readings - System validation check', 'medium'),\n('2025-07-05 15:46:15', 'sensor_fault', 'All sensors functioning correctly', 'low'),\n\n-- Mid July - Heat wave peak\n('2025-07-15 06:15:30', 'ac_control', 'Bedroom AC activated - Temperature: 38.2°C exceeded threshold', 'medium'),\n('2025-07-15 06:15:35', 'system_startup', 'Heat wave emergency protocol activated', 'high'),\n('2025-07-15 10:30:22', 'ac_control', 'Continuous AC operation - Extreme temperature conditions', 'high'),\n('2025-07-15 18:45:15', 'ac_control', 'AC load balancing - Energy optimization', 'medium'),\n('2025-07-15 23:45:33', 'ac_control', 'Bedroom AC deactivated - Temperature: 25.2°C below threshold', 'medium'),\n\n('2025-07-16 12:00:18', 'gas_alert', 'CRITICAL: Gas level spike during heat - Level: 3450ppm', 'critical'),\n('2025-07-16 12:00:20', 'ac_control', 'Emergency exhaust fan activation with AC running', 'critical'),\n('2025-07-16 12:00:25', 'gas_alert', 'Heat + Gas emergency protocol activated', 'critical'),\n('2025-07-16 12:03:45', 'gas_alert', 'Gas level decreasing - Level: 1800ppm', 'high'),\n('2025-07-16 12:05:30', 'gas_alert', 'Gas level safe - Level: 485ppm', 'medium'),\n('2025-07-16 12:07:15', 'ac_control', 'Emergency exhaust fan deactivated', 'medium'),\n\n-- System stress events\n('2025-07-18 14:30:45', 'maintenance', 'System performance degradation - High temperature stress', 'high'),\n('2025-07-18 14:32:22', 'maintenance', 'Automatic system optimization initiated', 'medium'),\n('2025-07-18 14:35:18', 'maintenance', 'System performance restored', 'low'),\n\n('2025-07-20 11:45:33', 'sensor_fault', 'DHT sensor protection mode - Extreme temperature exposure', 'medium'),\n('2025-07-20 11:47:15', 'sensor_fault', 'Sensor protection successful - Readings stable', 'low'),\n\n-- Late July - Continued extreme conditions\n('2025-07-25 05:30:22', 'ac_control', 'Bedroom AC activated - Temperature: 40.3°C exceeded threshold', 'medium'),\n('2025-07-25 05:30:27', 'system_startup', 'Record temperature alert - 40°C+ detected', 'high'),\n('2025-07-25 08:15:45', 'ac_control', 'Maximum AC performance mode activated', 'high'),\n('2025-07-25 20:30:33', 'ac_control', 'AC performance optimization - Energy management', 'medium'),\n('2025-07-25 23:15:18', 'ac_control', 'Bedroom AC deactivated - Temperature: 25.8°C below threshold', 'medium'),\n\n('2025-07-28 13:45:30', 'network_error', 'Data logging overload - High frequency updates', 'medium'),\n('2025-07-28 13:47:15', 'network_error', 'Database optimization completed', 'low'),\n\n('2025-07-31 06:00:15', 'ac_control', 'Bedroom AC activated - Temperature: 41.2°C exceeded threshold', 'medium'),\n('2025-07-31 06:00:20', 'system_startup', 'End of month heat record - 41°C+ detected', 'high'),\n('2025-07-31 23:45:22', 'ac_control', 'Bedroom AC deactivated - Temperature: 24.9°C below threshold', 'medium'),\n('2025-07-31 23:59:45', 'maintenance', 'Monthly system performance report generated', 'low'),\n\n-- Additional random events throughout both months\n('2025-06-05 15:20:30', 'door_security', 'Door left open extended period - 45 minutes', 'medium'),\n('2025-06-08 09:30:15', 'lighting_auto', 'Daylight sensor calibration - LDR adjustment', 'low'),\n('2025-06-10 16:45:22', 'network_error', 'MQTT broker connection timeout', 'medium'),\n('2025-06-10 16:46:33', 'network_error', 'MQTT broker reconnected successfully', 'low'),\n('2025-06-12 20:15:45', 'lighting_auto', 'RGB LED color optimization - Energy saving mode', 'low'),\n('2025-06-14 11:30:18', 'maintenance', 'Sensor calibration check - Weekly maintenance', 'low'),\n('2025-06-17 14:20:33', 'door_security', 'Multiple door open/close events - High activity', 'low'),\n('2025-06-19 18:45:15', 'lighting_auto', 'Motion sensor sensitivity adjustment', 'low'),\n('2025-06-22 12:30:45', 'system_startup', 'System reboot - Routine maintenance', 'low'),\n('2025-06-24 16:15:30', 'sensor_fault', 'Potentiometer reading fluctuation detected', 'low'),\n('2025-06-24 16:16:22', 'sensor_fault', 'Potentiometer stabilized - Servo control normal', 'low'),\n('2025-06-27 10:45:18', 'maintenance', 'Database cleanup - Old records archived', 'low'),\n('2025-06-29 13:20:33', 'network_error', 'WiFi router restart detected', 'medium'),\n('2025-06-29 13:22:15', 'network_error', 'WiFi connection reestablished', 'low'),\n\n('2025-07-03 08:15:45', 'ac_control', 'AC filter reminder - 30 days continuous operation', 'medium'),\n('2025-07-06 14:30:22', 'lighting_auto', 'Reduced RGB intensity - Energy conservation mode', 'low'),\n('2025-07-08 11:20:18', 'gas_alert', 'Gas sensor calibration - Heat compensation', 'medium'),\n('2025-07-08 11:22:33', 'gas_alert', 'Gas sensor calibration completed', 'low'),\n('2025-07-10 17:45:30', 'door_security', 'Door sensor heat compensation applied', 'low'),\n('2025-07-12 09:30:15', 'maintenance', 'Heat stress analysis - All components OK', 'medium'),\n('2025-07-14 15:20:45', 'network_error', 'Increased data transmission - Heat monitoring', 'low'),\n('2025-07-17 12:15:33', 'sensor_fault', 'Humidity sensor reading validation', 'low'),\n('2025-07-19 16:30:18', 'lighting_auto', 'Extended daylight - Sensor adjustment', 'low'),\n('2025-07-21 10:45:22', 'maintenance', 'Mid-month performance analysis completed', 'low'),\n('2025-07-23 14:20:30', 'ac_control', 'AC efficiency optimization applied', 'medium'),\n('2025-07-26 11:15:45', 'door_security', 'Security system heat stress test passed', 'low'),\n('2025-07-29 13:30:33', 'network_error', 'High temperature network optimization', 'medium'),\n('2025-07-29 13:32:18', 'network_error', 'Network performance optimized', 'low');",
+        "name": "Sample System Events Data",
+        "x": 530,
+        "y": 540,
+        "wires": [
+            [
+                "cd824e4668f8ce80"
+            ]
+        ]
+    },
+    {
+        "id": "cd824e4668f8ce80",
+        "type": "debug",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "d6f127450b384693",
+        "type": "inject",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "43b7e432cefb8e95",
+                "cb476c242fcaccd7",
+                "a8234c5d70355402",
+                "d8cdbe5a7abfa1f3"
+            ]
+        ]
+    },
+    {
+        "id": "d8cdbe5a7abfa1f3",
+        "type": "sqlite",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "-- Sample Device Status Data for Smart Home (June - July 2025)\n-- Device names: 'bedroom_ac', 'exhaust_fan', 'hall_rgb', 'toilet_led', 'blinds_servo', 'buzzer', 'dht1_sensor', 'dht2_sensor', 'gas_sensor', 'door_sensor', 'pir1_hall', 'pir2_toilet', 'light_sensor', 'potentiometer'\n-- Status: 'online', 'offline', 'active', 'inactive', 'standby', 'error', 'maintenance'\n-- Value: Device-specific readings or states\n\nINSERT INTO device_status (timestamp, device_name, status, value) VALUES\n\n-- June 2025 Data - Device monitoring and status tracking\n-- System startup - All devices initialization\n('2025-06-01 00:00:30', 'bedroom_ac', 'standby', 'Temperature: 18.5°C'),\n('2025-06-01 00:00:35', 'exhaust_fan', 'standby', 'Gas Level: 245ppm'),\n('2025-06-01 00:00:40', 'hall_rgb', 'inactive', 'RGB: 0,0,0'),\n('2025-06-01 00:00:45', 'toilet_led', 'inactive', 'Brightness: 0%'),\n('2025-06-01 00:00:50', 'blinds_servo', 'active', 'Position: 90°'),\n('2025-06-01 00:00:55', 'buzzer', 'standby', 'Silent'),\n('2025-06-01 00:01:00', 'dht1_sensor', 'online', 'Temp: 18.5°C, Humidity: 65%'),\n('2025-06-01 00:01:05', 'dht2_sensor', 'online', 'Temp: 19.2°C, Humidity: 62%'),\n('2025-06-01 00:01:10', 'gas_sensor', 'online', 'Level: 245ppm'),\n('2025-06-01 00:01:15', 'door_sensor', 'online', 'Distance: 45.2cm'),\n('2025-06-01 00:01:20', 'pir1_hall', 'online', 'No Motion'),\n('2025-06-01 00:01:25', 'pir2_toilet', 'online', 'No Motion'),\n('2025-06-01 00:01:30', 'light_sensor', 'online', 'Level: 150 lux'),\n('2025-06-01 00:01:35', 'potentiometer', 'online', 'Value: 2048'),\n\n-- Day 1 Operations\n('2025-06-01 06:15:00', 'pir1_hall', 'active', 'Motion Detected'),\n('2025-06-01 06:15:05', 'hall_rgb', 'active', 'RGB: 200,150,100'),\n('2025-06-01 06:35:00', 'hall_rgb', 'inactive', 'RGB: 0,0,0 - Timeout'),\n('2025-06-01 12:45:00', 'bedroom_ac', 'active', 'Cooling - Target: 22°C'),\n('2025-06-01 12:45:05', 'dht1_sensor', 'online', 'Temp: 24.3°C, Humidity: 58%'),\n('2025-06-01 14:30:00', 'bedroom_ac', 'standby', 'Target Reached: 22.1°C'),\n('2025-06-01 18:20:00', 'blinds_servo', 'active', 'Position: 135° - Adjusted'),\n('2025-06-01 18:25:00', 'pir1_hall', 'active', 'Motion Detected'),\n('2025-06-01 18:25:05', 'hall_rgb', 'active', 'RGB: 255,150,50 - Evening Mode'),\n\n-- Day 2 - Normal operations with gas event\n('2025-06-02 08:20:00', 'door_sensor', 'active', 'Door Opened - 175.3cm'),\n('2025-06-02 08:25:00', 'door_sensor', 'online', 'Door Closed - 46.2cm'),\n('2025-06-02 13:15:00', 'bedroom_ac', 'active', 'Cooling - 25.1°C detected'),\n('2025-06-02 16:30:00', 'bedroom_ac', 'standby', 'Temperature Normalized'),\n('2025-06-02 19:45:00', 'pir2_toilet', 'active', 'Motion Detected'),\n('2025-06-02 19:45:05', 'toilet_led', 'active', 'Brightness: 80%'),\n('2025-06-02 19:47:00', 'toilet_led', 'inactive', 'Brightness: 0% - Timeout'),\n\n-- Gas alert scenario\n('2025-06-04 16:45:00', 'gas_sensor', 'error', 'ALERT: 3050ppm detected'),\n('2025-06-04 16:45:05', 'exhaust_fan', 'active', 'Emergency Activation'),\n('2025-06-04 16:45:10', 'buzzer', 'active', 'Gas Alert Signal'),\n('2025-06-04 16:48:00', 'gas_sensor', 'online', 'Level Decreasing: 1200ppm'),\n('2025-06-04 16:50:00', 'gas_sensor', 'online', 'Level Safe: 280ppm'),\n('2025-06-04 16:50:05', 'exhaust_fan', 'standby', 'Emergency Resolved'),\n('2025-06-04 16:50:10', 'buzzer', 'standby', 'Alert Cleared'),\n\n-- Network connectivity issues\n('2025-06-03 11:30:00', 'dht1_sensor', 'offline', 'Connection Lost'),\n('2025-06-03 11:30:05', 'dht2_sensor', 'offline', 'Connection Lost'),\n('2025-06-03 11:31:00', 'dht1_sensor', 'online', 'Connection Restored'),\n('2025-06-03 11:31:05', 'dht2_sensor', 'online', 'Connection Restored'),\n\n-- Mid June - Increased temperature management\n('2025-06-15 10:30:00', 'bedroom_ac', 'active', 'High Temp Mode - 29.1°C'),\n('2025-06-15 11:45:00', 'dht1_sensor', 'error', 'Reading Anomaly Detected'),\n('2025-06-15 11:46:00', 'dht1_sensor', 'online', 'Sensor Stabilized'),\n('2025-06-15 12:00:00', 'blinds_servo', 'active', 'Position: 45° - Sun Protection'),\n('2025-06-15 19:20:00', 'bedroom_ac', 'standby', 'Evening Cool Down'),\n('2025-06-15 20:15:00', 'hall_rgb', 'active', 'RGB: 100,200,255 - Night Mode'),\n\n-- Critical gas event\n('2025-06-16 12:30:00', 'gas_sensor', 'error', 'CRITICAL: 3150ppm'),\n('2025-06-16 12:30:02', 'exhaust_fan', 'active', 'Maximum Speed'),\n('2025-06-16 12:30:05', 'buzzer', 'active', 'Emergency Alert'),\n('2025-06-16 12:30:08', 'bedroom_ac', 'standby', 'Safety Protocol'),\n('2025-06-16 12:33:00', 'gas_sensor', 'online', 'Level: 1200ppm - Improving'),\n('2025-06-16 12:35:00', 'gas_sensor', 'online', 'Level: 320ppm - Safe'),\n('2025-06-16 12:37:00', 'exhaust_fan', 'standby', 'Normal Operation'),\n('2025-06-16 12:37:05', 'buzzer', 'standby', 'All Clear'),\n('2025-06-16 12:40:00', 'bedroom_ac', 'active', 'Normal Operation Resumed'),\n\n-- Late June - Heat wave preparation\n('2025-06-25 09:15:00', 'bedroom_ac', 'active', 'Heat Wave Mode - 33.1°C'),\n('2025-06-25 09:20:00', 'blinds_servo', 'active', 'Position: 30° - Maximum Shade'),\n('2025-06-25 12:00:00', 'hall_rgb', 'active', 'RGB: 0,100,255 - Cooling Colors'),\n('2025-06-25 15:30:00', 'dht1_sensor', 'online', 'Temp: 35.2°C - Extreme'),\n('2025-06-25 21:45:00', 'bedroom_ac', 'standby', 'Night Cool Down'),\n\n('2025-06-30 08:30:00', 'bedroom_ac', 'active', 'Month End Heat - 34.2°C'),\n('2025-06-30 12:15:00', 'dht1_sensor', 'maintenance', 'Calibration Check'),\n('2025-06-30 12:16:00', 'dht1_sensor', 'online', 'Calibration Verified'),\n('2025-06-30 12:16:05', 'dht2_sensor', 'maintenance', 'Calibration Check'),\n('2025-06-30 12:16:10', 'dht2_sensor', 'online', 'Calibration Verified'),\n\n-- July 2025 - Peak summer device stress\n-- Extreme heat protocol activation\n('2025-07-01 07:45:00', 'bedroom_ac', 'active', 'Extreme Heat - 35.3°C'),\n('2025-07-01 07:45:05', 'exhaust_fan', 'active', 'Air Circulation Support'),\n('2025-07-01 08:30:00', 'blinds_servo', 'active', 'Position: 15° - Maximum Protection'),\n('2025-07-01 10:00:00', 'hall_rgb', 'active', 'RGB: 0,50,200 - Cool Mode'),\n('2025-07-01 22:15:00', 'bedroom_ac', 'standby', 'Night Temperature Reached'),\n\n('2025-07-02 06:30:00', 'bedroom_ac', 'active', 'Early Heat - 36.1°C'),\n('2025-07-02 09:45:00', 'bedroom_ac', 'maintenance', 'Performance Check'),\n('2025-07-02 09:46:30', 'bedroom_ac', 'active', 'Performance OK - Resumed'),\n('2025-07-02 12:00:00', 'gas_sensor', 'online', 'Heat Compensation Applied'),\n('2025-07-02 23:30:00', 'bedroom_ac', 'standby', 'Extended Operation Complete'),\n\n-- Network stress during extreme heat\n('2025-07-05 13:20:00', 'dht1_sensor', 'online', 'High Frequency Reporting'),\n('2025-07-05 13:20:05', 'dht2_sensor', 'online', 'High Frequency Reporting'),\n('2025-07-05 13:22:00', 'gas_sensor', 'online', 'Optimized Reporting'),\n('2025-07-05 15:45:00', 'door_sensor', 'maintenance', 'Heat Validation'),\n('2025-07-05 15:46:00', 'door_sensor', 'online', 'Heat Compensation OK'),\n\n-- Heat wave peak operations\n('2025-07-15 06:15:00', 'bedroom_ac', 'active', 'Record Heat - 38.2°C'),\n('2025-07-15 06:15:05', 'exhaust_fan', 'active', 'Maximum Air Flow'),\n('2025-07-15 10:30:00', 'bedroom_ac', 'active', 'Continuous Operation Mode'),\n('2025-07-15 14:00:00', 'blinds_servo', 'active', 'Position: 10° - Emergency Shade'),\n('2025-07-15 18:45:00', 'hall_rgb', 'active', 'RGB: 0,0,150 - Heat Relief Mode'),\n('2025-07-15 23:45:00', 'bedroom_ac', 'standby', 'Heat Wave Day Complete'),\n\n-- Critical gas event during heat wave\n('2025-07-16 12:00:00', 'gas_sensor', 'error', 'CRITICAL: 3450ppm + Heat'),\n('2025-07-16 12:00:02', 'exhaust_fan', 'active', 'Emergency + Heat Protocol'),\n('2025-07-16 12:00:05', 'buzzer', 'active', 'Heat + Gas Emergency'),\n('2025-07-16 12:00:08', 'bedroom_ac', 'active', 'Continued Cooling Required'),\n('2025-07-16 12:03:00', 'gas_sensor', 'online', 'Level: 1800ppm - Decreasing'),\n('2025-07-16 12:05:00', 'gas_sensor', 'online', 'Level: 485ppm - Safe'),\n('2025-07-16 12:07:00', 'exhaust_fan', 'standby', 'Emergency Resolved'),\n('2025-07-16 12:07:05', 'buzzer', 'standby', 'All Systems Normal'),\n\n-- System stress monitoring\n('2025-07-18 14:30:00', 'dht1_sensor', 'maintenance', 'Heat Stress Check'),\n('2025-07-18 14:30:05', 'dht2_sensor', 'maintenance', 'Heat Stress Check'),\n('2025-07-18 14:32:00', 'bedroom_ac', 'maintenance', 'Performance Analysis'),\n('2025-07-18 14:35:00', 'dht1_sensor', 'online', 'Stress Test Passed'),\n('2025-07-18 14:35:05', 'dht2_sensor', 'online', 'Stress Test Passed'),\n('2025-07-18 14:35:10', 'bedroom_ac', 'active', 'Optimized Performance'),\n\n('2025-07-20 11:45:00', 'dht1_sensor', 'maintenance', 'Extreme Heat Protection'),\n('2025-07-20 11:45:05', 'dht2_sensor', 'maintenance', 'Extreme Heat Protection'),\n('2025-07-20 11:47:00', 'dht1_sensor', 'online', 'Protection Successful'),\n('2025-07-20 11:47:05', 'dht2_sensor', 'online', 'Protection Successful'),\n\n-- Record temperature events\n('2025-07-25 05:30:00', 'bedroom_ac', 'active', 'Record Heat - 40.3°C'),\n('2025-07-25 05:30:05', 'dht1_sensor', 'online', '40°C+ Detection'),\n('2025-07-25 08:15:00', 'bedroom_ac', 'active', 'Maximum Performance Mode'),\n('2025-07-25 12:00:00', 'blinds_servo', 'active', 'Position: 5° - Emergency'),\n('2025-07-25 20:30:00', 'hall_rgb', 'active', 'RGB: 0,0,100 - Extreme Cool'),\n('2025-07-25 23:15:00', 'bedroom_ac', 'standby', 'Record Day Complete'),\n\n-- End of month operations\n('2025-07-31 06:00:00', 'bedroom_ac', 'active', 'Final Record - 41.2°C'),\n('2025-07-31 06:00:05', 'dht1_sensor', 'online', 'Month High: 41.2°C'),\n('2025-07-31 12:00:00', 'gas_sensor', 'maintenance', 'Monthly Calibration'),\n('2025-07-31 12:00:05', 'door_sensor', 'maintenance', 'Monthly Calibration'),\n('2025-07-31 12:01:00', 'gas_sensor', 'online', 'Calibration Complete'),\n('2025-07-31 12:01:05', 'door_sensor', 'online', 'Calibration Complete'),\n('2025-07-31 23:45:00', 'bedroom_ac', 'standby', 'Month End - Normal'),\n('2025-07-31 23:59:00', 'bedroom_ac', 'maintenance', 'Monthly Report Generated'),\n\n-- Additional device status updates throughout both months\n('2025-06-05 15:20:00', 'door_sensor', 'active', 'Extended Open - 45min'),\n('2025-06-08 09:30:00', 'light_sensor', 'maintenance', 'Calibration Update'),\n('2025-06-08 09:31:00', 'light_sensor', 'online', 'Daylight Optimized'),\n('2025-06-10 16:45:00', 'pir1_hall', 'offline', 'Connection Timeout'),\n('2025-06-10 16:46:00', 'pir1_hall', 'online', 'Connection Restored'),\n('2025-06-12 20:15:00', 'hall_rgb', 'active', 'Energy Saving Mode'),\n('2025-06-14 11:30:00', 'potentiometer', 'maintenance', 'Weekly Check'),\n('2025-06-14 11:31:00', 'potentiometer', 'online', 'Calibration OK'),\n('2025-06-17 14:20:00', 'door_sensor', 'active', 'High Activity Period'),\n('2025-06-19 18:45:00', 'pir1_hall', 'maintenance', 'Sensitivity Adjust'),\n('2025-06-19 18:46:00', 'pir1_hall', 'online', 'Optimized Detection'),\n('2025-06-22 12:30:00', 'bedroom_ac', 'maintenance', 'Routine Service'),\n('2025-06-22 12:35:00', 'bedroom_ac', 'standby', 'Service Complete'),\n('2025-06-24 16:15:00', 'blinds_servo', 'error', 'Position Fluctuation'),\n('2025-06-24 16:16:00', 'blinds_servo', 'active', 'Stabilized - Normal'),\n('2025-06-27 10:45:00', 'gas_sensor', 'maintenance', 'Filter Check'),\n('2025-06-27 10:46:00', 'gas_sensor', 'online', 'Filter OK'),\n('2025-06-29 13:20:00', 'hall_rgb', 'offline', 'Network Restart'),\n('2025-06-29 13:22:00', 'hall_rgb', 'active', 'Network Restored'),\n\n('2025-07-03 08:15:00', 'bedroom_ac', 'maintenance', '30-Day Service Alert'),\n('2025-07-06 14:30:00', 'hall_rgb', 'active', 'Energy Conservation'),\n('2025-07-08 11:20:00', 'gas_sensor', 'maintenance', 'Heat Compensation'),\n('2025-07-08 11:22:00', 'gas_sensor', 'online', 'Heat Calibration OK'),\n('2025-07-10 17:45:00', 'door_sensor', 'maintenance', 'Heat Compensation'),\n('2025-07-10 17:46:00', 'door_sensor', 'online', 'Heat Adjustment OK'),\n('2025-07-12 09:30:00', 'dht1_sensor', 'maintenance', 'Heat Stress Analysis'),\n('2025-07-12 09:31:00', 'dht1_sensor', 'online', 'Components OK'),\n('2025-07-14 15:20:00', 'pir2_toilet', 'maintenance', 'Heat Validation'),\n('2025-07-14 15:21:00', 'pir2_toilet', 'online', 'Heat Test Passed'),\n('2025-07-17 12:15:00', 'dht2_sensor', 'maintenance', 'Humidity Validation'),\n('2025-07-17 12:16:00', 'dht2_sensor', 'online', 'Validation Complete'),\n('2025-07-19 16:30:00', 'light_sensor', 'maintenance', 'Summer Calibration'),\n('2025-07-19 16:31:00', 'light_sensor', 'online', 'Summer Mode Active'),\n('2025-07-21 10:45:00', 'blinds_servo', 'maintenance', 'Mid-Month Check'),\n('2025-07-21 10:46:00', 'blinds_servo', 'active', 'Position Control OK'),\n('2025-07-23 14:20:00', 'bedroom_ac', 'maintenance', 'Efficiency Check'),\n('2025-07-23 14:22:00', 'bedroom_ac', 'active', 'Efficiency Optimized'),\n('2025-07-26 11:15:00', 'toilet_led', 'maintenance', 'Heat Impact Check'),\n('2025-07-26 11:16:00', 'toilet_led', 'online', 'Normal Operation'),\n('2025-07-29 13:30:00', 'potentiometer', 'maintenance', 'Heat Drift Check'),\n('2025-07-29 13:31:00', 'potentiometer', 'online', 'Heat Compensation OK');",
+        "name": "Sample Device Status Data",
+        "x": 530,
+        "y": 580,
+        "wires": [
+            [
+                "cd824e4668f8ce80"
+            ]
+        ]
+    },
+    {
+        "id": "36b9a9087cf9c65b",
+        "type": "debug",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "name": "Database Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "3fb9692c116eca6d",
+        "type": "catch",
+        "z": "1329f30dedb9b5b8",
+        "g": "c7c0bb6a3c3a5403",
+        "name": "",
+        "scope": [
+            "dbdc3fa650873164"
+        ],
+        "uncaught": false,
+        "x": 840,
+        "y": 560,
+        "wires": [
+            [
+                "36b9a9087cf9c65b"
+            ]
+        ]
+    },
+    {
+        "id": "677ea1d12d8e00c7",
+        "type": "ui_chart",
+        "z": "6aeb838eecd9063d",
+        "name": "Temperature (7d)",
+        "group": "42bd3733872e496f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature (7d)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "10",
+        "ymax": "50",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "0",
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1050,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0a30cf4e971e46a9",
+        "type": "ui_chart",
+        "z": "6aeb838eecd9063d",
+        "name": "Temperature (30d)",
+        "group": "42bd3733872e496f",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature (30d)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "D/M",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "10",
+        "ymax": "50",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "0",
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1050,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d24c3817e29c86e4",
+        "type": "ui_chart",
+        "z": "6aeb838eecd9063d",
+        "name": "Gas Level History (7d)",
+        "group": "cda8d302847c2de4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Gas Level History (7d)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "dd HH:mm",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": "0",
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1100,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b9dca1033df130f5",
+        "type": "ui_text",
+        "z": "6aeb838eecd9063d",
+        "group": "cda8d302847c2de4",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "Energy Consumption",
+        "label": "Energy Concumtion",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1080,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "11b3d3b304bafa31",
+        "type": "inject",
+        "z": "6aeb838eecd9063d",
+        "name": "Fetch Temprature History",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 100,
+        "wires": [
+            [
+                "9df76415e6edfd18"
+            ]
+        ]
+    },
+    {
+        "id": "9df76415e6edfd18",
+        "type": "sqlite",
+        "z": "6aeb838eecd9063d",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT timestamp, bedroom_temp, hall_temp \nFROM sensor_readings \nWHERE timestamp >= datetime('now', '-7 days')\n\n",
+        "name": "",
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "91e8ce6d96bfb1c3"
+            ]
+        ]
+    },
+    {
+        "id": "91e8ce6d96bfb1c3",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Temprature History 24 H",
+        "func": "var rows = msg.payload;\nvar bedroomData = rows.map(row => ({'x': new Date(row.timestamp).getTime(), 'y': row.bedroom_temp}));\nvar hallData = rows.map(row => ({'x': new Date(row.timestamp).getTime(), 'y': row.hall_temp}));\nvar temp={};\n//temp.lables = [ new Date(rows.timestamp).getTime()]\ntemp.series = [\"Bedroom Temp\", \"Hall Temp\"]\ntemp.data=[bedroomData,hallData]\n\nmsg.payload=[temp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 100,
+        "wires": [
+            [
+                "677ea1d12d8e00c7"
+            ]
+        ]
+    },
+    {
+        "id": "5b4af90df1737d16",
+        "type": "inject",
+        "z": "6aeb838eecd9063d",
+        "name": "Fetch Temprature History",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "e6c77e799d34253a"
+            ]
+        ]
+    },
+    {
+        "id": "e6c77e799d34253a",
+        "type": "sqlite",
+        "z": "6aeb838eecd9063d",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT timestamp, bedroom_temp, hall_temp \nFROM sensor_readings \nWHERE timestamp >= datetime('now', '-2 months')\n\n",
+        "name": "",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "9208f9b49ef04316"
+            ]
+        ]
+    },
+    {
+        "id": "9208f9b49ef04316",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Temprature History 24 H",
+        "func": "var rows = msg.payload;\nvar bedroomData = rows.map(row => ({'x': new Date(row.timestamp).getTime(), 'y': row.bedroom_temp}));\nvar hallData = rows.map(row => ({'x': new Date(row.timestamp).getTime(), 'y': row.hall_temp}));\nvar temp={};\n//temp.lables = [ new Date(rows.timestamp).getTime()]\ntemp.series = [\"Bedroom Temp\", \"Hall Temp\"]\ntemp.data=[bedroomData,hallData]\n\nmsg.payload=[temp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 140,
+        "wires": [
+            [
+                "0a30cf4e971e46a9"
+            ]
+        ]
+    },
+    {
+        "id": "abaf97a81f12a515",
+        "type": "sqlite",
+        "z": "6aeb838eecd9063d",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT strftime('%H', timestamp) as hour, location, COUNT(*) as count \nFROM motion_events \n--WHERE motion = 1 \n--AND timestamp >= datetime('now', '-1 month') \nGROUP BY hour, location\n\n",
+        "name": "",
+        "x": 510,
+        "y": 240,
+        "wires": [
+            [
+                "dea7859d0faa7243",
+                "0f1f711a762f0ef2"
+            ]
+        ]
+    },
+    {
+        "id": "80aa5138a8738cf8",
+        "type": "inject",
+        "z": "6aeb838eecd9063d",
+        "name": "Fetch Temprature History",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "abaf97a81f12a515"
+            ]
+        ]
+    },
+    {
+        "id": "dea7859d0faa7243",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Motion History Month",
+        "func": "var rows = msg.payload;\nvar heatmap = [\n    { row: \"Hall\", values: Array(24).fill(0) },\n    { row: \"Toilet\", values: Array(24).fill(0) }\n];\n\n// Fill heatmap arrays\nrows.forEach(row => {\n    var index = parseInt(row.hour);\n    if (row.location === \"hall\") heatmap[0].values[index] = row.count;\n    if (row.location === \"toilet\") heatmap[1].values[index] = row.count;\n});\n\n// Create flat array of 48 values (2 rows × 24 columns)\nvar flatData = [];\nheatmap.forEach(location => {\n    flatData = flatData.concat(location.values);\n});\n\n// Prepare final message\nmsg.payload = flatData;\nmsg.series=[\"hall\", \"toilet\"];\nmsg.rowLabels = [\"hall\", \"toilet\"];\nmsg.columnLabels = Array.from({length: 24}, (_, i) => `${i}:00`);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 220,
+        "wires": [
+            [
+                "331fe3532b6f8c0c",
+                "e872bcdf3813b5d1"
+            ]
+        ]
+    },
+    {
+        "id": "331fe3532b6f8c0c",
+        "type": "debug",
+        "z": "6aeb838eecd9063d",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "70dd15d1789cdd71",
+        "type": "inject",
+        "z": "6aeb838eecd9063d",
+        "name": "Fetch Temprature History",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "482e3d55b52746ae"
+            ]
+        ]
+    },
+    {
+        "id": "e78787dd4cb8b7f4",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Gas Level History 7 Days",
+        "func": "\n\n// Process gas level data for time-series chart\nvar rows = msg.payload;\n\n// Create the data array in the format: [timestamp, value]\nvar gasData = rows.map(row => [new Date(row.timestamp).getTime(), row.gas_level]);\n\n// Create the chart series object\nvar series = {\n    label: \"Gas Level\",\n    data: gasData,\n    color: \"#ff0000\"  // Red color for gas warnings\n};\n\n// Format for ui_chart node\nmsg.payload = [{\n    series: [\"Gas Level\"],\n    data: [gasData],\n    labels: rows.map(row => new Date(row.timestamp).toLocaleTimeString()),\n    options: {\n        title: \"Gas Level History\",\n        xaxis: { mode: \"time\" },\n        yaxis: { min: 0, position: \"left\" }\n    }\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 380,
+        "wires": [
+            [
+                "d24c3817e29c86e4",
+                "526cf55319164697"
+            ]
+        ]
+    },
+    {
+        "id": "482e3d55b52746ae",
+        "type": "sqlite",
+        "z": "6aeb838eecd9063d",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "-- SELECT device, action, value, timestamp \n-- FROM device_status \n-- WHERE timestamp >= datetime('now', '-7 days')\n\nSELECT * from sensor_readings;",
+        "name": "",
+        "x": 510,
+        "y": 420,
+        "wires": [
+            [
+                "54e83126085731b3",
+                "e78787dd4cb8b7f4"
+            ]
+        ]
+    },
+    {
+        "id": "54e83126085731b3",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Energy Consumption",
+        "func": "var rows = msg.payload;\nvar devices = { ac: 1000, fan: 50, light: 10 }; // Power in watts\nvar energy = { ac: 0, fan: 0, light: 0 }; // kWh\nvar lastOn = {};\n\nrows.forEach(row => {\n    var device = row.device;\n    var time = new Date(row.timestamp).getTime();\n    if (row.value === '\"on\"') {\n        lastOn[device] = time;\n    } else if (row.value === '\"off\"' && lastOn[device]) {\n        var duration = (time - lastOn[device]) / 3600000; // Hours\n        energy[device] += (devices[device] * duration) / 1000; // kWh\n        delete lastOn[device];\n    }\n});\n\nmsg.payload = `Energy Consumption (7d):\\nAC: ${energy.ac.toFixed(2)} kWh\\nFan: ${energy.fan.toFixed(2)} kWh\\nToilet Light: ${energy.light.toFixed(2)} kWh`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 460,
+        "wires": [
+            [
+                "b9dca1033df130f5",
+                "526cf55319164697"
+            ]
+        ]
+    },
+    {
+        "id": "718577716f1a191f",
+        "type": "ui_table",
+        "z": "6aeb838eecd9063d",
+        "group": "feae0a3a6e277f76",
+        "name": "Device Status",
+        "order": 1,
+        "width": 12,
+        "height": 8,
+        "columns": [
+            {
+                "field": "device",
+                "title": "Device",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "status",
+                "title": "Status",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "value",
+                "title": "Value",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "last_update",
+                "title": "Last Update",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 980,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21530aebc6afd8ee",
+        "type": "inject",
+        "z": "6aeb838eecd9063d",
+        "name": "Every 10 sec",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "f53d8a5770977745"
+            ]
+        ]
+    },
+    {
+        "id": "f53d8a5770977745",
+        "type": "sqlite",
+        "z": "6aeb838eecd9063d",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT \n    device_name AS device,\n    status,\n    value,\n    strftime('%Y-%m-%d %H:%M', timestamp) AS last_update\nFROM device_status\nWHERE id IN (\n    SELECT MAX(id) \n    FROM device_status \n    GROUP BY device_name\n)\nORDER BY timestamp DESC;\n",
+        "name": "Fetch Device Status",
+        "x": 500,
+        "y": 540,
+        "wires": [
+            [
+                "718577716f1a191f"
+            ]
+        ]
+    },
+    {
+        "id": "74217da2824045ca",
+        "type": "inject",
+        "z": "6aeb838eecd9063d",
+        "name": "Fetch Temprature History",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 60,
+        "wires": [
+            [
+                "11ffb7073ccf759b"
+            ]
+        ]
+    },
+    {
+        "id": "11ffb7073ccf759b",
+        "type": "sqlite",
+        "z": "6aeb838eecd9063d",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT timestamp, bedroom_temp, hall_temp \nFROM sensor_readings \nWHERE timestamp >= datetime('now', '-24 hours')\n\n",
+        "name": "",
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "324a4b200cd1992f"
+            ]
+        ]
+    },
+    {
+        "id": "324a4b200cd1992f",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Temprature History 24 H",
+        "func": "var rows = msg.payload;\nvar bedroomData = rows.map(row => ({ 'x': new Date(row.timestamp).getTime(), 'y': row.bedroom_temp }));\nvar hallData = rows.map(row => ({ 'x': new Date(row.timestamp).getTime(), 'y': row.hall_temp }));\nvar temp = {};\n//temp.lables = [new Date(rows.timestamp).getTime()]\ntemp.series = [\"Bedroom Temp\", \"Hall Temp\"]\ntemp.data = [bedroomData, hallData]\n\nmsg.payload = [temp]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 60,
+        "wires": [
+            [
+                "8ec10b6d97f6797c",
+                "8340c55809df64c8"
+            ]
+        ]
+    },
+    {
+        "id": "8ec10b6d97f6797c",
+        "type": "debug",
+        "z": "6aeb838eecd9063d",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "8340c55809df64c8",
+        "type": "ui_chart",
+        "z": "6aeb838eecd9063d",
+        "name": "Temperature (24h)",
+        "group": "42bd3733872e496f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature (24h)",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "No data",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": "0",
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d81313",
+            "#d917c9",
+            "#bcd214",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1050,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e872bcdf3813b5d1",
+        "type": "ui_heat_map",
+        "z": "6aeb838eecd9063d",
+        "group": "cda8d302847c2de4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Motion Activity",
+        "rows": "2",
+        "columns": "24",
+        "minMax": true,
+        "minimumValue": 0,
+        "maximumValue": "10",
+        "backgroundType": "color",
+        "backgroundColor": "#aa8d8d",
+        "image": "never",
+        "radius": 40,
+        "opacity": "0.3",
+        "blur": "0",
+        "showValues": false,
+        "gridType": "none",
+        "valuesDecimals": 0,
+        "showLegend": true,
+        "legendType": "vals",
+        "legendDecimals": 0,
+        "legendCount": 5,
+        "x": 1040,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "526cf55319164697",
+        "type": "debug",
+        "z": "6aeb838eecd9063d",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "90fecbbe5bafc972",
+        "type": "ui_chart",
+        "z": "6aeb838eecd9063d",
+        "name": "",
+        "group": "cda8d302847c2de4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Motion Detuction Bar Chart",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1080,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f1f711a762f0ef2",
+        "type": "function",
+        "z": "6aeb838eecd9063d",
+        "name": "Motion History Month",
+        "func": "// Process motion data for hourly bar chart\nconst rows = msg.payload;\nconst hourlyData = {};\n\n// Initialize 24-hour structure for both locations\nfor (let hour = 0; hour < 24; hour++) {\n    const hourStr = hour.toString().padStart(2, '0');\n    hourlyData[hourStr] = { hall: 0, toilet: 0 };\n}\n\n// Process database rows\nrows.forEach(row => {\n    const hour = row.hour;\n    if (hourlyData[hour]) {\n        hourlyData[hour][row.location.toLowerCase()] = row.count;\n    }\n});\n\n// Prepare arrays for chart data\nconst hallData = [];\nconst toiletData = [];\nconst labels = [];\n\n// Populate data arrays in hour order\nfor (let hour = 0; hour < 24; hour++) {\n    const hourStr = hour.toString().padStart(2, '0');\n    labels.push(`${hourStr}:00`);\n    hallData.push(hourlyData[hourStr].hall);\n    toiletData.push(hourlyData[hourStr].toilet);\n}\n\n// Create the data structure for ui_chart node\nmsg.payload = [\n    { \n        series: [\"Hall\", \"Toilet\"],\n        data: [hallData, toiletData],\n        labels: labels,\n        options: {\n            title: \"Hourly Motion Events (Past Month)\",\n            legend: true,\n            series: {\n                bars: {\n                    show: true,\n                    barWidth: 0.6,\n                    align: \"center\"\n                }\n            },\n            xaxis: {\n                mode: \"categories\",\n                tickLength: 0\n            },\n            yaxis: {\n                min: 0,\n                label: \"Event Count\"\n            },\n            grid: {\n                hoverable: true,\n                clickable: true\n            }\n        }\n    }\n];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 260,
+        "wires": [
+            [
+                "90fecbbe5bafc972"
+            ]
+        ]
+    },
+    {
+        "id": "0dfc391def4f8779",
+        "type": "ui_form",
+        "z": "4c15fc92b4b003a3",
+        "name": "",
+        "label": "",
+        "group": "641235355f36f5d7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "From Date",
+                "value": "f_date",
+                "type": "date",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "To Date",
+                "value": "t_date",
+                "type": "date",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "f_date": "",
+            "t_date": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 170,
+        "y": 60,
+        "wires": [
+            [
+                "prepare-sqlite-query"
+            ]
+        ]
+    },
+    {
+        "id": "e5c50f481653845e",
+        "type": "sqlite",
+        "z": "4c15fc92b4b003a3",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 790,
+        "y": 60,
+        "wires": [
+            [
+                "959ca0f3df15f2ae",
+                "5fb7b3fc7898f738"
+            ]
+        ]
+    },
+    {
+        "id": "959ca0f3df15f2ae",
+        "type": "debug",
+        "z": "4c15fc92b4b003a3",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "prepare-sqlite-query",
+        "type": "function",
+        "z": "4c15fc92b4b003a3",
+        "name": "Prepare SQLite Query for sensor_readings",
+        "func": "const f_date = msg.payload.f_date;\nconst t_date = msg.payload.t_date;\n\n// Validate date strings\nif (!f_date || !t_date) {\n    node.error(\"Missing f_date or t_date\");\n    return null;\n}\n\n// Optional: Validate they are valid ISO dates\nif (isNaN(new Date(f_date).getTime()) || \n    isNaN(new Date(t_date).getTime())) {\n    node.error(\"Invalid date format\");\n    return null;\n}\n\n// Set up the SQL query (adjust 'timestamp' to your actual column name)\nmsg.topic = `SELECT \n                    device_name AS device,\n                    status,\n                    value,\n                    strftime('%Y-%m-%d %H:%M', timestamp) AS last_update\n                FROM device_status\n                WHERE timestamp >= $val1 AND timestamp <= $val2 ORDER BY timestamp ASC`;\n\n// Use parameters to prevent SQL injection\nmsg.payload = [f_date, t_date];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 60,
+        "wires": [
+            [
+                "e5c50f481653845e"
+            ]
+        ]
+    },
+    {
+        "id": "5fb7b3fc7898f738",
+        "type": "ui_table",
+        "z": "4c15fc92b4b003a3",
+        "group": "641235355f36f5d7",
+        "name": "Device Status",
+        "order": 1,
+        "width": 12,
+        "height": 8,
+        "columns": [
+            {
+                "field": "device",
+                "title": "Device",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "status",
+                "title": "Status",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "value",
+                "title": "Value",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "last_update",
+                "title": "Last Update",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 1,
+        "cts": true,
+        "x": 1040,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b2c5d8f1.78a3f",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "name": "Weekly Trigger",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3f1c8b2.1b1d78",
+        "type": "function",
+        "z": "91115cb77d10aa3f",
+        "name": "Weekly Report Query",
+        "func": "msg.topic = `SELECT \n  strftime('%W', timestamp) as week,\n  AVG(bedroom_temp) as avg_bed_temp,\n  MAX(gas_level) as peak_gas,\n  COUNT(CASE WHEN motion_hall=1 THEN 1 END) as hall_motion,\n  COUNT(CASE WHEN door_status='open' THEN 1 END) as door_openings\nFROM sensor_readings\nGROUP BY week`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "c8d2e9f3.4c1d28"
+            ]
+        ]
+    },
+    {
+        "id": "c8d2e9f3.4c1d28",
+        "type": "sqlite",
+        "z": "91115cb77d10aa3f",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "Run Weekly Report",
+        "x": 750,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e8d7f1c2.7b1a88",
+        "type": "function",
+        "z": "91115cb77d10aa3f",
+        "name": "Maintenance Alerts",
+        "func": "const now = Date.now();\nconst alerts = [];\n\n// Filter replacement (every 90 days)\nif (now - context.get('lastFilterChange') > 7776000000) {\n    alerts.push({\n        alert: \"FILTER NEEDS REPLACEMENT\",\n        level: \"warning\"\n    });\n}\n\n// Sensor calibration (every 180 days)\nif (now - context.get('lastCalibration') > 15552000000) {\n    alerts.push({\n        alert: \"SENSORS NEED CALIBRATION\",\n        level: \"warning\"\n    });\n}\n\nif (alerts.length > 0) {\n    msg.payload = alerts;\n    return msg;\n}\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "context.set('lastFilterChange', 0);\ncontext.set('lastCalibration', 0);",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "66b66d9ca90b153d",
+        "type": "ui_audio",
+        "z": "91115cb77d10aa3f",
+        "name": "",
+        "group": "95fa1c75b210e67e",
+        "voice": "",
+        "always": "",
+        "x": 1020,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "18e64d1c40c5f9eb",
+        "type": "sqlite",
+        "z": "91115cb77d10aa3f",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "select * from motion_events\n\n-- update motion_events\n-- set location='toilet'\n-- where id %2==1;\n\n",
+        "name": "",
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "1c0e81c99df4a50e"
+            ]
+        ]
+    },
+    {
+        "id": "2932e352c3d3baaa",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "18e64d1c40c5f9eb"
+            ]
+        ]
+    },
+    {
+        "id": "1c0e81c99df4a50e",
+        "type": "debug",
+        "z": "91115cb77d10aa3f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d5ca6c4c0967775d",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "name": "Every 10 sec",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf1af656cd49602b",
+        "type": "sqlite",
+        "z": "91115cb77d10aa3f",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "--  select * from sensor_readings;\n\n-- update sensor_readings\n-- set hall_temp=(ABS(RANDOM() % 17) + 30);\n-- where hall_temp<16\n\nselect * from motion_events;",
+        "name": "Fetch Device Status",
+        "x": 720,
+        "y": 480,
+        "wires": [
+            [
+                "5fc95a48a41b2ab1",
+                "447f1c580ccca78c"
+            ]
+        ]
+    },
+    {
+        "id": "508fad8d489b515f",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"series\":[\"Bedroom Temp\",\"Hall Temp\"],\"data\":[[{\"x\":1627123456789,\"y\":27.5},{\"x\":1627123512345,\"y\":29}],[{\"x\":1627123456789,\"y\":20.8},{\"x\":1627123512345,\"y\":16.2}]]}",
+        "payloadType": "json",
+        "x": 330,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "inject_node_1",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "name": "Sample Data Inject",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "[{\"series\":[\"Bedroom Temp\"],\"data\":[[{\"x\":1722032400000,\"y\":27.5},{\"x\":1722032700000,\"y\":29}]]},{\"series\":[\"Hall Temp\"],\"data\":[[{\"x\":1722032400000,\"y\":20.8},{\"x\":1722032700000,\"y\":16.2}]]}]",
+        "payloadType": "json",
+        "x": 730,
+        "y": 520,
+        "wires": [
+            [
+                "chart_node_1"
+            ]
+        ]
+    },
+    {
+        "id": "chart_node_1",
+        "type": "ui_chart",
+        "z": "91115cb77d10aa3f",
+        "name": "Temperature Chart",
+        "group": "group_1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature Chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "monotone",
+        "nodata": "No Data",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d05d5d",
+            "#b5a13b",
+            "#b72a2a",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 970,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fc95a48a41b2ab1",
+        "type": "debug",
+        "z": "91115cb77d10aa3f",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "50fe7014429a30f5",
+        "type": "http in",
+        "z": "91115cb77d10aa3f",
+        "name": "",
+        "url": "/motion",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 490,
+        "y": 480,
+        "wires": [
+            [
+                "bf1af656cd49602b"
+            ]
+        ]
+    },
+    {
+        "id": "447f1c580ccca78c",
+        "type": "http response",
+        "z": "91115cb77d10aa3f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 990,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "2057c92dc2a09d3f",
+        "type": "ui_chart",
+        "z": "91115cb77d10aa3f",
+        "g": "1f9bcff40567d4d4",
+        "name": "",
+        "group": "group_1",
+        "order": 3,
+        "width": 10,
+        "height": 6,
+        "label": "Temperatures",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "cubic",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 840,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6f31a34f968c652",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "g": "1f9bcff40567d4d4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 100,
+        "wires": [
+            [
+                "e0cd5049e3a7a6e7",
+                "bb5f35b842352718"
+            ]
+        ]
+    },
+    {
+        "id": "e0cd5049e3a7a6e7",
+        "type": "function",
+        "z": "91115cb77d10aa3f",
+        "g": "1f9bcff40567d4d4",
+        "name": "Random Temperature Values",
+        "func": "msg.payload = Math.random() * 100\nmsg.topic = \"Temp 1\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 100,
+        "wires": [
+            [
+                "2057c92dc2a09d3f"
+            ]
+        ]
+    },
+    {
+        "id": "525a30eeffaf4a1b",
+        "type": "ui_button",
+        "z": "91115cb77d10aa3f",
+        "g": "1f9bcff40567d4d4",
+        "name": "",
+        "group": "group_1",
+        "order": 4,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "Clear Chart",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "2057c92dc2a09d3f"
+            ]
+        ]
+    },
+    {
+        "id": "bb5f35b842352718",
+        "type": "function",
+        "z": "91115cb77d10aa3f",
+        "g": "1f9bcff40567d4d4",
+        "name": "Random Temperature Values",
+        "func": "msg.payload = Math.random() * 100\nmsg.topic = \"Temp 2\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 140,
+        "wires": [
+            [
+                "2057c92dc2a09d3f"
+            ]
+        ]
+    },
+    {
+        "id": "motion-report-trigger",
+        "type": "inject",
+        "z": "91115cb77d10aa3f",
+        "name": "Daily at 6AM",
+        "props": [],
+        "repeat": "",
+        "crontab": "0 6 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "motion-sql-execute"
+            ]
+        ]
+    },
+    {
+        "id": "motion-sql-execute",
+        "type": "sqlite",
+        "z": "91115cb77d10aa3f",
+        "mydb": "d55321a5486880a4",
+        "sqlquery": "fixed",
+        "sql": "SELECT \n    strftime('%H', timestamp) as hour, \n    location, \n    COUNT(*) as count \nFROM motion_events \n--WHERE motion = 1 AND \n--    timestamp >= datetime('now', '-1 month') \nGROUP BY hour, location\nORDER BY hour ASC;\n\n",
+        "name": "Fetch Motion Data",
+        "x": 450,
+        "y": 620,
+        "wires": [
+            [
+                "motion-chart-processor"
+            ]
+        ]
+    },
+    {
+        "id": "motion-chart-processor",
+        "type": "function",
+        "z": "91115cb77d10aa3f",
+        "name": "Process for Bar Chart",
+        "func": "// Process motion data for hourly bar chart\nconst rows = msg.payload;\nconst hourlyData = {};\n\n// Initialize 24-hour structure for both locations\nfor (let hour = 0; hour < 24; hour++) {\n    const hourStr = hour.toString().padStart(2, '0');\n    hourlyData[hourStr] = { hall: 0, toilet: 0 };\n}\n\n// Process database rows\nrows.forEach(row => {\n    const hour = row.hour;\n    if (hourlyData[hour]) {\n        hourlyData[hour][row.location.toLowerCase()] = row.count;\n    }\n});\n\n// Prepare chart data structure\nconst chartData = {\n    labels: Object.keys(hourlyData).map(h => `${h}:00`),\n    datasets: [\n        {\n            label: 'Hall Motion',\n            data: Object.values(hourlyData).map(d => d.hall),\n            backgroundColor: 'rgba(54, 162, 235, 0.8)',\n            borderColor: 'rgba(54, 162, 235, 1)',\n            borderWidth: 1\n        },\n        {\n            label: 'Toilet Motion',\n            data: Object.values(hourlyData).map(d => d.toilet),\n            backgroundColor: 'rgba(255, 99, 132, 0.8)',\n            borderColor: 'rgba(255, 99, 132, 1)',\n            borderWidth: 1\n        }\n    ]\n};\n\n// Prepare final message for chart node\nmsg.payload = {\n    topic: \"MotionEvents\",\n    data: chartData,\n    chartConfig: {\n        type: 'bar',\n        options: {\n            responsive: true,\n            scales: {\n                x: {\n                    title: {\n                        display: true,\n                        text: 'Hour of Day'\n                    },\n                    stacked: false\n                },\n                y: {\n                    title: {\n                        display: true,\n                        text: 'Motion Events Count'\n                    },\n                    beginAtZero: true\n                }\n            },\n            plugins: {\n                title: {\n                    display: true,\n                    text: 'Hourly Motion Events (Past Month)',\n                    font: { size: 16 }\n                },\n                tooltip: {\n                    callbacks: {\n                        label: (context) => {\n                            return `${context.dataset.label}: ${context.parsed.y} events`;\n                        }\n                    }\n                }\n            }\n        }\n    }\n};\nmsg.series=[\"hall motion\",\"toilet motion\"]\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 620,
+        "wires": [
+            [
+                "motion-bar-chart"
+            ]
+        ]
+    },
+    {
+        "id": "motion-bar-chart",
+        "type": "ui_chart",
+        "z": "91115cb77d10aa3f",
+        "name": "Motion Events by Hour",
+        "group": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Hourly Motion Events",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 960,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    }
+]

@@ -3,10 +3,10 @@
 
 // Add static arrays for filtering
 static int lightHistory[5] = {0, 0, 0, 0, 0};
-static int potHistory[5] = {0, 0, 0, 0, 0};
+//static int potHistory[5] = {0, 0, 0, 0, 0};
 static int gasHistory[3] = {0, 0, 0};
 static int lightIndex = 0;
-static int potIndex = 0;
+//static int potIndex = 0;
 static int gasIndex = 0;
 
 Sensors::Sensors() : dht1(DHT1_PIN, DHT22), dht2(DHT2_PIN, DHT22) {
@@ -54,9 +54,6 @@ SensorData Sensors::readAll() {
  data.gasValue = analogRead(GAS_PIN);
   delay(10);  // Small delay between ADC readings
   data.lightLevel = analogRead(LDR_PIN);
-  delay(10);  // Delay to let ADC settle
-  data.potValue = analogRead(POT_PIN);
-  delay(10);  // Final delay
   
   // Motion sensors
   data.hallMotion = digitalRead(PIR1_PIN);

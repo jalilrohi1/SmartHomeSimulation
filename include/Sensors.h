@@ -11,7 +11,7 @@ struct SensorData {
   // Environmental sensors
   int gasValue;           // Gas sensor reading
   int lightLevel;         // LDR reading for brightness
-  int potValue;           // Potentiometer reading for blinds
+  //int potValue;           // Potentiometer reading for blinds
   
   // Motion sensors
   bool hallMotion;        // PIR1 - hall motion detection

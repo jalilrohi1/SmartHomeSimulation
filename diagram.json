@@ -40,14 +40,6 @@
       "attrs": {}
     },
     {
-      "type": "wokwi-servo",
-      "id": "servo1",
-      "top": -271.6,
-      "left": -813.2,
-      "rotate": 180,
-      "attrs": {}
-    },
-    {
       "type": "wokwi-rgb-led",
       "id": "rgb1",
       "top": 403,
@@ -80,7 +72,6 @@
       "attrs": { "color": "red", "xray": "1" }
     },
     { "type": "wokwi-pir-motion-sensor", "id": "pir2", "top": 4, "left": 31.02, "attrs": {} },
-    { "type": "wokwi-potentiometer", "id": "pot1", "top": -270.1, "left": -547.4, "attrs": {} },
     {
       "type": "wokwi-lcd1602",
       "id": "lcd2",
@@ -161,7 +152,7 @@
       "rotate": 180,
       "attrs": { "value": "220" }
     },
-      {
+    {
       "type": "wokwi-capacitor-polarized",
       "id": "cap1",
       "top": -200,
@@ -169,12 +160,12 @@
       "attrs": { "value": "100n" }
     },
     {
-      "type": "wokwi-capacitor-polarized", 
+      "type": "wokwi-capacitor-polarized",
       "id": "cap2",
       "top": 300,
       "left": -350,
       "attrs": { "value": "100n" }
-    }  
+    }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
@@ -206,13 +197,9 @@
     [ "relay2:GND", "esp:GND.1", "gray", [ "h38.4", "v-66.8" ] ],
     [ "relay2:IN", "esp:14", "green", [ "h86.4", "v0.2", "h9.6", "v-115.2" ] ],
     [ "relay1:IN", "esp:27", "green", [ "h9.6", "v-57.4" ] ],
-    [ "servo1:V+", "esp:5V", "#8f4814", [ "v-0.1", "h67.1", "v-124.8" ] ],
-    [ "servo1:GND", "esp:GND.1", "gray", [ "v0", "h48", "v-144" ] ],
-    [ "servo1:PWM", "esp:12", "purple", [ "h76.8", "v-173" ] ],
     [ "relay2:VCC", "esp:5V", "#8f4814", [ "h105.6", "v-67.2" ] ],
     [ "relay1:VCC", "esp:5V", "#8f4814", [ "h67.2", "h0", "v38.4" ] ],
     [ "ldr1:VCC", "esp:3V3", "#8f4814", [ "v-9.6", "h-28.8", "v-326.4" ] ],
-    [ "pot1:GND", "esp:GND.1", "gray", [ "v38.4", "h134.4", "v259.2", "h-19.35" ] ],
     [ "bz1:1", "esp:GND.3", "gray", [ "h-67.2", "v-19.2", "h-105.6", "v-57.6" ] ],
     [ "bz1:2", "esp:23", "magenta", [ "h-76.8", "v-38.8", "h-134.4", "v-96" ] ],
     [ "lcd2:SCL", "esp:22", "green", [ "h-67.2", "v173.1", "h-153.6", "v-19.2" ] ],
@@ -246,12 +233,8 @@
     [ "toilet-led:A", "r5:2", "green", [ "h28.8", "v28.8" ] ],
     [ "r5:1", "esp:25", "green", [ "v19.2", "h38.4", "v67.2", "h9.6" ] ],
     [ "toilet-led:C", "esp:GND.1", "gray", [ "h134.4", "v172.4" ] ],
-    [ "pot1:VCC", "esp:5V", "#8f4814", [ "v211.2", "h37.6", "v9.6", "h38.4", "v124.8" ] ],
     [ "btn1:2.l", "esp:35", "green", [ "h67.2", "v-230.6", "h19.2", "v-9.6" ] ],
-    [ "esp:VN", "pot1:SIG", "green", [ "h-76.65", "v-124.8", "h-28.8" ] ],
     [ "esp:34", "ldr1:AO", "green", [ "h38.55", "v249.6", "h67.9" ] ],
-
-    [ "pot1:SIG", "cap1:+", "blue", [ "h20", "v10" ] ],
     [ "cap1:-", "esp:GND.1", "gray", [ "h50", "v100" ] ],
     [ "ldr1:AO", "cap2:+", "blue", [ "h20", "v-10" ] ],
     [ "cap2:-", "esp:GND.3", "gray", [ "h30", "v-50" ] ]

@@ -23,3 +23,7 @@ wifi_config.h
 # OS specific
 .DS_Store
 Thumbs.db
+
+//miscellaneous folders and files
+.idea/
+/Report Presentation/extras/*
