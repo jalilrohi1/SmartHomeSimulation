@@ -111,6 +111,112 @@ Configure in `include/config.h`:
 - `smart_home/blinds` - Blinds angle (0-180)
 - `smart_home/control` - Emergency stop
 
+## 🛠️ Technology Stack
+
+### **Hardware Components**
+- **ESP32 DevKit**: Main microcontroller with WiFi connectivity
+- **DHT22**: Temperature and humidity sensors
+- **MQ-2**: Gas leak detection sensor
+- **PIR**: Motion detection sensors
+- **LDR**: Light-dependent resistor for ambient light sensing
+- **RGB LED Strip**: Intelligent lighting system
+- **Servo Motors**: Blinds automation
+- **Relay Modules**: AC and fan control
+
+### **Software Technologies**
+- **C++**: Core firmware development with Arduino framework
+- **PlatformIO**: Development environment and build system
+- **MQTT Protocol**: Message queuing for IoT communication
+- **JSON**: Data serialization and API communication
+- **SQLite**: Database for historical data storage
+- **Node-RED**: Visual programming and dashboard interface
+- **Docker**: Containerized deployment environment
+
+### **Development Tools**
+- **VS Code**: Primary IDE with PlatformIO extension
+- **Wokwi Simulator**: Hardware simulation and testing
+- **Node-RED Dashboard**: Real-time monitoring interface
+- **Docker Compose**: Multi-container orchestration
+
+## 📋 Prerequisites
+
+### **Hardware Requirements**
+- ESP32 development board (DevKit v1 recommended)
+- DHT22 temperature/humidity sensors (x2)
+- MQ-2 gas sensor
+- PIR motion sensors (x2)
+- LDR photoresistor
+- RGB LED strip (WS2812B compatible)
+- Servo motors for blinds (x2)
+- Relay modules for AC/fan control
+- Breadboards and jumper wires
+- Power supply (5V/3.3V)
+
+### **Software Prerequisites**
+- **PlatformIO IDE** (VS Code extension)
+- **Docker Desktop** (for Node-RED container)
+- **Git** (for version control)
+- **Node.js** (v16+ for Node-RED development)
+
+### **Network Requirements**
+- WiFi network with internet access
+- MQTT broker (local or cloud-based)
+- Static IP recommended for ESP32
+
+## 🐳 Docker Setup
+
+The project includes a complete Docker Compose configuration for Node-RED:
+
+### **docker-compose.yaml Features:**
+```yaml
+version: '3'
+services:
+  node-red:
+    image: nodered/node-red
+    environment:
+      - NODE_RED_ENABLE_PROJECTS=true
+    ports:
+      - "1880:1880"
+    volumes:
+      - node_red_data:/data
+    command: >
+      bash -c "
+        npm install --unsafe-perm node-red-dashboard bufferutil utf-8-validate &&
+        ./node_modules/node-red/red.js -v
+      "
+```
+
+### **Start Node-RED Dashboard:**
+```bash
+# Start the Node-RED container
+docker-compose up -d
+
+# Access dashboard at: http://localhost:1880
+```
+
+## 📊 Node-RED Flow Configuration
+
+### **Flow Tabs Structure:**
+1. **Dashboard Input Management** - Sensor data processing
+2. **Dashboard Output Management** - Device control interface  
+3. **Database Management** - SQLite data storage
+4. **Reports** - Analytics and historical data visualization
+
+### **Pre-configured Node-RED Flow (31-july-2025.json):**
+- **Real-time Dashboards**: Live sensor monitoring with gauges and charts
+- **Device Controls**: RGB lighting, AC, blinds, and fan control
+- **Energy Monitoring**: Power consumption tracking and cost analysis
+- **Database Integration**: Automatic data logging to SQLite
+- **Alert System**: Emergency notifications and safety alerts
+- **Mobile-Responsive UI**: Optimized for tablets and smartphones
+
+### **Import Flow Instructions:**
+1. Open Node-RED at `http://localhost:1880`
+2. Go to Menu → Import
+3. Upload `nodredFlows/31-july-2025.json`
+4. Deploy the flows
+5. Access dashboard at `http://localhost:1880/ui`
+
 ## ✅ System Status
 
 **Build Status:** ✅ SUCCESS  
@@ -121,17 +227,95 @@ Configure in `include/config.h`:
 **Scheduler:** ✅ ACTIVE  
 **Safety Systems:** ✅ OPERATIONAL  
 
-## 🔧 Quick Setup
+## 🔧 Complete Setup Guide
 
-1. **Flash the firmware:**
+### **Step 1: Hardware Setup**
+1. **Connect ESP32** to sensors according to `include/pins.h`
+2. **Power Requirements**: 5V for servos/relays, 3.3V for sensors
+3. **Wiring Verification**: Test all connections before powering on
+
+### **Step 2: Software Installation**
+```bash
+# Install PlatformIO CLI (optional)
+pip install platformio
+
+# Clone the repository
+git clone https://github.com/jalilrohi1/SmartHomeSimulation.git
+cd SmartHomeSimulation
+
+# Install dependencies and build
+platformio run
+```
+
+### **Step 3: Docker & Node-RED Setup**
+```bash
+# Start Node-RED container
+docker-compose up -d
+
+# Verify container is running
+docker ps
+
+# Access Node-RED editor
+# Browser: http://localhost:1880
+```
+
+### **Step 4: Import Node-RED Flows**
+1. Open Node-RED at `http://localhost:1880`
+2. Menu → Import → Select File
+3. Choose `nodredFlows/31-july-2025.json`
+4. Click **Deploy**
+5. Access dashboard: `http://localhost:1880/ui`
+
+### **Step 5: ESP32 Configuration**
+1. **Update WiFi credentials** in `include/config.h`
+2. **Configure MQTT broker** settings
+3. **Flash firmware:**
    ```bash
    platformio run --target upload
    ```
 
-2. **Access the system:**
-   - Web Dashboard: `http://[ESP32_IP]/`
-   - Simple Interface: Available when full dashboard loads
-   - MQTT Broker: `test.mosquitto.org:1883`
+### **Step 6: System Verification**
+1. **ESP32 Dashboard**: `http://[ESP32_IP]/` (if web server enabled)
+2. **Node-RED Dashboard**: `http://localhost:1880/ui`
+3. **MQTT Topics**: Monitor via MQTT client or Node-RED debug
+4. **Database**: SQLite file created automatically in `db/` folder
+
+## 🌐 Access Points
+
+### **Web Interfaces**
+- **Node-RED Editor**: `http://localhost:1880` (Flow development)
+- **Node-RED Dashboard**: `http://localhost:1880/ui` (Main control interface)
+- **ESP32 Web Server**: `http://[ESP32_IP]/` (Optional, if enabled)
+
+### **MQTT Configuration**
+- **Broker**: `test.mosquitto.org:1883` (default)
+- **Topics**: All prefixed with `smart_home/`
+- **QoS**: Level 1 for reliable delivery
+- **Keep Alive**: 60 seconds with auto-reconnection
+
+## 📁 Project Structure
+
+```
+SmartHomeSimulation/
+├── src/                    # C++ source files
+│   ├── main.ino           # Main program loop
+│   ├── WiFiMQTT.cpp       # Network communication
+│   ├── Sensors.cpp        # Sensor data processing
+│   ├── Actuators.cpp      # Device control
+│   └── Display.cpp        # OLED display management
+├── include/               # Header files
+│   ├── config.h           # System configuration
+│   ├── pins.h             # Pin definitions
+│   └── *.h                # Component headers
+├── nodredFlows/           # Node-RED flow configurations
+│   ├── 31-july-2025.json  # Latest complete flow (v3.0)
+│   └── Allflows_7-july-2025.json # Previous version
+├── db/                    # Database files
+│   └── SmartHomeDB.db     # SQLite database
+├── docker-compose.yaml    # Node-RED container setup
+├── platformio.ini         # PlatformIO configuration
+└── README.md             # This documentation
+```
 
 3. **Configure features** (optional):
    Edit `include/config.h` and rebuild
